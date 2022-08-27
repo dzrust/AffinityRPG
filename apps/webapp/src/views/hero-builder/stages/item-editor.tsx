@@ -7,15 +7,15 @@ import ItemEditorForm from "../../../components/item/item-editor-form";
 import { ItemContext } from "../../../components/item/item-hoc";
 import WeaponEditorForm from "../../../components/weapon/weapon-editor-form";
 import { useIsLoading } from "../../../hooks";
-import { AFFINITY, AffinityStat, AffinityStatFormModel } from "../../../models/affinity";
-import { Armor, ArmorFormModel, armorFormModel, ARMOR_CLASSIFICATION } from "../../../models/armor";
-import { ELEMENT } from "../../../models/element";
-import { STAGES } from "../../../models/hero";
-import { itemFormModel, ItemFormModel, ITEM_TYPE } from "../../../models/item";
-import { RATING } from "../../../models/rating";
-import { ROUTES } from "../../../models/routes";
-import { STATUS_EFFECT } from "../../../models/status-effect";
-import { Weapon, WeaponFormModel, weaponFormModel, WEAPON_CLASSIFICATION } from "../../../models/weapon";
+import { AFFINITY, AffinityStat, AffinityStatFormModel } from "@affinity-rpg/models/affinity";
+import { Armor, ArmorFormModel, armorFormModel, ARMOR_CLASSIFICATION } from "@affinity-rpg/models/armor";
+import { ELEMENT } from "@affinity-rpg/models/element";
+import { STAGES } from "@affinity-rpg/models/hero";
+import { itemFormModel, ItemFormModel, ITEM_TYPE } from "@affinity-rpg/models/item";
+import { RATING } from "@affinity-rpg/models/rating";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
+import { Weapon, WeaponFormModel, weaponFormModel, WEAPON_CLASSIFICATION } from "@affinity-rpg/models/weapon";
 
 const ItemEditor: FC = () => {
   const { item } = useContext(ItemContext);

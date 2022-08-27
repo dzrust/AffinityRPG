@@ -1,5 +1,5 @@
 import { FC, useMemo } from "react";
-import { AOE } from "../models/aoe";
+import { AOE } from "@affinity-rpg/models/aoe";
 
 type Props = {
   aoe: AOE;

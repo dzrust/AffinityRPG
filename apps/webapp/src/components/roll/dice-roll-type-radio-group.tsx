@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormCheckProps } from "react-bootstrap";
-import { ROLL_TYPES } from "../../models/roll";
+import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import FormControlErrors from "../form/form-control-errors";
 
 type Props = {

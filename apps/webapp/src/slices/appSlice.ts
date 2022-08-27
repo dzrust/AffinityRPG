@@ -7,8 +7,8 @@ import {
   MiddlewareAPI,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { RollNotification } from "../models/roll";
-import { VERSION } from "../models/versions";
+import { RollNotification } from "@affinity-rpg/models/roll";
+import { VERSION } from "@affinity-rpg/models/versions";
 
 // Define a type for the slice state
 interface AppState {

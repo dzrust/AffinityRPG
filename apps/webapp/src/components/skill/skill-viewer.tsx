@@ -3,10 +3,10 @@ import { Badge, Button, OverlayTrigger, Popover, Row } from "react-bootstrap";
 import { getNumberOfSkillDiceByHeroLevel } from "../../helpers/hero";
 import { getSkillStatesOrDefault } from "../../helpers/skills";
 import { getLabelForSkill, getLabelForSkillDifficulty, getStatusEffectText } from "../../helpers/text-helpers";
-import { Hero } from "../../models/hero";
-import { ROLL_TYPES } from "../../models/roll";
-import { DIFFICULTIES, SKILL } from "../../models/skills";
-import { STATUS_EFFECT } from "../../models/status-effect";
+import { Hero } from "@affinity-rpg/models/hero";
+import { ROLL_TYPES } from "@affinity-rpg/models/roll";
+import { DIFFICULTIES, SKILL } from "@affinity-rpg/models/skills";
+import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
 import RollButton from "../roll/roll-button";
 
 type Props = {

@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { FC, Fragment, useMemo, useState } from "react";
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
-import { WeaponFormModel, WEAPON_CLASSIFICATIONS } from "../../models/weapon";
+import { WeaponFormModel, WEAPON_CLASSIFICATIONS } from "@affinity-rpg/models/weapon";
 import AffinityStatsEditor from "../affinity/affinity-stat-editor";
 import FormControl from "../form/form-control";
 import FormSelect from "../form/form-select";

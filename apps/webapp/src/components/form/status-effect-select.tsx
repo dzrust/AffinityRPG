@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { STATUS_EFFECT, STATUS_EFFECTS } from "../../models/status-effect";
+import { STATUS_EFFECT, STATUS_EFFECTS } from "@affinity-rpg/models/status-effect";
 import FormSelect from "./form-select";
 
 const StatusEffectSelect: FC = () => {

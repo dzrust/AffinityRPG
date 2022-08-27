@@ -1,7 +1,7 @@
 import { faBriefcase, faSack, faHeartPulse, faBoot } from "@fortawesome/pro-regular-svg-icons";
 import { FC } from "react";
 import { Badge } from "react-bootstrap";
-import { Hero } from "../../models/hero";
+import { Hero } from "@affinity-rpg/models/hero";
 import AffinityEmblem from "../affinity/affinity-emblem";
 import Emblem from "../emblem";
 

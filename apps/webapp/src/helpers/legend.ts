@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 import { v4 } from "uuid";
-import { Legend } from "../models/legend";
+import { Legend } from "@affinity-rpg/models/legend";
 
 export const createLegend = (): Legend => {
   const invitation = generateInvitation();

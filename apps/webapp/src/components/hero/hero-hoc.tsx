@@ -1,9 +1,9 @@
 import { FC, useMemo, useEffect, createContext, useCallback } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Hero } from "../../models/hero";
-import { Item } from "../../models/item";
-import { Mastery } from "../../models/mastery";
-import { ROUTES } from "../../models/routes";
+import { Hero } from "@affinity-rpg/models/hero";
+import { Item } from "@affinity-rpg/models/item";
+import { Mastery } from "@affinity-rpg/models/mastery";
+import { ROUTES } from "@affinity-rpg/models/routes";
 import { useGetHeroQuery } from "../../api/heroes";
 import { useGetMasteriesQuery } from "../../api/masteries";
 import { useGetItemsQuery } from "../../api/items";

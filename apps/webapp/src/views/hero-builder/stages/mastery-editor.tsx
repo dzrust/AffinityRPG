@@ -5,9 +5,9 @@ import { useDeleteMasteryMutation, useUpdateMasteryMutation } from "../../../api
 import MasteryEditorForm from "../../../components/mastery/mastery-editor-form";
 import { MasteryContext } from "../../../components/mastery/mastery-hoc";
 import { useIsLoading } from "../../../hooks";
-import { STAGES } from "../../../models/hero";
-import { masteryFormModel, MasteryFormModel } from "../../../models/mastery";
-import { ROUTES } from "../../../models/routes";
+import { STAGES } from "@affinity-rpg/models/hero";
+import { masteryFormModel, MasteryFormModel } from "@affinity-rpg/models/mastery";
+import { ROUTES } from "@affinity-rpg/models/routes";
 
 const MasteryEditor: FC = () => {
   const { mastery } = useContext(MasteryContext);

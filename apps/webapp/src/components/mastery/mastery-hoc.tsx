@@ -1,7 +1,7 @@
 import { FC, useMemo, useEffect, createContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ROUTES } from "../../models/routes";
-import { Mastery } from "../../models/mastery";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { Mastery } from "@affinity-rpg/models/mastery";
 import { useGetMasteryQuery } from "../../api/masteries";
 import { createMastery } from "../../helpers/mastery";
 

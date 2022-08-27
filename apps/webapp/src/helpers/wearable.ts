@@ -1,6 +1,6 @@
-import { ITEM_TYPE } from "../models/item";
-import { STATUS_EFFECT } from "../models/status-effect";
-import { Wearable } from "../models/wearable";
+import { ITEM_TYPE } from "@affinity-rpg/models/item";
+import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
+import { Wearable } from "@affinity-rpg/models/wearable";
 import { createItem } from "./item";
 
 export const createWearable = (): Wearable => ({

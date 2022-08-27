@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { RATINGS, RATING } from "../../models/rating";
+import { RATINGS, RATING } from "@affinity-rpg/models/rating";
 import FormSelect from "./form-select";
 
 const RatingSelect: FC = () => {

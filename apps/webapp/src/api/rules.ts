@@ -1,7 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { DocumentData } from "firebase/firestore";
-import { COLLECTION_NAMES } from "../models/database";
-import { Rule } from "../models/rules";
+import { COLLECTION_NAMES } from "@affinity-rpg/models/database";
+import { Rule } from "@affinity-rpg/models/rules";
 import { firebaseBaseQuery } from "./base-query";
 
 export const RULE_TAG = "RULE";

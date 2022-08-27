@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { DiceUnit } from "../../models/units";
+import { DiceUnit } from "@affinity-rpg/models/units";
 import StatDisplay from "./stat-display";
 
 type Props = {

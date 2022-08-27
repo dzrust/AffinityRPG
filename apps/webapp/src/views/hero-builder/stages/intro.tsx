@@ -9,9 +9,9 @@ import GenderRadioGroup from "../../../components/form/gender-radio-group";
 import { HeroContext } from "../../../components/hero/hero-hoc";
 import { getBaseAffinityStatScore } from "../../../helpers/affinity";
 import { useIsLoading } from "../../../hooks";
-import { AFFINITY } from "../../../models/affinity";
-import { GENDER, Hero, HeroIntroFormModel, heroIntroFormModel, STAGES } from "../../../models/hero";
-import { ROUTES } from "../../../models/routes";
+import { AFFINITY } from "@affinity-rpg/models/affinity";
+import { GENDER, Hero, HeroIntroFormModel, heroIntroFormModel, STAGES } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
 
 const IntroStage: FC = () => {
   const { hero } = useContext(HeroContext);

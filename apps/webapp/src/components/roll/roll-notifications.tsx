@@ -5,9 +5,9 @@ import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../hooks";
 import { removeRollNotification } from "../../slices/appSlice";
 import Emblem from "../emblem";
-import { RollNotification, ROLL_TYPES } from "../../models/roll";
-import { RATING } from "../../models/rating";
-import { STATUS_RATING } from "../../models/status-effect";
+import { RollNotification, ROLL_TYPES } from "@affinity-rpg/models/roll";
+import { RATING } from "@affinity-rpg/models/rating";
+import { STATUS_RATING } from "@affinity-rpg/models/status-effect";
 import { getRatingText, getStatusRatingText } from "../../helpers/text-helpers";
 
 const getResultByRollType = (rollNotification: RollNotification) => {

@@ -1,7 +1,7 @@
 import { FieldArray, useFormikContext } from "formik";
 import { ChangeEvent, FC, Fragment } from "react";
 import { Col, Row } from "react-bootstrap";
-import { AFFINITIES, AffinityStatFormModel } from "../../models/affinity";
+import { AFFINITIES, AffinityStatFormModel } from "@affinity-rpg/models/affinity";
 import FormControl from "../form/form-control";
 
 const AffinityStatsEditor: FC = () => {

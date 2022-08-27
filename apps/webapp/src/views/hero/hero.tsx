@@ -11,13 +11,13 @@ import MasteryViewer from "../../components/mastery/mastery-viewer";
 import SkillViewer from "../../components/skill/skill-viewer";
 import WeaponViewer from "../../components/weapon/weapon-viewer";
 import { useIsLoading, useUserState } from "../../hooks";
-import { AFFINITY } from "../../models/affinity";
-import { Armor } from "../../models/armor";
-import { Hero, STAGES } from "../../models/hero";
-import { ITEM_TYPE } from "../../models/item";
-import { MASTERY_TYPE } from "../../models/mastery";
-import { ROUTES } from "../../models/routes";
-import { Weapon } from "../../models/weapon";
+import { AFFINITY } from "@affinity-rpg/models/affinity";
+import { Armor } from "@affinity-rpg/models/armor";
+import { Hero, STAGES } from "@affinity-rpg/models/hero";
+import { ITEM_TYPE } from "@affinity-rpg/models/item";
+import { MASTERY_TYPE } from "@affinity-rpg/models/mastery";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { Weapon } from "@affinity-rpg/models/weapon";
 import AffinityScore from "./affinity-score";
 
 type Props = {

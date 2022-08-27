@@ -6,8 +6,8 @@ import { useCreateLegendMutation, useGetGGLegendsQuery, useGetLegendsQuery } fro
 import LegendViewer from "../../components/legend/legend-viewer";
 import { createLegend } from "../../helpers/legend";
 import { useIsLoading, useUserState } from "../../hooks";
-import { Legend } from "../../models/legend";
-import { ROUTES } from "../../models/routes";
+import { Legend } from "@affinity-rpg/models/legend";
+import { ROUTES } from "@affinity-rpg/models/routes";
 
 const Legends: FC = () => {
   const isLoading = useIsLoading();

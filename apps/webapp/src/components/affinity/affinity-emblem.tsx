@@ -1,6 +1,6 @@
 import { faPersonRunning, faDumbbell, faHeart } from "@fortawesome/pro-regular-svg-icons";
 import { FC } from "react";
-import { AFFINITY } from "../../models/affinity";
+import { AFFINITY } from "@affinity-rpg/models/affinity";
 import Emblem from "../emblem";
 
 type Props = {

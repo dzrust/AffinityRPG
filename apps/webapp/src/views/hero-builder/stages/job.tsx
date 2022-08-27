@@ -8,10 +8,10 @@ import { HeroContext } from "../../../components/hero/hero-hoc";
 import SkillEditor from "../../../components/skill/skill-editor";
 import { getLevelFromExperience } from "../../../helpers/level";
 import { useIsLoading } from "../../../hooks";
-import { heroJobFormModel, HeroJobFormModel, STAGES } from "../../../models/hero";
-import { ROUTES } from "../../../models/routes";
-import { SKILLS, SkillState } from "../../../models/skills";
-import { STATUS_EFFECT } from "../../../models/status-effect";
+import { heroJobFormModel, HeroJobFormModel, STAGES } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { SKILLS, SkillState } from "@affinity-rpg/models/skills";
+import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
 
 const JobStage: FC = () => {
   const { hero } = useContext(HeroContext);

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ELEMENTS, ELEMENT } from "../../models/element";
+import { ELEMENTS, ELEMENT } from "@affinity-rpg/models/element";
 import FormSelect from "./form-select";
 
 const ElementSelect: FC = () => {

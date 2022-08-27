@@ -18,7 +18,7 @@ import {
   where,
 } from "firebase/firestore";
 import { firestoreDB } from "../firebase";
-import { COLLECTION_NAMES } from "../models/database";
+import { COLLECTION_NAMES } from "@affinity-rpg/models/database";
 
 export type FirebaseParams = {
   fieldPath: string | FieldPath;

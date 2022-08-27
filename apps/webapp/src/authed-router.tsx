@@ -17,8 +17,8 @@ import {
   faBalanceScale as faBalanceScaleRegular,
   faHoodCloak as faHoodCloakRegular,
 } from "@fortawesome/pro-regular-svg-icons";
-import { ROUTES, ROUTES_ARRAY } from "./models/routes";
-import { STAGES } from "./models/hero";
+import { ROUTES, ROUTES_ARRAY } from "@affinity-rpg/models/routes";
+import { STAGES } from "@affinity-rpg/models/hero";
 
 const LazyHome = lazy(() => import("./views/home/home"));
 const LazyHeroes = lazy(() => import("./views/heroes/heroes"));

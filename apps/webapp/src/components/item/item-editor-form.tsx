@@ -1,7 +1,7 @@
 import { FC, Fragment, useState } from "react";
 import { useFormikContext } from "formik";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { ItemFormModel } from "../../models/item";
+import { ItemFormModel } from "@affinity-rpg/models/item";
 import AffinityStatsEditor from "../affinity/affinity-stat-editor";
 import FormControl from "../form/form-control";
 import FormSelect from "../form/form-select";

@@ -1,8 +1,8 @@
 import { FC, Fragment } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { STAGES } from "../../../models/hero";
-import { ROUTES } from "../../../models/routes";
+import { STAGES } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
 import HeroSheet from "../../hero/hero";
 
 const ConfirmationStage: FC = () => {

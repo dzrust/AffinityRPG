@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormCheckProps } from "react-bootstrap";
-import { GENDER } from "../../models/hero";
+import { GENDER } from "@affinity-rpg/models/hero";
 import FormControlErrors from "./form-control-errors";
 
 type Props = {

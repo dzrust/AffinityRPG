@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useDispatch } from "react-redux";
-import { ROLL_TYPES } from "../../models/roll";
-import { DIFFICULTY } from "../../models/skills";
+import { ROLL_TYPES } from "@affinity-rpg/models/roll";
+import { DIFFICULTY } from "@affinity-rpg/models/skills";
 import { addRollNotification } from "../../slices/appSlice";
 import { v4 } from "uuid";
 import { rollRating, rollD6, resistanceRoll, rollStatusEffect, rollSkillSeries } from "../../helpers/roll";

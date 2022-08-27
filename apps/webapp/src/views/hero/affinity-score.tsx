@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceD6 } from "@fortawesome/pro-duotone-svg-icons";
 import { FC, useMemo } from "react";
-import { AFFINITY } from "../../models/affinity";
+import { AFFINITY } from "@affinity-rpg/models/affinity";
 import AffinityEmblem from "../../components/affinity/affinity-emblem";
 import RollButton from "../../components/roll/roll-button";
-import { ROLL_TYPES } from "../../models/roll";
+import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import { Button } from "react-bootstrap";
 
 type Props = {

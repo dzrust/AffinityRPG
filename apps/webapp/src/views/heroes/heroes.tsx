@@ -5,8 +5,8 @@ import { useCreateHeroMutation, useGetHeroesForUserQuery } from "../../api/heroe
 import HeroViewer from "../../components/hero/hero-viewer";
 import { createHero } from "../../helpers/hero";
 import { useIsLoading, useUserState } from "../../hooks";
-import { Hero } from "../../models/hero";
-import { ROUTES } from "../../models/routes";
+import { Hero } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
 
 const Heroes: FC = () => {
   const isLoading = useIsLoading();

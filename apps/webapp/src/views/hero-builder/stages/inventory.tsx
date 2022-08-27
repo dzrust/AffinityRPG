@@ -13,11 +13,11 @@ import { createArmor } from "../../../helpers/armor";
 import { createItem } from "../../../helpers/item";
 import { createWeapon } from "../../../helpers/weapon";
 import { useIsLoading } from "../../../hooks";
-import { Armor } from "../../../models/armor";
-import { HeroInventoryFormModel, heroInventoryFormModel, STAGES } from "../../../models/hero";
-import { Item, ITEM_TYPE } from "../../../models/item";
-import { ROUTES } from "../../../models/routes";
-import { Weapon } from "../../../models/weapon";
+import { Armor } from "@affinity-rpg/models/armor";
+import { HeroInventoryFormModel, heroInventoryFormModel, STAGES } from "@affinity-rpg/models/hero";
+import { Item, ITEM_TYPE } from "@affinity-rpg/models/item";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { Weapon } from "@affinity-rpg/models/weapon";
 
 const InventoryStage: FC = () => {
   const { hero, items } = useContext(HeroContext);

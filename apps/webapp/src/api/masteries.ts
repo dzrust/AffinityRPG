@@ -1,7 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { DocumentData } from "firebase/firestore";
-import { COLLECTION_NAMES } from "../models/database";
-import { Mastery } from "../models/mastery";
+import { COLLECTION_NAMES } from "@affinity-rpg/models//database";
+import { Mastery } from "@affinity-rpg/models/mastery";
 import { firebaseBaseQuery } from "./base-query";
 
 export const MASTERIES_TAG = "MASTERIES";

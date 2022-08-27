@@ -1,9 +1,9 @@
 import { FC, useMemo, useState, useEffect, createContext, useCallback } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useUserState } from "../../hooks";
-import { Hero } from "../../models/hero";
-import { ROUTES } from "../../models/routes";
-import { Legend } from "../../models/legend";
+import { Hero } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { Legend } from "@affinity-rpg/models/legend";
 import { useGetLegendQuery } from "../../api/legends";
 import { useLazyGetHeroQuery } from "../../api/heroes";
 import { DateTime } from "luxon";

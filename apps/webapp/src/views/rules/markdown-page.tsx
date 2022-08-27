@@ -5,9 +5,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import remarkGfm from "remark-gfm";
 import V01Routes from "../../rules-routes/0.1.json";
 import { useAppDispatch, useAppState } from "../../hooks";
-import { ROUTES } from "../../models/routes";
+import { ROUTES } from "@affinity-rpg/models/routes";
 import { setVersion } from "../../slices/appSlice";
-import { VERSION } from "../../models/versions";
+import { VERSION } from "@affinity-rpg/models/versions";
 import { useGetRulesQuery } from "../../api/rules";
 
 const MarkdownPage = () => {

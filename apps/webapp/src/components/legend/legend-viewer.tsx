@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { useUserState } from "../../hooks";
-import { Legend } from "../../models/legend";
+import { Legend } from "@affinity-rpg/models/legend";
 
 type Props = {
   legend: Legend;

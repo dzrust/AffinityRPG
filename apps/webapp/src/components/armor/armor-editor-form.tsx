@@ -9,7 +9,7 @@ import {
 } from "../../helpers/armor";
 import { getDefaultArmorMovement } from "../../helpers/item";
 import { getArmorClassificationText } from "../../helpers/text-helpers";
-import { ArmorFormModel, ARMOR_CLASSIFICATIONS } from "../../models/armor";
+import { ArmorFormModel, ARMOR_CLASSIFICATIONS } from "@affinity-rpg/models/armor";
 import AffinityStatsEditor from "../affinity/affinity-stat-editor";
 import ConfirmationModal from "../confirmation-modal";
 import ClassificationSelect from "../form/classification-select";

@@ -1,7 +1,7 @@
 import { faFlaskPotion } from "@fortawesome/pro-regular-svg-icons";
 import { FC, Fragment } from "react";
 import { Badge, Card } from "react-bootstrap";
-import { Item } from "../../models/item";
+import { Item } from "@affinity-rpg/models/item";
 import Emblem from "../emblem";
 import WeaponSlots from "../weapon/weapon-slots";
 

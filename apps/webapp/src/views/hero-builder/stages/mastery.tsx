@@ -10,9 +10,9 @@ import MasteryViewer from "../../../components/mastery/mastery-viewer";
 import { createMastery } from "../../../helpers/mastery";
 import { rollD6 } from "../../../helpers/roll";
 import { useIsLoading } from "../../../hooks";
-import { heroMasteryFormModel, HeroMasteryFormModel, STAGES } from "../../../models/hero";
-import { Mastery } from "../../../models/mastery";
-import { ROUTES } from "../../../models/routes";
+import { heroMasteryFormModel, HeroMasteryFormModel, STAGES } from "@affinity-rpg/models/hero";
+import { Mastery } from "@affinity-rpg/models/mastery";
+import { ROUTES } from "@affinity-rpg/models/routes";
 
 const MasteriesStage: FC = () => {
   const { hero, masteries } = useContext(HeroContext);

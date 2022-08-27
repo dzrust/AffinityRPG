@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormCheckProps } from "react-bootstrap";
-import { AFFINITY } from "../../models/affinity";
+import { AFFINITY } from "@affinity-rpg/models/affinity";
 
 type Props = {
   label: string;

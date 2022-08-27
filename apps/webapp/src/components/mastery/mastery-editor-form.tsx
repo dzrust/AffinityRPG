@@ -3,7 +3,13 @@ import { FC, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { getMasteryCost } from "../../helpers/mastery";
 import { getMasteryClassificationText } from "../../helpers/text-helpers";
-import { Mastery, MasteryFormModel, MASTERY_CLASSIFICATIONS, MASTERY_TYPE, MASTERY_TYPES } from "../../models/mastery";
+import {
+  Mastery,
+  MasteryFormModel,
+  MASTERY_CLASSIFICATIONS,
+  MASTERY_TYPE,
+  MASTERY_TYPES,
+} from "@affinity-rpg/models/mastery";
 import AffinityStatsEditor from "../affinity/affinity-stat-editor";
 import ConfirmationModal from "../confirmation-modal";
 import ClassificationSelect from "../form/classification-select";

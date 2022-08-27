@@ -4,8 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo built"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/luxon": "^2.3.2",
+    "@types/uuid": "^8.3.4",
+    "@types/yup": "^0.29.13",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "yup": "^0.32.11",
+    "firebase": "^9.9.3",
+    "luxon": "^2.4.0",
+    "uuid": "^8.3.2"
+  }
 }

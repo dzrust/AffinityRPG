@@ -1,19 +1,19 @@
 import { faSword } from "@fortawesome/pro-regular-svg-icons";
 import { FC, useContext, useMemo } from "react";
 import { Card } from "react-bootstrap";
-import { Weapon } from "../../models/weapon";
-import { STATUS_EFFECT } from "../../models/status-effect";
+import { Weapon } from "@affinity-rpg/models/weapon";
+import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
 import Emblem from "../emblem";
 import WeaponSlots from "./weapon-slots";
 import { getDefaultWeaponPointsFromRating, getDefaultWeaponDamage } from "../../helpers/weapon";
-import { ROLL_TYPES } from "../../models/roll";
+import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import DiceUnitDisplay from "../displays/dice-unit-display";
 import RollButton from "../roll/roll-button";
 import { HeroContext } from "../hero/hero-hoc";
 import StatDisplay from "../displays/stat-display";
 import { getElementText, getStatusEffectText } from "../../helpers/text-helpers";
 import { getNumberOfSkillDiceByHeroLevel } from "../../helpers/hero";
-import { ELEMENT } from "../../models/element";
+import { ELEMENT } from "@affinity-rpg/models/element";
 
 type Props = {
   item: Weapon;

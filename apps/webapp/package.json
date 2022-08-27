@@ -29,6 +29,7 @@
     "vite": "^3.0.7"
   },
   "dependencies": {
+    "@affinity-rpg/models": "workspace:^1.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/pro-duotone-svg-icons": "^6.1.1",
     "@fortawesome/pro-light-svg-icons": "^6.1.1",

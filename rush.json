@@ -394,6 +394,10 @@
     {
       "packageName": "@affinity-rpg/webapp",
       "projectFolder": "apps/webapp"
+    },
+    {
+      "packageName": "@affinity-rpg/models",
+      "projectFolder": "libraries/models"
     }
   ]
 }

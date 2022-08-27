@@ -1,7 +1,7 @@
 import { FC, useMemo, useEffect, createContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ROUTES } from "../../models/routes";
-import { Item } from "../../models/item";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { Item } from "@affinity-rpg/models/item";
 import { useGetItemQuery } from "../../api/items";
 import { createItem } from "../../helpers/item";
 

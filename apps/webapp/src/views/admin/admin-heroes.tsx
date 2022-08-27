@@ -3,8 +3,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useGetHeroesQuery } from "../../api/heroes";
 import HeroViewer from "../../components/hero/hero-viewer";
-import { Hero } from "../../models/hero";
-import { ROUTES } from "../../models/routes";
+import { Hero } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
 
 const AdminHeroes: FC = () => {
   const navigator = useNavigate();

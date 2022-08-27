@@ -1,4 +1,4 @@
-import { RATING } from "../models/rating";
+import { RATING } from "@affinity-rpg/models/rating";
 import {
   Roll,
   DiceFaceType,
@@ -7,9 +7,9 @@ import {
   RollSeries,
   ResistanceRoll,
   resistanceRollLookup,
-} from "../models/roll";
-import { DIFFICULTY } from "../models/skills";
-import { STATUS_RATING } from "../models/status-effect";
+} from "@affinity-rpg/models/roll";
+import { DIFFICULTY } from "@affinity-rpg/models/skills";
+import { STATUS_RATING } from "@affinity-rpg/models/status-effect";
 
 export const getNumberOfSuccessForStatusRating = (numberOfSuccesses: number) => {
   if (numberOfSuccesses === 2) {

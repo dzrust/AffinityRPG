@@ -10,7 +10,7 @@ import {
   Roll,
   ROLL_TYPES,
   SkillRoll,
-} from "../../models/roll";
+} from "@affinity-rpg/models/roll";
 import { rollD6, resistanceRoll, skillRoll } from "../../helpers/roll";
 import DiceDisplay from "./dice-display";
 

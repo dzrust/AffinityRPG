@@ -6,8 +6,8 @@ import FormControl from "../../../components/form/form-control";
 import { HeroContext } from "../../../components/hero/hero-hoc";
 import MultiStringFormControl from "../../../components/form/multi-string-form-control";
 import { useIsLoading } from "../../../hooks";
-import { heroHistoryFormModel, HeroHistoryFormModel, STAGES } from "../../../models/hero";
-import { ROUTES } from "../../../models/routes";
+import { heroHistoryFormModel, HeroHistoryFormModel, STAGES } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
 import { useUpdateHeroMutation } from "../../../api/heroes";
 
 const HistoryStage: FC = () => {

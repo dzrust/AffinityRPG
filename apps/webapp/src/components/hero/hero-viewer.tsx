@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { Hero } from "../../models/hero";
+import { Hero } from "@affinity-rpg/models/hero";
 import HeroDescription from "./hero-description";
 
 type Props = {

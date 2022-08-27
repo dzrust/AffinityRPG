@@ -7,8 +7,8 @@ import HeroViewer from "../../components/hero/hero-viewer";
 import { LegendContext } from "../../components/legend/legend-hoc";
 import { generateInvitation } from "../../helpers/legend";
 import { useIsLoading, useUserState } from "../../hooks";
-import { Hero } from "../../models/hero";
-import { ROUTES } from "../../models/routes";
+import { Hero } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
 
 type Props = {
   showLegendBuilder?: boolean;
