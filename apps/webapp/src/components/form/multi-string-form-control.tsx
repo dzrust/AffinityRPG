@@ -1,7 +1,7 @@
 import { FieldArray } from "formik";
 import { ChangeEvent, FC, Fragment, useState } from "react";
 import { Row, Col, Button, Table } from "react-bootstrap";
-import FormControl from "../form/form-control";
+import FormControl from "./form-control";
 
 type Props = {
   controlLabel: string;

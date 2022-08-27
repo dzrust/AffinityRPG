@@ -380,7 +380,7 @@
    * to projects. If this property is not specified, any tag is allowed. This
    * list is useful in preventing typos when specifying tags for projects.
    */
-  // "allowedProjectTags": [ "apps", "Web", "tools" ],
+  "allowedProjectTags": ["apps", "library", "tools"],
 
   /**
    * (Required) This is the inventory of projects to be managed by Rush.
@@ -393,7 +393,7 @@
   "projects": [
     {
       "packageName": "@affinity-rpg/webapp",
-      "projectFolder": "webapp"
+      "projectFolder": "apps/webapp"
     }
   ]
 }
