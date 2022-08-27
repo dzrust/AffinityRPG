@@ -77,7 +77,11 @@ const WeaponEditorForm: FC<Props> = ({ close, onDelete }) => {
       </Row>
       <Row>
         <Col md={4} sm={12}>
-          <ClassificationSelect label="Classification" classifications={WEAPON_CLASSIFICATIONS} getClassificationText={getWeaponClassificationText} />
+          <ClassificationSelect
+            label="Classification"
+            classifications={WEAPON_CLASSIFICATIONS}
+            getClassificationText={getWeaponClassificationText}
+          />
         </Col>
       </Row>
       <Row>

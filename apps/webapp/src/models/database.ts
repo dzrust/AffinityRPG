@@ -3,5 +3,5 @@ export enum COLLECTION_NAMES {
   LEGENDS = "legends",
   MASTERIES = "masteries",
   ITEMS = "items",
-  RULES = "rules"
+  RULES = "rules",
 }
