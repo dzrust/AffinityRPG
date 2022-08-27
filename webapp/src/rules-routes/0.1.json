@@ -1,0 +1,32 @@
+{
+  "routes": [
+    {
+      "label": "Aldarria",
+      "to": "/aldarria"
+    },
+    {
+      "label": "Classes",
+      "to": "/classes"
+    },
+    {
+      "label": "Definitions",
+      "to": "/definitions"
+    },
+    {
+      "label": "Items",
+      "to": "/items"
+    },
+    {
+      "label": "Jobs",
+      "to": "/jobs"
+    },
+    {
+      "label": "Masteries",
+      "to": "/masteries"
+    },
+    {
+      "label": "Rules",
+      "to": "/rules"
+    }
+  ]
+}
