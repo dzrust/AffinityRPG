@@ -1,14 +1,6 @@
 import { useFormikContext } from "formik";
 import { FC, Fragment, useMemo, useState } from "react";
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
-import {
-  armorFromFormModel,
-  getDefaultArmorPointsFromRating,
-  getDefaultArmorDefense,
-  getArmorPoints,
-} from "../../helpers/armor";
-import { getDefaultArmorMovement } from "../../helpers/item";
-import { getArmorClassificationText } from "../../helpers/text-helpers";
 import { ArmorFormModel, ARMOR_CLASSIFICATIONS } from "@affinity-rpg/models/armor";
 import AffinityStatsEditor from "../affinity/affinity-stat-editor";
 import ConfirmationModal from "../confirmation-modal";
@@ -17,6 +9,14 @@ import ElementSelect from "../form/element-select";
 import FormControl from "../form/form-control";
 import FormSelect from "../form/form-select";
 import RatingSelect from "../form/rating-select";
+import {
+  armorFromFormModel,
+  getDefaultArmorPointsFromRating,
+  getDefaultArmorDefense,
+  getArmorPoints,
+} from "@affinity-rpg/data/helpers/armor";
+import { getDefaultArmorMovement } from "@affinity-rpg/data/helpers/item";
+import { getArmorClassificationText } from "@affinity-rpg/data/helpers/text-helpers";
 
 type Props = {
   close: () => void;

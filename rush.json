@@ -402,6 +402,10 @@
     {
       "packageName": "@affinity-rpg/components",
       "projectFolder": "libraries/components"
+    },
+    {
+      "packageName": "@affinity-rpg/data",
+      "projectFolder": "libraries/data"
     }
   ]
 }

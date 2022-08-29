@@ -4,6 +4,6 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "lib"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

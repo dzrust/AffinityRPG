@@ -1,8 +1,6 @@
 import { FormikProps } from "formik";
 import { FC, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { getMasteryCost } from "../../helpers/mastery";
-import { getMasteryClassificationText } from "../../helpers/text-helpers";
 import {
   Mastery,
   MasteryFormModel,
@@ -17,6 +15,8 @@ import ElementSelect from "../form/element-select";
 import FormControl from "../form/form-control";
 import FormSelect from "../form/form-select";
 import StatusEffectSelect from "../form/status-effect-select";
+import { getMasteryClassificationText } from "@affinity-rpg/data/helpers/text-helpers";
+import { getMasteryCost } from "@affinity-rpg/data/helpers/mastery";
 
 type Props = {
   formik: FormikProps<MasteryFormModel>;

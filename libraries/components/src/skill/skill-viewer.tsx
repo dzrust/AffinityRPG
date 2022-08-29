@@ -1,13 +1,17 @@
 import { FC } from "react";
 import { Badge, Button, OverlayTrigger, Popover, Row } from "react-bootstrap";
-import { getNumberOfSkillDiceByHeroLevel } from "../../helpers/hero";
-import { getSkillStatesOrDefault } from "../../helpers/skills";
-import { getLabelForSkill, getLabelForSkillDifficulty, getStatusEffectText } from "../../helpers/text-helpers";
 import { Hero } from "@affinity-rpg/models/hero";
 import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import { DIFFICULTIES, SKILL } from "@affinity-rpg/models/skills";
 import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
 import RollButton from "../roll/roll-button";
+import { getNumberOfSkillDiceByHeroLevel } from "@affinity-rpg/data/helpers/hero";
+import {
+  getLabelForSkill,
+  getLabelForSkillDifficulty,
+  getStatusEffectText,
+} from "@affinity-rpg/data/helpers/text-helpers";
+import { getSkillStatesOrDefault } from "@affinity-rpg/data/helpers/skills";
 
 type Props = {
   hero: Hero;

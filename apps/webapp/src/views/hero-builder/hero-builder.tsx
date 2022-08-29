@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { HeroContext } from "../../components/hero/hero-hoc";
 import StepperSVG from "../../components/stepper-svg";
-import { getLevelFromExperience } from "../../helpers/level";
+import { getLevelFromExperience } from "@affinity-rpg/data/helpers/level";
 import { AFFINITIES } from "@affinity-rpg/models/affinity";
 import { GENDERS, Hero, STAGES } from "@affinity-rpg/models/hero";
 import { ROUTES } from "@affinity-rpg/models/routes";

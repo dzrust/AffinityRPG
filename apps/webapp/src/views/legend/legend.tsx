@@ -2,13 +2,12 @@ import { DateTime } from "luxon";
 import { FC, useContext, useMemo } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useUpdateLegendMutation } from "../../api/legends";
-import HeroViewer from "../../components/hero/hero-viewer";
-import { LegendContext } from "../../components/legend/legend-hoc";
-import { generateInvitation } from "../../helpers/legend";
+import { generateInvitation } from "@affinity-rpg/data/helpers/legend";
 import { useIsLoading, useUserState } from "../../hooks";
 import { Hero } from "@affinity-rpg/models/hero";
 import { ROUTES } from "@affinity-rpg/models/routes";
+import { LegendContext } from "@affinity-rpg/components/src/legend/legend-hoc";
+import { useUpdateLegendMutation } from "@affinity-rpg/data/api/legends";
 
 type Props = {
   showLegendBuilder?: boolean;

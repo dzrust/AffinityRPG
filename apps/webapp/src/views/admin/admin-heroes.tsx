@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useGetHeroesQuery } from "../../api/heroes";
+import { useGetHeroesQuery } from "../../../../../libraries/data/api/heroes";
 import HeroViewer from "../../components/hero/hero-viewer";
 import { Hero } from "@affinity-rpg/models/hero";
 import { ROUTES } from "@affinity-rpg/models/routes";

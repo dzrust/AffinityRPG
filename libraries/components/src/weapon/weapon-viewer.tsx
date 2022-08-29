@@ -5,15 +5,15 @@ import { Weapon } from "@affinity-rpg/models/weapon";
 import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
 import Emblem from "../emblem";
 import WeaponSlots from "./weapon-slots";
-import { getDefaultWeaponPointsFromRating, getDefaultWeaponDamage } from "../../helpers/weapon";
 import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import DiceUnitDisplay from "../displays/dice-unit-display";
 import RollButton from "../roll/roll-button";
 import { HeroContext } from "../hero/hero-hoc";
 import StatDisplay from "../displays/stat-display";
-import { getElementText, getStatusEffectText } from "../../helpers/text-helpers";
-import { getNumberOfSkillDiceByHeroLevel } from "../../helpers/hero";
 import { ELEMENT } from "@affinity-rpg/models/element";
+import { getStatusEffectText, getElementText } from "@affinity-rpg/data/helpers/text-helpers";
+import { getDefaultWeaponPointsFromRating, getDefaultWeaponDamage } from "@affinity-rpg/data/helpers/weapon";
+import { getNumberOfSkillDiceByHeroLevel } from "@affinity-rpg/data/helpers/hero";
 
 type Props = {
   item: Weapon;

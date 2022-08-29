@@ -4,6 +4,12 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "../../libraries/data/helpers",
+    "../../libraries/data/slices",
+    "../../libraries/data/api",
+    "../../libraries/data/store.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

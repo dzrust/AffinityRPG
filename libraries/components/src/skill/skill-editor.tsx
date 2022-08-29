@@ -1,10 +1,10 @@
 import { FieldArray, useFormikContext } from "formik";
 import { FC, Fragment } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { getLabelForSkill } from "../../helpers/text-helpers";
 import { HeroJobFormModel } from "@affinity-rpg/models/hero";
 import { SKILL, SKILLS } from "@affinity-rpg/models/skills";
 import FormSelect from "../form/form-select";
+import { getLabelForSkill } from "@affinity-rpg/data/helpers/text-helpers";
 
 const SkillEditor: FC = () => {
   const { values } = useFormikContext<HeroJobFormModel>();

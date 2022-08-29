@@ -2,8 +2,8 @@ import { FC, useMemo, useEffect, createContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ROUTES } from "@affinity-rpg/models/routes";
 import { Mastery } from "@affinity-rpg/models/mastery";
-import { useGetMasteryQuery } from "../../api/masteries";
-import { createMastery } from "../../helpers/mastery";
+import { useGetMasteryQuery } from "@affinity-rpg/data/api/masteries";
+import { createMastery } from "@affinity-rpg/data/helpers/mastery";
 
 type MasteryContextType = {
   mastery: Mastery;

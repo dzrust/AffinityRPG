@@ -6,17 +6,17 @@ import AffinityStatsEditor from "../affinity/affinity-stat-editor";
 import FormControl from "../form/form-control";
 import FormSelect from "../form/form-select";
 import ConfirmationModal from "../confirmation-modal";
-import {
-  weaponFromFormModel,
-  getDefaultWeaponPointsFromRating,
-  getDefaultWeaponDamage,
-  getWeaponPoints,
-} from "../../helpers/weapon";
 import StatusEffectSelect from "../form/status-effect-select";
 import RatingSelect from "../form/rating-select";
 import ElementSelect from "../form/element-select";
 import ClassificationSelect from "../form/classification-select";
-import { getWeaponClassificationText } from "../../helpers/text-helpers";
+import {
+  getDefaultWeaponDamage,
+  getDefaultWeaponPointsFromRating,
+  getWeaponPoints,
+  weaponFromFormModel,
+} from "@affinity-rpg/data/helpers/weapon";
+import { getWeaponClassificationText } from "@affinity-rpg/data/helpers/text-helpers";
 
 type Props = {
   close: () => void;

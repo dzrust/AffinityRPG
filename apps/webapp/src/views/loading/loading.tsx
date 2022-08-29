@@ -1,6 +1,6 @@
+import Loader from "@affinity-rpg/components/src/loader";
 import { FC } from "react";
 import { Container } from "react-bootstrap";
-import Loader from "../../components/loader";
 
 const Loading: FC = () => {
   return (

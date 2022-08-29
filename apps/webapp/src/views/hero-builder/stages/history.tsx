@@ -8,7 +8,7 @@ import MultiStringFormControl from "../../../components/form/multi-string-form-c
 import { useIsLoading } from "../../../hooks";
 import { heroHistoryFormModel, HeroHistoryFormModel, STAGES } from "@affinity-rpg/models/hero";
 import { ROUTES } from "@affinity-rpg/models/routes";
-import { useUpdateHeroMutation } from "../../../api/heroes";
+import { useUpdateHeroMutation } from "../../../../../../libraries/data/api/heroes";
 
 const HistoryStage: FC = () => {
   const { hero } = useContext(HeroContext);

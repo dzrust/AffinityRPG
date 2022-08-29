@@ -5,6 +5,9 @@ import { Button, Container } from "react-bootstrap";
 import { AFFINITY } from "@affinity-rpg/models/affinity";
 import { GENDER } from "@affinity-rpg/models/hero";
 import { ROLL_TYPES } from "@affinity-rpg/models/roll";
+import { createArmor } from "@affinity-rpg/data/helpers/armor";
+import { createWeapon } from "@affinity-rpg/data/helpers/weapon";
+import { createItem } from "@affinity-rpg/data/helpers/item";
 import AffinityRadioGroup from "./affinity/affinity-radio-group";
 import AffinityStatsEditor from "./affinity/affinity-stat-editor";
 import ArmorViewer from "./armor/armor-viewer";
@@ -15,6 +18,7 @@ import Loader from "./loader";
 import DiceRollTypeRadioGroup from "./roll/dice-roll-type-radio-group";
 import StepperSVG from "./stepper-svg";
 import WeaponViewer from "./weapon/weapon-viewer";
+import Emblem from "./emblem";
 
 const KitchenSink: FC = () => {
   const [isInvalid, setIsInvalid] = useState(() => false);

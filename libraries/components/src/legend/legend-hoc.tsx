@@ -1,13 +1,13 @@
 import { FC, useMemo, useState, useEffect, createContext, useCallback } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useUserState } from "../../hooks";
 import { Hero } from "@affinity-rpg/models/hero";
 import { ROUTES } from "@affinity-rpg/models/routes";
 import { Legend } from "@affinity-rpg/models/legend";
-import { useGetLegendQuery } from "../../api/legends";
-import { useLazyGetHeroQuery } from "../../api/heroes";
 import { DateTime } from "luxon";
-import { createLegend } from "../../helpers/legend";
+import { useUserState } from "../hooks";
+import { useLazyGetHeroQuery } from "@affinity-rpg/data/api/heroes";
+import { useGetLegendQuery } from "@affinity-rpg/data/api/legends";
+import { createLegend } from "@affinity-rpg/data/helpers/legend";
 
 type LegendContextType = {
   legend: Legend;

@@ -2,8 +2,8 @@ import { faUser, faUserPilotTie } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { useUserState } from "../../hooks";
 import { Legend } from "@affinity-rpg/models/legend";
+import { useUserState } from "../hooks";
 
 type Props = {
   legend: Legend;

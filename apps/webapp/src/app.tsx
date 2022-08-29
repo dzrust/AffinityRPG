@@ -1,6 +1,6 @@
 import { FC, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Loader from "./components/loader";
+import Loader from "@affinity-rpg/components/src/loader";
 import { useAppState } from "./hooks";
 import Navigation from "./navigation";
 

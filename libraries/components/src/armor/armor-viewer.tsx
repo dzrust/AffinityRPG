@@ -1,9 +1,6 @@
 import { faShield } from "@fortawesome/pro-regular-svg-icons";
 import { FC, useContext, useMemo } from "react";
 import { Card } from "react-bootstrap";
-import { getDefaultArmorPointsFromRating, getDefaultArmorDefense } from "../../helpers/armor";
-import { getDefaultArmorMovement } from "../../helpers/item";
-import { getElementText } from "../../helpers/text-helpers";
 import { Armor } from "@affinity-rpg/models/armor";
 import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import DiceUnitDisplay from "../displays/dice-unit-display";
@@ -12,6 +9,9 @@ import Emblem from "../emblem";
 import { HeroContext } from "../hero/hero-hoc";
 import RollButton from "../roll/roll-button";
 import WeaponSlots from "../weapon/weapon-slots";
+import { getDefaultArmorPointsFromRating, getDefaultArmorDefense } from "@affinity-rpg/data/helpers/armor";
+import { getDefaultArmorMovement } from "@affinity-rpg/data/helpers/item";
+import { getElementText } from "@affinity-rpg/data/helpers/text-helpers";
 
 type Props = {
   item: Armor;

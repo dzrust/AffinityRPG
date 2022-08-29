@@ -16,9 +16,9 @@ import WeaponViewer from "../../components/weapon/weapon-viewer";
 import { AFFINITY } from "@affinity-rpg/models/affinity";
 import { GENDER } from "@affinity-rpg/models/hero";
 import { ROLL_TYPES } from "@affinity-rpg/models/roll";
-import { createArmor } from "../../helpers/armor";
-import { createItem } from "../../helpers/item";
-import { createWeapon } from "../../helpers/weapon";
+import { createArmor } from "../../../../../libraries/data/helpers/armor";
+import { createItem } from "../../../../../libraries/data/helpers/item";
+import { createWeapon } from "../../../../../libraries/data/helpers/weapon";
 
 const KitchenSink: FC = () => {
   const [isInvalid, setIsInvalid] = useState(() => false);

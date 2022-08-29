@@ -1,7 +1,7 @@
 import { Formik } from "formik";
 import { FC, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useDeleteMasteryMutation, useUpdateMasteryMutation } from "../../../api/masteries";
+import { useDeleteMasteryMutation, useUpdateMasteryMutation } from "../../../../../../libraries/data/api/masteries";
 import MasteryEditorForm from "../../../components/mastery/mastery-editor-form";
 import { MasteryContext } from "../../../components/mastery/mastery-hoc";
 import { useIsLoading } from "../../../hooks";

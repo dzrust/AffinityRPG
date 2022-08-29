@@ -4,11 +4,11 @@ import { Hero } from "@affinity-rpg/models/hero";
 import { Item } from "@affinity-rpg/models/item";
 import { Mastery } from "@affinity-rpg/models/mastery";
 import { ROUTES } from "@affinity-rpg/models/routes";
-import { useGetHeroQuery } from "../../api/heroes";
-import { useGetMasteriesQuery } from "../../api/masteries";
-import { useGetItemsQuery } from "../../api/items";
-import { getItemModifiers } from "../../helpers/item";
-import { createHero } from "../../helpers/hero";
+import { useGetHeroQuery } from "@affinity-rpg/data/api/heroes";
+import { useGetItemsQuery } from "@affinity-rpg/data/api/items";
+import { useGetMasteriesQuery } from "@affinity-rpg/data/api/masteries";
+import { createHero } from "@affinity-rpg/data/helpers/hero";
+import { getItemModifiers } from "@affinity-rpg/data/helpers/item";
 
 type HeroContextType = {
   hero: Hero & { movement: number };

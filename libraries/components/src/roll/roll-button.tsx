@@ -2,9 +2,9 @@ import { FC } from "react";
 import { useDispatch } from "react-redux";
 import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import { DIFFICULTY } from "@affinity-rpg/models/skills";
-import { addRollNotification } from "../../slices/appSlice";
 import { v4 } from "uuid";
-import { rollRating, rollD6, resistanceRoll, rollStatusEffect, rollSkillSeries } from "../../helpers/roll";
+import { addRollNotification } from "@affinity-rpg/data/slices/appSlice";
+import { rollD6, rollRating, resistanceRoll, rollSkillSeries, rollStatusEffect } from "@affinity-rpg/data/helpers/roll";
 
 type Props = {
   render: (rollDice: () => void) => JSX.Element;

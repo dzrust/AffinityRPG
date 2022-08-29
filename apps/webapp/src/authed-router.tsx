@@ -25,19 +25,19 @@ const LazyHeroes = lazy(() => import("./views/heroes/heroes"));
 const LazyLegends = lazy(() => import("./views/legends/legends"));
 const LazySettings = lazy(() => import("./views/settings/settings"));
 const LazyBackToHome = lazy(() => import("./views/home/404"));
-const LazyHeroHOC = lazy(() => import("./components/hero/hero-hoc"));
+const LazyHeroHOC = lazy(() => import("@affinity-rpg/components/src/hero/hero-hoc"));
 const LazyHeroBuilder = lazy(() => import("./views/hero-builder/hero-builder"));
 const LazyDiceRoller = lazy(() => import("./views/dice-roller/dice-roller"));
-const LazyMasteryHOC = lazy(() => import("./components/mastery/mastery-hoc"));
+const LazyMasteryHOC = lazy(() => import("@affinity-rpg/components/src/mastery/mastery-hoc"));
 const LazyMasteryEditor = lazy(() => import("./views/hero-builder/stages/mastery-editor"));
-const LazyItemHOC = lazy(() => import("./components/item/item-hoc"));
+const LazyItemHOC = lazy(() => import("@affinity-rpg/components/src/item/item-hoc"));
 const LazyItemEditor = lazy(() => import("./views/hero-builder/stages/item-editor"));
 const LazyAdminHeroes = lazy(() => import("./views/admin/admin-heroes"));
 const LazyMarkdownPage = lazy(() => import("./views/rules/markdown-page"));
 const LazyKitchenSink = lazy(() => import("./views/kitchen-sink/kitchen-sink"));
-const LazyLegendHOC = lazy(() => import("./components/legend/legend-hoc"));
+const LazyLegendHOC = lazy(() => import("@affinity-rpg/components/src/legend/legend-hoc"));
 const LazyLegendSheet = lazy(() => import("./views/legend/legend"));
-const LazyRollNotificationDisplay = lazy(() => import("./components/roll/roll-notifications"));
+const LazyRollNotificationDisplay = lazy(() => import("@affinity-rpg/components/src/roll/roll-notifications"));
 const LazyHeroSheet = lazy(() => import("./views/hero/hero"));
 
 const routeIconTable = new Map<

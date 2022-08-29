@@ -11,7 +11,7 @@ import {
   ROLL_TYPES,
   SkillRoll,
 } from "@affinity-rpg/models/roll";
-import { rollD6, resistanceRoll, skillRoll } from "../../helpers/roll";
+import { rollD6, resistanceRoll, skillRoll } from "@affinity-rpg/data/helpers/roll";
 import DiceDisplay from "./dice-display";
 
 const DiceRoller: FC = () => {

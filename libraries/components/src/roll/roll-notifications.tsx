@@ -2,13 +2,13 @@ import { FC } from "react";
 import { faDiceD6 } from "@fortawesome/pro-regular-svg-icons";
 import { Toast, ToastContainer } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "../../hooks";
-import { removeRollNotification } from "../../slices/appSlice";
 import Emblem from "../emblem";
 import { RollNotification, ROLL_TYPES } from "@affinity-rpg/models/roll";
 import { RATING } from "@affinity-rpg/models/rating";
 import { STATUS_RATING } from "@affinity-rpg/models/status-effect";
-import { getRatingText, getStatusRatingText } from "../../helpers/text-helpers";
+import { getRatingText, getStatusRatingText } from "@affinity-rpg/data/helpers/text-helpers";
+import { removeRollNotification } from "@affinity-rpg/data/slices/appSlice";
+import { useAppSelector } from "../hooks";
 
 const getResultByRollType = (rollNotification: RollNotification) => {
   if (rollNotification.type === ROLL_TYPES.RATING_ROLL) {

@@ -1,7 +1,7 @@
+import { getSubObjectByKey } from "@affinity-rpg/data/helpers/object-access";
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormSelectProps, InputGroup } from "react-bootstrap";
-import { getSubObjectByKey } from "../../helpers/object-access";
 import FormControlErrors from "./form-control-errors";
 
 type Props = {

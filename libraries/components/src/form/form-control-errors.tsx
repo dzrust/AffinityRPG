@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { FC, useMemo } from "react";
 import { Form } from "react-bootstrap";
-import { getSubObjectByKey } from "../../helpers/object-access";
+import { getSubObjectByKey } from "@affinity-rpg/data/helpers/object-access";
 
 type Props = {
   name: string;

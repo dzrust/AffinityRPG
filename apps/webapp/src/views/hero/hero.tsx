@@ -1,7 +1,7 @@
 import { FC, Fragment, useContext, useState } from "react";
 import { Row, Col, Button, Badge } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useDeleteHeroMutation } from "../../api/heroes";
+import { useDeleteHeroMutation } from "../../../../../libraries/data/api/heroes";
 import ArmorViewer from "../../components/armor/armor-viewer";
 import ConfirmationModal from "../../components/confirmation-modal";
 import HeroDescription from "../../components/hero/hero-description";
