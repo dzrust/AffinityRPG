@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceD6 } from "@fortawesome/pro-duotone-svg-icons";
 import { FC, useMemo } from "react";
 import { AFFINITY } from "@affinity-rpg/models/affinity";
-import AffinityEmblem from "../../components/affinity/affinity-emblem";
+import AffinityEmblem from "../../../../../libraries/components/affinity/affinity-emblem";
 import RollButton from "../../components/roll/roll-button";
 import { ROLL_TYPES } from "@affinity-rpg/models/roll";
 import { Button } from "react-bootstrap";

@@ -398,6 +398,10 @@
     {
       "packageName": "@affinity-rpg/models",
       "projectFolder": "libraries/models"
+    },
+    {
+      "packageName": "@affinity-rpg/components",
+      "projectFolder": "libraries/components"
     }
   ]
 }

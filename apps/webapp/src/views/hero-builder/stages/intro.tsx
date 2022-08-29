@@ -3,7 +3,7 @@ import { FC, useContext } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { useUpdateHeroMutation } from "../../../api/heroes";
-import AffinityRadioGroup from "../../../components/affinity/affinity-radio-group";
+import AffinityRadioGroup from "../../../../../../libraries/components/affinity/affinity-radio-group";
 import FormControl from "../../../components/form/form-control";
 import GenderRadioGroup from "../../../components/form/gender-radio-group";
 import { HeroContext } from "../../../components/hero/hero-hoc";
