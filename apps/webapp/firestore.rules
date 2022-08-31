@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth.uid != null;
+    }
+
+    function getUser() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && getUser().type in ["Admin"];
+    }
+    
+    function isPublic(rsc) {
+    	return rsc.data.visibility == 'public';
+    }
+    
+    function isOwner() {
+    	return resource.data.userId == request.auth.uid;
+    }
+
+    function isUIDAbleToAccessHero(rsc, userId) {
+      return rsc.data.userId == userId;
+    }
+
+    function isUIDAbleToAccessLegends(rsc, userId) {
+      return rsc.data.gameGuideUserId == userId || userId in rsc.data.playerUserIds;
+    }
+
+    function isUserGameGuideForHero(rsc) {
+      return get(rsc.data.legend).data.gameGuideUserId == request.auth.uid;
+    }
+
+    function isAbleToAccessHeroSubDocuments(hero) {
+      return isPublic(get(/databases/$(database)/documents/heroes/$(hero))) || isUIDAbleToAccessHero(get(/databases/$(database)/documents/heroes/$(hero)), request.auth.uid) || isUserGameGuideForHero(get(/databases/$(database)/documents/heroes/$(hero)));
+    }
+
+    function isAbleToAccessLegendSubDocuments(legend) {
+      return isPublic(get(/databases/$(database)/documents/legends/$(legend))) || isUIDAbleToAccessLegends(get(/databases/$(database)/documents/legends/$(legend)), request.auth.uid)
+    }
+
+    match /{document=**} {
+      allow read, write: if isAdmin();
+    }
+
+    match /rules/{rule} {
+      allow read: if isSignedIn();
+    }
+
+    match /heroes/{hero} {
+    	allow read: if isPublic(resource) || isUIDAbleToAccessHero(resource, request.auth.uid) || isUserGameGuideForHero(resource);
+      allow write: if isOwner();
+
+      match /{document=**} {
+      	allow read: if isAbleToAccessHeroSubDocuments(hero);
+        allow write: if isUIDAbleToAccessHero(get(/databases/$(database)/documents/heroes/$(hero)), request.auth.uid);
+      }
+    }
+    
+    match /legends/{legend} {
+    	allow read: if isPublic(resource) || isUIDAbleToAccessLegends(resource, request.auth.uid);
+      allow write: if isOwner();
+
+      match /{document=**} {
+      	allow read: if isAbleToAccessLegendSubDocuments(legend);
+        allow write: if isUIDAbleToAccessLegends(get(/databases/$(database)/documents/legends/$(legend)), request.auth.uid);
+      }
+    }
+  }
+}

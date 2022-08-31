@@ -1,0 +1,39 @@
+.affinity__emblem {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.affinity__hero-affinity {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.affinity__hero-affinity-empty {
+  width: 2.3rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.affinity__level {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.affinity__level--label {
+  width: 6rem;
+  margin-bottom: 0;
+}
+
+.affinity__level--dice {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-left: 0.25rem;
+}
