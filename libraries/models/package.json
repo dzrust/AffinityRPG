@@ -1,0 +1,21 @@
+{
+  "name": "@affinity-rpg/models",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.9.3",
+    "luxon": "^2.4.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/luxon": "^2.3.2",
+    "@types/yup": "^0.29.13"
+  }
+}

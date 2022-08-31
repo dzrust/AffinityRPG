@@ -17,27 +17,29 @@ import {
   faBalanceScale as faBalanceScaleRegular,
   faHoodCloak as faHoodCloakRegular,
 } from "@fortawesome/pro-regular-svg-icons";
-import { ROUTES, ROUTES_ARRAY } from "./models/routes";
-import { STAGES } from "./models/hero";
+import { ROUTES, ROUTES_ARRAY } from "@affinity-rpg/models/routes";
+import { STAGES } from "@affinity-rpg/models/hero";
 
 const LazyHome = lazy(() => import("./views/home/home"));
 const LazyHeroes = lazy(() => import("./views/heroes/heroes"));
 const LazyLegends = lazy(() => import("./views/legends/legends"));
 const LazySettings = lazy(() => import("./views/settings/settings"));
 const LazyBackToHome = lazy(() => import("./views/home/404"));
-const LazyHeroHOC = lazy(() => import("./components/hero/hero-hoc"));
+const LazyHeroHOC = lazy(() => import("../../../libraries/components/src/components/hero/hero-hoc"));
 const LazyHeroBuilder = lazy(() => import("./views/hero-builder/hero-builder"));
 const LazyDiceRoller = lazy(() => import("./views/dice-roller/dice-roller"));
-const LazyMasteryHOC = lazy(() => import("./components/mastery/mastery-hoc"));
+const LazyMasteryHOC = lazy(() => import("../../../libraries/components/src/components/mastery/mastery-hoc"));
 const LazyMasteryEditor = lazy(() => import("./views/hero-builder/stages/mastery-editor"));
-const LazyItemHOC = lazy(() => import("./components/item/item-hoc"));
+const LazyItemHOC = lazy(() => import("../../../libraries/components/src/components/item/item-hoc"));
 const LazyItemEditor = lazy(() => import("./views/hero-builder/stages/item-editor"));
 const LazyAdminHeroes = lazy(() => import("./views/admin/admin-heroes"));
 const LazyMarkdownPage = lazy(() => import("./views/rules/markdown-page"));
-const LazyKitchenSink = lazy(() => import("./views/kitchen-sink/kitchen-sink"));
-const LazyLegendHOC = lazy(() => import("./components/legend/legend-hoc"));
+const LazyKitchenSink = lazy(() => import("@affinity-rpg/components/src/kitchen-sink"));
+const LazyLegendHOC = lazy(() => import("../../../libraries/components/src/components/legend/legend-hoc"));
 const LazyLegendSheet = lazy(() => import("./views/legend/legend"));
-const LazyRollNotificationDisplay = lazy(() => import("./components/roll/roll-notifications"));
+const LazyRollNotificationDisplay = lazy(
+  () => import("../../../libraries/components/src/components/roll/roll-notifications"),
+);
 const LazyHeroSheet = lazy(() => import("./views/hero/hero"));
 
 const routeIconTable = new Map<

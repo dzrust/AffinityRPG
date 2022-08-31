@@ -1,5 +1,7 @@
 packages:
   # all packages in direct subdirs of packages/
-  - "journeys/*"
+  - "apps/*"
+  - "libraries/*"
+  - "tools/*"
   # exclude packages that are inside test directories
   - "!**/test/**"

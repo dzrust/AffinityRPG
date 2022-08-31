@@ -1,6 +1,6 @@
+import { firebaseAuth } from "@affinity-rpg/data/firebase";
 import { FC } from "react";
 import { Button, Container } from "react-bootstrap";
-import { firebaseAuth } from "../../firebase";
 
 const Settings: FC = () => {
   return (

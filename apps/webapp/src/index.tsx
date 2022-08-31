@@ -1,9 +1,9 @@
-import "./firebase";
+import "@affinity-rpg/data/firebase";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./app";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "@affinity-rpg/data/store";
 
 import "firebaseui/dist/firebaseui.css";
 import "./styles/styles.scss";

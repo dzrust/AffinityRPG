@@ -2,17 +2,17 @@ import { Formik } from "formik";
 import { FC, useContext } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { useUpdateHeroMutation } from "../../../api/heroes";
-import { useCreateMasteryMutation } from "../../../api/masteries";
-import FormControl from "../../../components/form/form-control";
-import { HeroContext } from "../../../components/hero/hero-hoc";
-import MasteryViewer from "../../../components/mastery/mastery-viewer";
-import { createMastery } from "../../../helpers/mastery";
-import { rollD6 } from "../../../helpers/roll";
-import { useIsLoading } from "../../../hooks";
-import { heroMasteryFormModel, HeroMasteryFormModel, STAGES } from "../../../models/hero";
-import { Mastery } from "../../../models/mastery";
-import { ROUTES } from "../../../models/routes";
+import { createMastery } from "@affinity-rpg/helpers/mastery";
+import { rollD6 } from "@affinity-rpg/helpers/roll";
+import { heroMasteryFormModel, HeroMasteryFormModel, STAGES } from "@affinity-rpg/models/hero";
+import { Mastery } from "@affinity-rpg/models/mastery";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { HeroContext } from "@affinity-rpg/components/src/components/hero/hero-hoc";
+import MasteryViewer from "@affinity-rpg/components/src/components/mastery/mastery-viewer";
+import { useUpdateHeroMutation } from "@affinity-rpg/data/api/heroes";
+import { useCreateMasteryMutation } from "@affinity-rpg/data/api/masteries";
+import { useIsLoading } from "@affinity-rpg/hooks/src/hooks";
+import FormControl from "@affinity-rpg/components/src/components/form/form-control";
 
 const MasteriesStage: FC = () => {
   const { hero, masteries } = useContext(HeroContext);

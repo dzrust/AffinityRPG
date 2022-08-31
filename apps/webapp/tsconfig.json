@@ -1,25 +1,9 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "noImplicitAny": true,
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "../../libraries/components/src/kitchen-sink.tsx", "../../libraries/hooks/src/hooks.ts", "../../libraries/data/store.ts", "../../libraries/data/firebase.ts", "../../libraries/components/src/components", "../../libraries/helpers/affinity.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

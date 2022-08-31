@@ -1,21 +1,21 @@
 import { Formik } from "formik";
 import { FC, useContext, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useDeleteItemMutation, useUpdateItemMutation } from "../../../api/items";
-import ArmorEditorForm from "../../../components/armor/armor-editor-form";
-import ItemEditorForm from "../../../components/item/item-editor-form";
-import { ItemContext } from "../../../components/item/item-hoc";
-import WeaponEditorForm from "../../../components/weapon/weapon-editor-form";
-import { useIsLoading } from "../../../hooks";
-import { AFFINITY, AffinityStat, AffinityStatFormModel } from "../../../models/affinity";
-import { Armor, ArmorFormModel, armorFormModel, ARMOR_CLASSIFICATION } from "../../../models/armor";
-import { ELEMENT } from "../../../models/element";
-import { STAGES } from "../../../models/hero";
-import { itemFormModel, ItemFormModel, ITEM_TYPE } from "../../../models/item";
-import { RATING } from "../../../models/rating";
-import { ROUTES } from "../../../models/routes";
-import { STATUS_EFFECT } from "../../../models/status-effect";
-import { Weapon, WeaponFormModel, weaponFormModel, WEAPON_CLASSIFICATION } from "../../../models/weapon";
+import { AFFINITY, AffinityStat, AffinityStatFormModel } from "@affinity-rpg/models/affinity";
+import { Armor, ArmorFormModel, armorFormModel, ARMOR_CLASSIFICATION } from "@affinity-rpg/models/armor";
+import { ELEMENT } from "@affinity-rpg/models/element";
+import { STAGES } from "@affinity-rpg/models/hero";
+import { itemFormModel, ItemFormModel, ITEM_TYPE } from "@affinity-rpg/models/item";
+import { RATING } from "@affinity-rpg/models/rating";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
+import { Weapon, WeaponFormModel, weaponFormModel, WEAPON_CLASSIFICATION } from "@affinity-rpg/models/weapon";
+import { ItemContext } from "@affinity-rpg/components/src/components/item/item-hoc";
+import ArmorEditorForm from "@affinity-rpg/components/src/components/armor/armor-editor-form";
+import WeaponEditorForm from "@affinity-rpg/components/src/components/weapon/weapon-editor-form";
+import ItemEditorForm from "@affinity-rpg/components/src/components/item/item-editor-form";
+import { useUpdateItemMutation, useDeleteItemMutation } from "@affinity-rpg/data/api/items";
+import { useIsLoading } from "@affinity-rpg/hooks/src/hooks";
 
 const ItemEditor: FC = () => {
   const { item } = useContext(ItemContext);

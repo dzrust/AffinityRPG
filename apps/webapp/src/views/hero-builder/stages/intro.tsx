@@ -2,16 +2,16 @@ import { Formik } from "formik";
 import { FC, useContext } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { useUpdateHeroMutation } from "../../../api/heroes";
-import AffinityRadioGroup from "../../../components/affinity/affinity-radio-group";
-import FormControl from "../../../components/form/form-control";
-import GenderRadioGroup from "../../../components/form/gender-radio-group";
-import { HeroContext } from "../../../components/hero/hero-hoc";
-import { getBaseAffinityStatScore } from "../../../helpers/affinity";
-import { useIsLoading } from "../../../hooks";
-import { AFFINITY } from "../../../models/affinity";
-import { GENDER, Hero, HeroIntroFormModel, heroIntroFormModel, STAGES } from "../../../models/hero";
-import { ROUTES } from "../../../models/routes";
+import { AFFINITY } from "@affinity-rpg/models/affinity";
+import { GENDER, Hero, HeroIntroFormModel, heroIntroFormModel, STAGES } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import FormControl from "@affinity-rpg/components/src/components/form/form-control";
+import GenderRadioGroup from "@affinity-rpg/components/src/components/form/gender-radio-group";
+import AffinityRadioGroup from "@affinity-rpg/components/src/components/affinity/affinity-radio-group";
+import { HeroContext } from "@affinity-rpg/components/src/components/hero/hero-hoc";
+import { useUpdateHeroMutation } from "@affinity-rpg/data/api/heroes";
+import { useIsLoading } from "@affinity-rpg/hooks/src/hooks";
+import { getBaseAffinityStatScore } from "@affinity-rpg/helpers/affinity";
 
 const IntroStage: FC = () => {
   const { hero } = useContext(HeroContext);

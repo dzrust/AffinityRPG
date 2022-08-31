@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useCreateHeroMutation, useGetHeroesForUserQuery } from "../../api/heroes";
-import HeroViewer from "../../components/hero/hero-viewer";
-import { createHero } from "../../helpers/hero";
-import { useIsLoading, useUserState } from "../../hooks";
-import { Hero } from "../../models/hero";
-import { ROUTES } from "../../models/routes";
+import { createHero } from "@affinity-rpg/helpers/hero";
+import { Hero } from "@affinity-rpg/models/hero";
+import { ROUTES } from "@affinity-rpg/models/routes";
+import HeroViewer from "@affinity-rpg/components/src/components/hero/hero-viewer";
+import { useGetHeroesForUserQuery, useCreateHeroMutation } from "@affinity-rpg/data/api/heroes";
+import { useIsLoading, useUserState } from "@affinity-rpg/hooks/src/hooks";
 
 const Heroes: FC = () => {
   const isLoading = useIsLoading();
