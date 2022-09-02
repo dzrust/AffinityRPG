@@ -1,19 +1,20 @@
 import { faSword } from "@fortawesome/pro-regular-svg-icons";
 import { FC, useContext, useMemo } from "react";
 import { Card } from "react-bootstrap";
-import { Weapon } from "@affinity-rpg/models/weapon";
-import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
-import Emblem from "../emblem";
-import WeaponSlots from "./weapon-slots";
-import { ROLL_TYPES } from "@affinity-rpg/models/roll";
-import DiceUnitDisplay from "../displays/dice-unit-display";
-import RollButton from "../roll/roll-button";
+import { Weapon, STATUS_EFFECT, ROLL_TYPES, ELEMENT } from "@affinity-rpg/models";
+import {
+  getNumberOfSkillDiceByHeroLevel,
+  getStatusEffectText,
+  getElementText,
+  getDefaultWeaponPointsFromRating,
+  getDefaultWeaponDamage,
+} from "@affinity-rpg/helpers";
+import { DiceUnitDisplay } from "../displays/dice-unit-display";
+import { StatDisplay } from "../displays/stat-display";
+import { Emblem } from "../emblem";
 import { HeroContext } from "../hero/hero-hoc";
-import StatDisplay from "../displays/stat-display";
-import { ELEMENT } from "@affinity-rpg/models/element";
-import { getNumberOfSkillDiceByHeroLevel } from "@affinity-rpg/helpers/hero";
-import { getStatusEffectText, getElementText } from "@affinity-rpg/helpers/text-helpers";
-import { getDefaultWeaponPointsFromRating, getDefaultWeaponDamage } from "@affinity-rpg/helpers/weapon";
+import { RollButton } from "../roll/roll-button";
+import { WeaponSlots } from "./weapon-slots";
 
 type Props = {
   item: Weapon;
@@ -21,7 +22,7 @@ type Props = {
   onSelectItem?: () => void;
 };
 const badgeBackground = "primary";
-const WeaponViewer: FC<Props> = ({ item, isRollingAllowed = false, onSelectItem }) => {
+export const WeaponViewer: FC<Props> = ({ item, isRollingAllowed = false, onSelectItem }) => {
   const { hero } = useContext(HeroContext);
   const weaponDefaults = useMemo(() => {
     return {
@@ -114,5 +115,3 @@ const WeaponViewer: FC<Props> = ({ item, isRollingAllowed = false, onSelectItem 
     </Card>
   );
 };
-
-export default WeaponViewer;

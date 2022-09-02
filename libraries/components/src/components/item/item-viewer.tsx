@@ -1,9 +1,9 @@
 import { faFlaskPotion } from "@fortawesome/pro-regular-svg-icons";
 import { FC, Fragment } from "react";
 import { Badge, Card } from "react-bootstrap";
-import { Item } from "@affinity-rpg/models/item";
-import Emblem from "../emblem";
-import WeaponSlots from "../weapon/weapon-slots";
+import { Item } from "@affinity-rpg/models";
+import { Emblem } from "../emblem";
+import { WeaponSlots } from "../weapon/weapon-slots";
 
 type Props = {
   item: Item;
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const badgeBackground = "primary";
-const ItemViewer: FC<Props> = ({ item, onSelectItem }) => {
+export const ItemViewer: FC<Props> = ({ item, onSelectItem }) => {
   return (
     <Card onClick={onSelectItem} className={!!onSelectItem ? "clickable" : ""}>
       <Card.Header className="item__card-header">
@@ -51,5 +51,3 @@ const ItemViewer: FC<Props> = ({ item, onSelectItem }) => {
     </Card>
   );
 };
-
-export default ItemViewer;

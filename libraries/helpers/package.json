@@ -1,20 +1,23 @@
 {
   "name": "@affinity-rpg/helpers",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@affinity-rpg/models": "workspace:1.0.0",
+    "@affinity-rpg/models": "workspace:*",
     "luxon": "^2.4.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7",
+    "luxon": "^2.4.0",
+    "uuid": "^8.3.2",
     "@types/luxon": "^2.3.2",
     "@types/uuid": "^8.3.4"
   }

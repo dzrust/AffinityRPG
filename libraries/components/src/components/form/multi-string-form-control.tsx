@@ -1,7 +1,7 @@
 import { FieldArray } from "formik";
 import { ChangeEvent, FC, Fragment, useState } from "react";
 import { Row, Col, Button, Table } from "react-bootstrap";
-import FormControl from "./form-control";
+import { FormControl } from "./form-control";
 
 type Props = {
   controlLabel: string;
@@ -11,7 +11,7 @@ type Props = {
   values: string[];
 };
 
-const MultiStringFormControl: FC<Props> = ({ controlLabel, tableHeader, name, arrayName, values }) => {
+export const MultiStringFormControl: FC<Props> = ({ controlLabel, tableHeader, name, arrayName, values }) => {
   const [tempValue, setTempValue] = useState(() => "");
   return (
     <FieldArray name={arrayName}>
@@ -67,5 +67,3 @@ const MultiStringFormControl: FC<Props> = ({ controlLabel, tableHeader, name, ar
     </FieldArray>
   );
 };
-
-export default MultiStringFormControl;

@@ -1,14 +1,14 @@
 import { FC } from "react";
 import { faDiceD6 } from "@fortawesome/pro-regular-svg-icons";
 import { Toast, ToastContainer } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import Emblem from "../emblem";
-import { RollNotification, ROLL_TYPES } from "@affinity-rpg/models/roll";
-import { RATING } from "@affinity-rpg/models/rating";
-import { STATUS_RATING } from "@affinity-rpg/models/status-effect";
-import { removeRollNotification } from "@affinity-rpg/data/slices/appSlice";
-import { getRatingText, getStatusRatingText } from "@affinity-rpg/helpers/text-helpers";
-import { useAppSelector } from "@affinity-rpg/hooks/src/hooks";
+import { RollNotification, ROLL_TYPES, RATING, STATUS_RATING } from "@affinity-rpg/models";
+import { getRatingText, getStatusRatingText } from "@affinity-rpg/helpers";
+import { useAppSelector } from "@affinity-rpg/hooks";
+import { Emblem } from "../emblem";
+
+type Props = {
+  onNotificationClose: (index: number) => void;
+};
 
 const getResultByRollType = (rollNotification: RollNotification) => {
   if (rollNotification.type === ROLL_TYPES.RATING_ROLL) {
@@ -33,14 +33,13 @@ const getResultByRollType = (rollNotification: RollNotification) => {
   return 0;
 };
 
-const RollNotificationDisplay: FC = () => {
+export const RollNotificationDisplay: FC<Props> = ({ onNotificationClose }) => {
   const notifications = useAppSelector((state) => state.app).rollNotification;
-  const dispatch = useDispatch();
   return (
     <ToastContainer position="bottom-end" className="mt-5" style={{ zIndex: 999999 }}>
       {notifications.map((notification, index) => {
         return (
-          <Toast key={notification.id} onClose={() => dispatch(removeRollNotification(index))} autohide delay={6000}>
+          <Toast key={notification.id} onClose={() => onNotificationClose(index)} autohide delay={6000}>
             <Toast.Header>
               <Emblem innerIcon={faDiceD6} />
               <strong className="me-auto">{notification.message}</strong>
@@ -54,5 +53,3 @@ const RollNotificationDisplay: FC = () => {
     </ToastContainer>
   );
 };
-
-export default RollNotificationDisplay;

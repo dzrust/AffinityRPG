@@ -1,8 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { DocumentData } from "firebase/firestore";
-import { createItem } from "@affinity-rpg/helpers/item";
-import { COLLECTION_NAMES } from "@affinity-rpg/models/database";
-import { Item } from "@affinity-rpg/models/item";
+import { createItem } from "@affinity-rpg/helpers";
+import { COLLECTION_NAMES, Item } from "@affinity-rpg/models";
 import { firebaseBaseQuery } from "./base-query";
 
 export const ITEM_TAG = "ITEM";

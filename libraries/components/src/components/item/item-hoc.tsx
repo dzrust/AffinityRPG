@@ -1,9 +1,8 @@
 import { FC, useMemo, useEffect, createContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { Item } from "@affinity-rpg/models/item";
-import { useGetItemQuery } from "@affinity-rpg/data/api/items";
-import { createItem } from "@affinity-rpg/helpers/item";
+import { ROUTES, Item } from "@affinity-rpg/models";
+import { useGetItemQuery } from "@affinity-rpg/data";
+import { createItem } from "@affinity-rpg/helpers";
 
 type ItemContextType = {
   item: Item;
@@ -13,7 +12,7 @@ export const ItemContext = createContext<ItemContextType>({
   item: createItem(),
 });
 
-const ItemHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ItemHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   const navigator = useNavigate();
   let { id, itemId } = useParams();
   const { data: item, isError, error } = useGetItemQuery({ heroId: id ?? "", itemId: itemId ?? "" });
@@ -31,5 +30,3 @@ const ItemHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   }
   return <ItemContext.Provider value={itemContext}>{children}</ItemContext.Provider>;
 };
-
-export default ItemHOC;

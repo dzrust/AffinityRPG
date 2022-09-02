@@ -1,7 +1,7 @@
 import { faCheck, faHorizontalRule } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC, useMemo } from "react";
-import Emblem from "./emblem";
+import { Emblem } from "./emblem";
 
 type StepperSVGProps = {
   numberOfSteps: number;
@@ -10,7 +10,7 @@ type StepperSVGProps = {
   onStepClick: (step: number) => void;
 };
 
-const StepperSVG: FC<StepperSVGProps> = ({ numberOfSteps, activeStep, completeSteps, onStepClick }) => {
+export const StepperSVG: FC<StepperSVGProps> = ({ numberOfSteps, activeStep, completeSteps, onStepClick }) => {
   const stepsArray = useMemo(() => {
     const stepsArray: number[] = [];
     for (let i = 0; i < numberOfSteps; i++) {
@@ -41,5 +41,3 @@ const StepperSVG: FC<StepperSVGProps> = ({ numberOfSteps, activeStep, completeSt
     </div>
   );
 };
-
-export default StepperSVG;

@@ -1,13 +1,13 @@
 import { faPersonRunning, faDumbbell, faHeart } from "@fortawesome/pro-regular-svg-icons";
 import { FC } from "react";
-import { AFFINITY } from "@affinity-rpg/models/affinity";
-import Emblem from "../emblem";
+import { AFFINITY } from "@affinity-rpg/models";
+import { Emblem } from "../emblem";
 
 type Props = {
   type: AFFINITY;
 };
 
-const AffinityEmblem: FC<Props> = ({ type }) => {
+export const AffinityEmblem: FC<Props> = ({ type }) => {
   return (
     <span className="affinity__emblem">
       <Emblem
@@ -16,5 +16,3 @@ const AffinityEmblem: FC<Props> = ({ type }) => {
     </span>
   );
 };
-
-export default AffinityEmblem;

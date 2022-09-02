@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { DiceUnit } from "@affinity-rpg/models/units";
-import StatDisplay from "./stat-display";
+import { DiceUnit } from "@affinity-rpg/models";
+import { StatDisplay } from "./stat-display";
 
 type Props = {
   diceUnit: DiceUnit;
@@ -10,7 +10,7 @@ type Props = {
   rollDice?: () => void;
 };
 
-const DiceUnitDisplay: FC<Props> = ({ diceUnit, label, variant, isRollingAllowed = false, rollDice }) => (
+export const DiceUnitDisplay: FC<Props> = ({ diceUnit, label, variant, isRollingAllowed = false, rollDice }) => (
   <StatDisplay
     label={`${diceUnit.diceCount > 0 ? diceUnit.diceCount + "D6" : ""}${
       diceUnit.modifier > 0 ? `+ ${diceUnit.modifier}` : ""
@@ -21,5 +21,3 @@ const DiceUnitDisplay: FC<Props> = ({ diceUnit, label, variant, isRollingAllowed
     rollDice={rollDice}
   />
 );
-
-export default DiceUnitDisplay;

@@ -1,8 +1,12 @@
-import { AffinityStat } from "@affinity-rpg/models/affinity";
-import { ARMOR_CLASSIFICATION, Armor, ArmorFormModel } from "@affinity-rpg/models/armor";
-import { ELEMENT } from "@affinity-rpg/models/element";
-import { ITEM_TYPE } from "@affinity-rpg/models/item";
-import { RATING } from "@affinity-rpg/models/rating";
+import {
+  AffinityStat,
+  ARMOR_CLASSIFICATION,
+  Armor,
+  ArmorFormModel,
+  ELEMENT,
+  ITEM_TYPE,
+  RATING,
+} from "@affinity-rpg/models";
 import { createItem } from "./item";
 
 export const decorateArmorWithModifiers = (armor: Armor): Armor & { defaultArmorPoints: number } => {

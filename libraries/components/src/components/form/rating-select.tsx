@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { RATINGS, RATING } from "@affinity-rpg/models/rating";
-import FormSelect from "./form-select";
+import { RATINGS, RATING } from "@affinity-rpg/models";
+import { FormSelect } from "./form-select";
 
-const RatingSelect: FC = () => {
+export const RatingSelect: FC = () => {
   return (
     <FormSelect
       label="Rating"
@@ -16,5 +16,3 @@ const RatingSelect: FC = () => {
     />
   );
 };
-
-export default RatingSelect;

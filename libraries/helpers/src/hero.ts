@@ -1,6 +1,6 @@
-import { AFFINITY } from "@affinity-rpg/models/affinity";
-import { GENDER, Hero } from "@affinity-rpg/models/hero";
-import { VISIBILITY } from "@affinity-rpg/models/visibility";
+import { AFFINITY } from "@affinity-rpg/models";
+import { GENDER, Hero } from "@affinity-rpg/models";
+import { VISIBILITY } from "@affinity-rpg/models";
 
 export const createHero = (): Hero => ({
   id: "",

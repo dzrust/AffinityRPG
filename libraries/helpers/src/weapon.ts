@@ -1,10 +1,10 @@
-import { AffinityStat } from "@affinity-rpg/models/affinity";
-import { ELEMENT } from "@affinity-rpg/models/element";
-import { ITEM_TYPE } from "@affinity-rpg/models/item";
-import { RATING } from "@affinity-rpg/models/rating";
-import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
-import { DiceUnit } from "@affinity-rpg/models/units";
-import { WeaponFormModel, Weapon, WEAPON_CLASSIFICATION } from "@affinity-rpg/models/weapon";
+import { AffinityStat } from "@affinity-rpg/models";
+import { ELEMENT } from "@affinity-rpg/models";
+import { ITEM_TYPE } from "@affinity-rpg/models";
+import { RATING } from "@affinity-rpg/models";
+import { STATUS_EFFECT } from "@affinity-rpg/models";
+import { DiceUnit } from "@affinity-rpg/models";
+import { WeaponFormModel, Weapon, WEAPON_CLASSIFICATION } from "@affinity-rpg/models";
 import { createItem } from "./item";
 
 export const weaponFromFormModel = (formModel: WeaponFormModel): Weapon => ({

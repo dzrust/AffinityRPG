@@ -1,15 +1,15 @@
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormCheckProps } from "react-bootstrap";
-import { GENDER } from "@affinity-rpg/models/hero";
-import FormControlErrors from "./form-control-errors";
+import { GENDER } from "@affinity-rpg/models";
+import { FormControlErrors } from "./form-control-errors";
 
 type Props = {
   label: string;
   inputProps?: FormCheckProps;
 };
 
-const GenderRadioGroup: FC<Props> = ({ label, inputProps = {} }) => {
+export const GenderRadioGroup: FC<Props> = ({ label, inputProps = {} }) => {
   const { values, errors, touched, handleBlur, handleChange } = useFormikContext<{ gender: GENDER }>();
   return (
     <Form.Group className="mt-3">
@@ -44,5 +44,3 @@ const GenderRadioGroup: FC<Props> = ({ label, inputProps = {} }) => {
     </Form.Group>
   );
 };
-
-export default GenderRadioGroup;

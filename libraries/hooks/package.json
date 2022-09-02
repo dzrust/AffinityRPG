@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@affinity-rpg/data": "workspace:1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.2"
+    "react-redux": "^8.0.2",
+    "firebase": "^9.9.3",
+    "firebaseui": "^6.0.1",
+    "@affinity-rpg/data": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

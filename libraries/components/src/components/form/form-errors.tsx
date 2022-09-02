@@ -6,7 +6,7 @@ type Props = {
   errors?: FormikErrors<any>;
 };
 
-const FormErrors: FC<Props> = ({ errors }) => {
+export const FormErrors: FC<Props> = ({ errors }) => {
   if (!errors) return null;
   const errorMessages = useMemo(() => {
     const errorMessages: string[] = [];
@@ -27,5 +27,3 @@ const FormErrors: FC<Props> = ({ errors }) => {
     </Fragment>
   );
 };
-
-export default FormErrors;

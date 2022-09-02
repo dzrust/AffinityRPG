@@ -2,12 +2,12 @@ import { DateTime } from "luxon";
 import { FC, useMemo } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { createLegend } from "@affinity-rpg/helpers/legend";
-import { Legend } from "@affinity-rpg/models/legend";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { useGetGGLegendsQuery, useGetLegendsQuery, useCreateLegendMutation } from "@affinity-rpg/data/api/legends";
-import { useIsLoading, useUserState } from "@affinity-rpg/hooks/src/hooks";
-import LegendViewer from "@affinity-rpg/components/src/components/legend/legend-viewer";
+import { createLegend } from "@affinity-rpg/helpers";
+import { Legend } from "@affinity-rpg/models";
+import { ROUTES } from "@affinity-rpg/models";
+import { useGetGGLegendsQuery, useGetLegendsQuery, useCreateLegendMutation } from "@affinity-rpg/data/src/api/legends";
+import { useIsLoading, useUserState } from "@affinity-rpg/hooks";
+import { LegendViewer } from "@affinity-rpg/components";
 
 const Legends: FC = () => {
   const isLoading = useIsLoading();

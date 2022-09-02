@@ -1,5 +1,5 @@
 import { FC } from "react";
-import FormSelect from "./form-select";
+import { FormSelect } from "./form-select";
 
 type Props = {
   label: string;
@@ -7,7 +7,7 @@ type Props = {
   getClassificationText: (option: any) => string;
 };
 
-const ClassificationSelect: FC<Props> = ({ label, classifications, getClassificationText }) => {
+export const ClassificationSelect: FC<Props> = ({ label, classifications, getClassificationText }) => {
   return (
     <FormSelect
       label={label}
@@ -21,5 +21,3 @@ const ClassificationSelect: FC<Props> = ({ label, classifications, getClassifica
     />
   );
 };
-
-export default ClassificationSelect;

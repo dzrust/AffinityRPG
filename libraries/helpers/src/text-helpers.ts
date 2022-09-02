@@ -1,10 +1,10 @@
-import { ARMOR_CLASSIFICATION } from "@affinity-rpg/models/armor";
-import { ELEMENT } from "@affinity-rpg/models/element";
-import { MASTERY_CLASSIFICATION } from "@affinity-rpg/models/mastery";
-import { RATING } from "@affinity-rpg/models/rating";
-import { SKILL, DIFFICULTY } from "@affinity-rpg/models/skills";
-import { STATUS_EFFECT, STATUS_RATING } from "@affinity-rpg/models/status-effect";
-import { WEAPON_CLASSIFICATION } from "@affinity-rpg/models/weapon";
+import { ARMOR_CLASSIFICATION } from "@affinity-rpg/models";
+import { ELEMENT } from "@affinity-rpg/models";
+import { MASTERY_CLASSIFICATION } from "@affinity-rpg/models";
+import { RATING } from "@affinity-rpg/models";
+import { SKILL, DIFFICULTY } from "@affinity-rpg/models";
+import { STATUS_EFFECT, STATUS_RATING } from "@affinity-rpg/models";
+import { WEAPON_CLASSIFICATION } from "@affinity-rpg/models";
 
 export const getElementText = (element: ELEMENT) => {
   switch (element) {

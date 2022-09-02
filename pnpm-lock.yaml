@@ -2,13 +2,16 @@ lockfileVersion: 5.4
 
 importers:
 
+  .:
+    specifiers: {}
+
   apps/webapp:
     specifiers:
-      '@affinity-rpg/components': workspace:1.0.0
-      '@affinity-rpg/data': workspace:1.0.0
-      '@affinity-rpg/helpers': workspace:1.0.0
-      '@affinity-rpg/hooks': workspace:1.0.0
-      '@affinity-rpg/models': workspace:1.0.0
+      '@affinity-rpg/components': workspace:*
+      '@affinity-rpg/data': workspace:*
+      '@affinity-rpg/helpers': workspace:*
+      '@affinity-rpg/hooks': workspace:*
+      '@affinity-rpg/models': workspace:*
       '@fortawesome/fontawesome-svg-core': ^6.1.1
       '@fortawesome/pro-duotone-svg-icons': ^6.1.1
       '@fortawesome/pro-light-svg-icons': ^6.1.1
@@ -95,10 +98,10 @@ importers:
 
   libraries/components:
     specifiers:
-      '@affinity-rpg/data': workspace:1.0.0
-      '@affinity-rpg/helpers': workspace:1.0.0
-      '@affinity-rpg/hooks': workspace:1.0.0
-      '@affinity-rpg/models': workspace:1.0.0
+      '@affinity-rpg/data': workspace:*
+      '@affinity-rpg/helpers': workspace:*
+      '@affinity-rpg/hooks': workspace:*
+      '@affinity-rpg/models': workspace:*
       '@fortawesome/fontawesome-svg-core': ^6.1.1
       '@fortawesome/pro-duotone-svg-icons': ^6.1.1
       '@fortawesome/pro-light-svg-icons': ^6.1.1
@@ -158,6 +161,8 @@ importers:
       firebase: ^9.9.3
       firebaseui: ^6.0.1
       redux: ^4.2.0
+      typescript: ^4.6.4
+      vite: ^3.0.7
     dependencies:
       '@affinity-rpg/helpers': link:../helpers
       '@affinity-rpg/models': link:../models
@@ -165,14 +170,19 @@ importers:
       firebase: 9.9.3
       firebaseui: 6.0.1_firebase@9.9.3
       redux: 4.2.0
+    devDependencies:
+      typescript: 4.8.2
+      vite: 3.0.9
 
   libraries/helpers:
     specifiers:
-      '@affinity-rpg/models': workspace:1.0.0
+      '@affinity-rpg/models': workspace:*
       '@types/luxon': ^2.3.2
       '@types/uuid': ^8.3.4
       luxon: ^2.4.0
+      typescript: ^4.6.4
       uuid: ^8.3.2
+      vite: ^3.0.7
     dependencies:
       '@affinity-rpg/models': link:../models
       luxon: 2.5.0
@@ -180,14 +190,18 @@ importers:
     devDependencies:
       '@types/luxon': 2.4.0
       '@types/uuid': 8.3.4
+      typescript: 4.8.2
+      vite: 3.0.9
 
   libraries/hooks:
     specifiers:
-      '@affinity-rpg/data': workspace:1.0.0
+      '@affinity-rpg/data': workspace:*
       '@types/react': ^18.0.17
       '@types/react-dom': ^18.0.6
       '@types/react-redux': ^7.1.23
       '@vitejs/plugin-react': ^2.0.1
+      firebase: ^9.9.3
+      firebaseui: ^6.0.1
       react: ^18.2.0
       react-dom: ^18.2.0
       react-redux: ^8.0.2
@@ -195,6 +209,8 @@ importers:
       vite: ^3.0.7
     dependencies:
       '@affinity-rpg/data': link:../data
+      firebase: 9.9.3
+      firebaseui: 6.0.1_firebase@9.9.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-redux: 8.0.2_5d4wf3yo6k5smpa3kasqkeetaq
@@ -212,6 +228,8 @@ importers:
       '@types/yup': ^0.29.13
       firebase: ^9.9.3
       luxon: ^2.4.0
+      typescript: ^4.6.4
+      vite: ^3.0.7
       yup: ^0.32.11
     dependencies:
       firebase: 9.9.3
@@ -220,6 +238,8 @@ importers:
     devDependencies:
       '@types/luxon': 2.4.0
       '@types/yup': 0.29.14
+      typescript: 4.8.2
+      vite: 3.0.9
 
 packages:
 

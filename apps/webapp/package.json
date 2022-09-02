@@ -31,11 +31,11 @@
     "vite": "^3.0.7"
   },
   "dependencies": {
-    "@affinity-rpg/components": "workspace:1.0.0",
-    "@affinity-rpg/data": "workspace:1.0.0",
-    "@affinity-rpg/helpers": "workspace:1.0.0",
-    "@affinity-rpg/hooks": "workspace:1.0.0",
-    "@affinity-rpg/models": "workspace:1.0.0",
+    "@affinity-rpg/components": "workspace:*",
+    "@affinity-rpg/data": "workspace:*",
+    "@affinity-rpg/helpers": "workspace:*",
+    "@affinity-rpg/hooks": "workspace:*",
+    "@affinity-rpg/models": "workspace:*",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/pro-duotone-svg-icons": "^6.1.1",
     "@fortawesome/pro-light-svg-icons": "^6.1.1",

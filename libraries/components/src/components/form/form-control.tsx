@@ -1,8 +1,8 @@
-import { getSubObjectByKey } from "@affinity-rpg/helpers/object-access";
+import { getSubObjectByKey } from "@affinity-rpg/helpers";
 import { useFormikContext } from "formik";
 import { FC, HTMLProps } from "react";
 import { Form, FormControlProps, InputGroup } from "react-bootstrap";
-import FormControlErrors from "./form-control-errors";
+import { FormControlErrors } from "./form-control-errors";
 
 type Props = {
   label: string;
@@ -11,7 +11,7 @@ type Props = {
   appendedElement?: JSX.Element;
 };
 
-const FormControl: FC<Props> = ({ label, name, inputProps = {}, appendedElement }) => {
+export const FormControl: FC<Props> = ({ label, name, inputProps = {}, appendedElement }) => {
   const { values, errors, touched, handleBlur, handleChange } = useFormikContext<any>();
   const error = getSubObjectByKey(name, errors);
   const touchedValue = getSubObjectByKey(name, touched);
@@ -34,5 +34,3 @@ const FormControl: FC<Props> = ({ label, name, inputProps = {}, appendedElement 
     </Form.Group>
   );
 };
-
-export default FormControl;

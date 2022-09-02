@@ -1,20 +1,21 @@
 import { FC } from "react";
 import { Badge, Button, OverlayTrigger, Popover, Row } from "react-bootstrap";
-import { Hero } from "@affinity-rpg/models/hero";
-import { ROLL_TYPES } from "@affinity-rpg/models/roll";
-import { DIFFICULTIES, SKILL } from "@affinity-rpg/models/skills";
-import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
-import RollButton from "../roll/roll-button";
-import { getNumberOfSkillDiceByHeroLevel } from "@affinity-rpg/helpers/hero";
-import { getLabelForSkill, getLabelForSkillDifficulty, getStatusEffectText } from "@affinity-rpg/helpers/text-helpers";
-import { getSkillStatesOrDefault } from "@affinity-rpg/helpers/skills";
+import { Hero, ROLL_TYPES, DIFFICULTIES, SKILL, STATUS_EFFECT } from "@affinity-rpg/models";
+import {
+  getNumberOfSkillDiceByHeroLevel,
+  getLabelForSkill,
+  getLabelForSkillDifficulty,
+  getStatusEffectText,
+  getSkillStatesOrDefault,
+} from "@affinity-rpg/helpers";
+import { RollButton } from "../roll/roll-button";
 
 type Props = {
   hero: Hero;
   isRollsAllowed?: boolean;
 };
 
-const SkillViewer: FC<Props> = ({ hero, isRollsAllowed = false }) => {
+export const SkillViewer: FC<Props> = ({ hero, isRollsAllowed = false }) => {
   return (
     <div className="d-flex flex-wrap">
       {getSkillStatesOrDefault(hero.skills).map((skill) => {
@@ -71,5 +72,3 @@ const SkillViewer: FC<Props> = ({ hero, isRollsAllowed = false }) => {
     </div>
   );
 };
-
-export default SkillViewer;

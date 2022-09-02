@@ -1,8 +1,8 @@
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormCheckProps } from "react-bootstrap";
-import { ROLL_TYPES } from "@affinity-rpg/models/roll";
-import FormControlErrors from "../form/form-control-errors";
+import { ROLL_TYPES } from "@affinity-rpg/models";
+import { FormControlErrors } from "../form/form-control-errors";
 
 type Props = {
   label: string;
@@ -10,7 +10,7 @@ type Props = {
   inputProps?: FormCheckProps;
 };
 
-const DiceRollTypeRadioGroup: FC<Props> = ({ label, name, inputProps = {} }) => {
+export const DiceRollTypeRadioGroup: FC<Props> = ({ label, name, inputProps = {} }) => {
   const { values, errors, touched, handleBlur, handleChange } = useFormikContext<any>();
   const numberValue = parseInt(values[name] ?? "0", 10);
   return (
@@ -58,5 +58,3 @@ const DiceRollTypeRadioGroup: FC<Props> = ({ label, name, inputProps = {} }) => 
     </Form.Group>
   );
 };
-
-export default DiceRollTypeRadioGroup;

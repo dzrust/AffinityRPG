@@ -1,4 +1,4 @@
-import { firebaseAuth } from "@affinity-rpg/data/firebase";
+import { firebaseAuth } from "@affinity-rpg/data";
 import { FC } from "react";
 import { Button, Container } from "react-bootstrap";
 

@@ -1,8 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { DocumentData } from "firebase/firestore";
-import { createLegend } from "@affinity-rpg/helpers/legend";
-import { COLLECTION_NAMES } from "@affinity-rpg/models/database";
-import { Legend } from "@affinity-rpg/models/legend";
+import { createLegend } from "@affinity-rpg/helpers";
+import { COLLECTION_NAMES, Legend } from "@affinity-rpg/models";
 import { firebaseBaseQuery } from "./base-query";
 
 export const LEGEND_TAG = "LEGEND";

@@ -3,18 +3,15 @@ import { faAtom, faExplosion } from "@fortawesome/pro-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC, useContext, useMemo, useState } from "react";
 import { Card } from "react-bootstrap";
-import { Mastery, MASTERY_CLASSIFICATION, MASTERY_TYPE } from "@affinity-rpg/models/mastery";
-import { ROLL_TYPES } from "@affinity-rpg/models/roll";
-import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
-import DiceUnitDisplay from "../displays/dice-unit-display";
-import StatDisplay from "../displays/stat-display";
-import Emblem from "../emblem";
+import { Mastery, MASTERY_CLASSIFICATION, MASTERY_TYPE, ROLL_TYPES, STATUS_EFFECT } from "@affinity-rpg/models";
+import { useUpdateMasteryMutation } from "@affinity-rpg/data";
+import { getNumberOfSkillDiceByHeroLevel, getStatusEffectText, getElementText } from "@affinity-rpg/helpers";
+import { useIsLoading } from "@affinity-rpg/hooks";
 import { HeroContext } from "../hero/hero-hoc";
-import RollButton from "../roll/roll-button";
-import { useUpdateMasteryMutation } from "@affinity-rpg/data/api/masteries";
-import { getNumberOfSkillDiceByHeroLevel } from "@affinity-rpg/helpers/hero";
-import { getStatusEffectText, getElementText } from "@affinity-rpg/helpers/text-helpers";
-import { useIsLoading } from "@affinity-rpg/hooks/src/hooks";
+import { DiceUnitDisplay } from "../displays/dice-unit-display";
+import { StatDisplay } from "../displays/stat-display";
+import { Emblem } from "../emblem";
+import { RollButton } from "../roll/roll-button";
 
 type Props = {
   mastery: Mastery;
@@ -24,7 +21,7 @@ type Props = {
   isRollingAllowed?: boolean;
 };
 
-const MasteryViewer: FC<Props> = ({
+export const MasteryViewer: FC<Props> = ({
   mastery,
   showCooldownTracker = false,
   heroId,
@@ -220,5 +217,3 @@ const MasteryViewer: FC<Props> = ({
     </Card>
   );
 };
-
-export default MasteryViewer;

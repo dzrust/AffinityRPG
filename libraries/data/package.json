@@ -16,5 +16,9 @@
     "firebase": "^9.9.3",
     "firebaseui": "^6.0.1",
     "redux": "^4.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7"
   }
 }

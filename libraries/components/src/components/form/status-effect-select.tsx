@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { STATUS_EFFECT, STATUS_EFFECTS } from "@affinity-rpg/models/status-effect";
-import FormSelect from "./form-select";
+import { STATUS_EFFECT, STATUS_EFFECTS } from "@affinity-rpg/models";
+import { FormSelect } from "./form-select";
 
-const StatusEffectSelect: FC = () => {
+export const StatusEffectSelect: FC = () => {
   return (
     <FormSelect
       label="Status Effect"

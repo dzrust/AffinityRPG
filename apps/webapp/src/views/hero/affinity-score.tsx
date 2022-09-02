@@ -1,11 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceD6 } from "@fortawesome/pro-duotone-svg-icons";
 import { FC, useMemo } from "react";
-import { AFFINITY } from "@affinity-rpg/models/affinity";
-import { ROLL_TYPES } from "@affinity-rpg/models/roll";
+import { AFFINITY } from "@affinity-rpg/models";
+import { ROLL_TYPES } from "@affinity-rpg/models";
 import { Button } from "react-bootstrap";
-import AffinityEmblem from "@affinity-rpg/components/src/components/affinity/affinity-emblem";
-import RollButton from "@affinity-rpg/components/src/components/roll/roll-button";
+import { AffinityEmblem, RollButton } from "@affinity-rpg/components";
 
 type Props = {
   affinityText: string;

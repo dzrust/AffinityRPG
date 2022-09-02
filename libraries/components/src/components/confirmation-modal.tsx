@@ -9,7 +9,7 @@ type Props = {
   onNo: () => void;
 };
 
-const ConfirmationModal: FC<Props> = ({ title, text, isOpen, onYes, onNo }) => {
+export const ConfirmationModal: FC<Props> = ({ title, text, isOpen, onYes, onNo }) => {
   return (
     <Modal show={isOpen}>
       <Modal.Header>{title}</Modal.Header>
@@ -25,5 +25,3 @@ const ConfirmationModal: FC<Props> = ({ title, text, isOpen, onYes, onNo }) => {
     </Modal>
   );
 };
-
-export default ConfirmationModal;

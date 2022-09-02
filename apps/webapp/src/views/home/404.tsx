@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { ROUTES } from "@affinity-rpg/models/routes";
+import { ROUTES } from "@affinity-rpg/models";
 
 const BackToHome: FC = () => {
   const navigation = useNavigate();

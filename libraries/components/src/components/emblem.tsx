@@ -11,7 +11,7 @@ type Props = {
   onClick?: Function;
 };
 
-const Emblem: FC<Props> = ({ innerIcon, primaryColor = "#a60000", seconadryColor = "#ecad17", onClick }) => {
+export const Emblem: FC<Props> = ({ innerIcon, primaryColor = "#a60000", seconadryColor = "#ecad17", onClick }) => {
   return (
     <span
       className={`fa-layers fa-fw fa-lg ${onClick ? "clickable" : ""}`}
@@ -23,5 +23,3 @@ const Emblem: FC<Props> = ({ innerIcon, primaryColor = "#a60000", seconadryColor
     </span>
   );
 };
-
-export default Emblem;

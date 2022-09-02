@@ -1,12 +1,11 @@
 import { FieldArray, useFormikContext } from "formik";
 import { FC, Fragment } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { HeroJobFormModel } from "@affinity-rpg/models/hero";
-import { SKILL, SKILLS } from "@affinity-rpg/models/skills";
-import FormSelect from "../form/form-select";
-import { getLabelForSkill } from "@affinity-rpg/helpers/text-helpers";
+import { HeroJobFormModel, SKILL, SKILLS } from "@affinity-rpg/models";
+import { getLabelForSkill } from "@affinity-rpg/helpers";
+import { FormSelect } from "../form/form-select";
 
-const SkillEditor: FC = () => {
+export const SkillEditor: FC = () => {
   const { values } = useFormikContext<HeroJobFormModel>();
   return (
     <FieldArray name="skills">
@@ -40,5 +39,3 @@ const SkillEditor: FC = () => {
     </FieldArray>
   );
 };
-
-export default SkillEditor;

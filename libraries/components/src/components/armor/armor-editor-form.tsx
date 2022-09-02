@@ -1,29 +1,29 @@
 import { useFormikContext } from "formik";
 import { FC, Fragment, useMemo, useState } from "react";
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
-import { ArmorFormModel, ARMOR_CLASSIFICATIONS } from "@affinity-rpg/models/armor";
-import AffinityStatsEditor from "../affinity/affinity-stat-editor";
-import ConfirmationModal from "../confirmation-modal";
-import ClassificationSelect from "../form/classification-select";
-import ElementSelect from "../form/element-select";
-import FormControl from "../form/form-control";
-import FormSelect from "../form/form-select";
-import RatingSelect from "../form/rating-select";
+import { ArmorFormModel, ARMOR_CLASSIFICATIONS } from "@affinity-rpg/models";
 import {
   armorFromFormModel,
   getDefaultArmorPointsFromRating,
   getDefaultArmorDefense,
   getArmorPoints,
-} from "@affinity-rpg/helpers/armor";
-import { getDefaultArmorMovement } from "@affinity-rpg/helpers/item";
-import { getArmorClassificationText } from "@affinity-rpg/helpers/text-helpers";
+  getDefaultArmorMovement,
+  getArmorClassificationText,
+} from "@affinity-rpg/helpers";
+import { ConfirmationModal } from "../confirmation-modal";
+import { FormControl } from "../form/form-control";
+import { FormSelect } from "../form/form-select";
+import { AffinityStatsEditor } from "../affinity/affinity-stat-editor";
+import { ClassificationSelect } from "../form/classification-select";
+import { ElementSelect } from "../form/element-select";
+import { RatingSelect } from "../form/rating-select";
 
 type Props = {
   close: () => void;
   onDelete: () => void;
 };
 
-const ArmorEditorForm: FC<Props> = ({ close, onDelete }) => {
+export const ArmorEditorForm: FC<Props> = ({ close, onDelete }) => {
   const { values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting } =
     useFormikContext<ArmorFormModel>();
   const [isDeleting, setIsDeleting] = useState(() => false);
@@ -176,5 +176,3 @@ const ArmorEditorForm: FC<Props> = ({ close, onDelete }) => {
     </Fragment>
   );
 };
-
-export default ArmorEditorForm;

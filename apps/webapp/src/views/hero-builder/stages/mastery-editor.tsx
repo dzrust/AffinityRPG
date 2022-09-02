@@ -1,13 +1,13 @@
 import { Formik } from "formik";
 import { FC, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { STAGES } from "@affinity-rpg/models/hero";
-import { masteryFormModel, MasteryFormModel } from "@affinity-rpg/models/mastery";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { MasteryContext } from "@affinity-rpg/components/src/components/mastery/mastery-hoc";
-import MasteryEditorForm from "@affinity-rpg/components/src/components/mastery/mastery-editor-form";
-import { useUpdateMasteryMutation, useDeleteMasteryMutation } from "@affinity-rpg/data/api/masteries";
-import { useIsLoading } from "@affinity-rpg/hooks/src/hooks";
+import { STAGES } from "@affinity-rpg/models";
+import { masteryFormModel, MasteryFormModel } from "@affinity-rpg/models";
+import { ROUTES } from "@affinity-rpg/models";
+import { MasteryContext } from "@affinity-rpg/components";
+import { MasteryEditorForm } from "@affinity-rpg/components";
+import { useUpdateMasteryMutation, useDeleteMasteryMutation } from "@affinity-rpg/data/src/api/masteries";
+import { useIsLoading } from "@affinity-rpg/hooks";
 
 const MasteryEditor: FC = () => {
   const { mastery } = useContext(MasteryContext);

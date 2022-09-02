@@ -1,13 +1,13 @@
 import { useFormikContext } from "formik";
 import { FC, useMemo } from "react";
 import { Form } from "react-bootstrap";
-import { getSubObjectByKey } from "@affinity-rpg/helpers/object-access";
+import { getSubObjectByKey } from "@affinity-rpg/helpers";
 
 type Props = {
   name: string;
 };
 
-const FormControlErrors: FC<Props> = ({ name }) => {
+export const FormControlErrors: FC<Props> = ({ name }) => {
   const { errors } = useFormikContext<any>();
   const error = useMemo(() => getSubObjectByKey(name, errors), [name, errors]);
   const arrayOfErrors: string[] = useMemo(() => {
@@ -24,5 +24,3 @@ const FormControlErrors: FC<Props> = ({ name }) => {
     </Form.Control.Feedback>
   );
 };
-
-export default FormControlErrors;

@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
-import { DiceFaceType } from "@affinity-rpg/models/roll";
+import { DiceFaceType } from "@affinity-rpg/models";
 
 type Props = {
   results: DiceFaceType[];

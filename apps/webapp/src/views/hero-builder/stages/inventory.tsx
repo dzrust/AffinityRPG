@@ -2,22 +2,20 @@ import { Formik } from "formik";
 import { FC, useContext } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { createArmor } from "@affinity-rpg/helpers/armor";
-import { createItem } from "@affinity-rpg/helpers/item";
-import { createWeapon } from "@affinity-rpg/helpers/weapon";
-import { Armor } from "@affinity-rpg/models/armor";
-import { HeroInventoryFormModel, heroInventoryFormModel, STAGES } from "@affinity-rpg/models/hero";
-import { Item, ITEM_TYPE } from "@affinity-rpg/models/item";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { Weapon } from "@affinity-rpg/models/weapon";
-import ArmorViewer from "@affinity-rpg/components/src/components/armor/armor-viewer";
-import { HeroContext } from "@affinity-rpg/components/src/components/hero/hero-hoc";
-import ItemViewer from "@affinity-rpg/components/src/components/item/item-viewer";
-import WeaponViewer from "@affinity-rpg/components/src/components/weapon/weapon-viewer";
-import { useUpdateHeroMutation } from "@affinity-rpg/data/api/heroes";
-import { useCreateItemMutation } from "@affinity-rpg/data/api/items";
-import { useIsLoading } from "@affinity-rpg/hooks/src/hooks";
-import FormControl from "@affinity-rpg/components/src/components/form/form-control";
+import { createArmor } from "@affinity-rpg/helpers";
+import { createItem } from "@affinity-rpg/helpers";
+import { createWeapon } from "@affinity-rpg/helpers";
+import { Armor } from "@affinity-rpg/models";
+import { HeroInventoryFormModel, heroInventoryFormModel, STAGES } from "@affinity-rpg/models";
+import { Item, ITEM_TYPE } from "@affinity-rpg/models";
+import { ROUTES } from "@affinity-rpg/models";
+import { Weapon } from "@affinity-rpg/models";
+import { ArmorViewer, ItemViewer, WeaponViewer, FormControl } from "@affinity-rpg/components";
+import { HeroContext } from "@affinity-rpg/components";
+
+import { useUpdateHeroMutation } from "@affinity-rpg/data/src/api/heroes";
+import { useCreateItemMutation } from "@affinity-rpg/data/src/api/items";
+import { useIsLoading } from "@affinity-rpg/hooks";
 
 const InventoryStage: FC = () => {
   const { hero, items } = useContext(HeroContext);

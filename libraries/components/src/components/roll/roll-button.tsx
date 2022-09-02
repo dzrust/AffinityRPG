@@ -1,10 +1,9 @@
 import { FC } from "react";
 import { useDispatch } from "react-redux";
-import { ROLL_TYPES } from "@affinity-rpg/models/roll";
-import { DIFFICULTY } from "@affinity-rpg/models/skills";
+import { ROLL_TYPES, DIFFICULTY } from "@affinity-rpg/models";
 import { v4 } from "uuid";
-import { addRollNotification } from "@affinity-rpg/data/slices/appSlice";
-import { resistanceRoll, rollD6, rollRating, rollSkillSeries, rollStatusEffect } from "@affinity-rpg/helpers/roll";
+import { addRollNotification } from "@affinity-rpg/data";
+import { resistanceRoll, rollD6, rollRating, rollSkillSeries, rollStatusEffect } from "@affinity-rpg/helpers";
 
 type Props = {
   render: (rollDice: () => void) => JSX.Element;
@@ -15,7 +14,7 @@ type Props = {
   difficulty?: DIFFICULTY;
 };
 
-const RollButton: FC<Props> = ({ numberOfDice, modifier = 0, message, rollType, difficulty, render }) => {
+export const RollButton: FC<Props> = ({ numberOfDice, modifier = 0, message, rollType, difficulty, render }) => {
   const dispatch = useDispatch();
   const rollDice = () => {
     if (rollType === ROLL_TYPES.RATING_ROLL) {
@@ -99,5 +98,3 @@ const RollButton: FC<Props> = ({ numberOfDice, modifier = 0, message, rollType, 
   };
   return render(rollDice);
 };
-
-export default RollButton;

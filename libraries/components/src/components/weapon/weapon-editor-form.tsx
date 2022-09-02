@@ -1,29 +1,29 @@
 import { useFormikContext } from "formik";
 import { FC, Fragment, useMemo, useState } from "react";
 import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
-import { WeaponFormModel, WEAPON_CLASSIFICATIONS } from "@affinity-rpg/models/weapon";
-import AffinityStatsEditor from "../affinity/affinity-stat-editor";
-import FormControl from "../form/form-control";
-import FormSelect from "../form/form-select";
-import ConfirmationModal from "../confirmation-modal";
-import StatusEffectSelect from "../form/status-effect-select";
-import RatingSelect from "../form/rating-select";
-import ElementSelect from "../form/element-select";
-import ClassificationSelect from "../form/classification-select";
-import { getWeaponClassificationText } from "@affinity-rpg/helpers/text-helpers";
+import { WeaponFormModel, WEAPON_CLASSIFICATIONS } from "@affinity-rpg/models";
+import { getWeaponClassificationText } from "@affinity-rpg/helpers";
 import {
   weaponFromFormModel,
   getDefaultWeaponPointsFromRating,
   getDefaultWeaponDamage,
   getWeaponPoints,
-} from "@affinity-rpg/helpers/weapon";
+} from "@affinity-rpg/helpers";
+import { ConfirmationModal } from "../confirmation-modal";
+import { AffinityStatsEditor } from "../affinity/affinity-stat-editor";
+import { ClassificationSelect } from "../form/classification-select";
+import { ElementSelect } from "../form/element-select";
+import { RatingSelect } from "../form/rating-select";
+import StatusEffectSelect from "../form/status-effect-select";
+import { FormControl } from "../form/form-control";
+import { FormSelect } from "../form/form-select";
 
 type Props = {
   close: () => void;
   onDelete: () => void;
 };
 
-const WeaponEditorForm: FC<Props> = ({ close, onDelete }) => {
+export const WeaponEditorForm: FC<Props> = ({ close, onDelete }) => {
   const { values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting } =
     useFormikContext<WeaponFormModel>();
   const [isDeleting, setIsDeleting] = useState(() => false);
@@ -172,5 +172,3 @@ const WeaponEditorForm: FC<Props> = ({ close, onDelete }) => {
     </Fragment>
   );
 };
-
-export default WeaponEditorForm;

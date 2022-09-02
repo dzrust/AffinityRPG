@@ -2,14 +2,15 @@ import { faUser, faUserPilotTie } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { Legend } from "@affinity-rpg/models/legend";
-import { useUserState } from "@affinity-rpg/hooks/src/hooks";
+import { Legend } from "@affinity-rpg/models";
+import { useUserState } from "@affinity-rpg/hooks";
 
 type Props = {
   legend: Legend;
   onSelectLegend?: () => void;
 };
-const LegendViewer: FC<Props> = ({ legend, onSelectLegend }) => {
+
+export const LegendViewer: FC<Props> = ({ legend, onSelectLegend }) => {
   const user = useUserState().user;
   return (
     <Card onClick={onSelectLegend} className={!!onSelectLegend ? "clickable" : ""}>
@@ -37,5 +38,3 @@ const LegendViewer: FC<Props> = ({ legend, onSelectLegend }) => {
     </Card>
   );
 };
-
-export default LegendViewer;

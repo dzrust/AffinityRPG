@@ -1,4 +1,4 @@
-import Loader from "@affinity-rpg/components/src/components/loader";
+import { Loader } from "@affinity-rpg/components";
 import { FC } from "react";
 import { Container } from "react-bootstrap";
 

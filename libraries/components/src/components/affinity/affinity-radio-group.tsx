@@ -1,14 +1,14 @@
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormCheckProps } from "react-bootstrap";
-import { AFFINITY } from "@affinity-rpg/models/affinity";
+import { AFFINITY } from "@affinity-rpg/models";
 
 type Props = {
   label: string;
   inputProps?: FormCheckProps;
 };
 
-const AffinityRadioGroup: FC<Props> = ({ label, inputProps = {} }) => {
+export const AffinityRadioGroup: FC<Props> = ({ label, inputProps = {} }) => {
   const { values, errors, touched, handleBlur, handleChange } = useFormikContext<{ affinity: string }>();
   const isInvalid = !!errors.affinity && !!touched.affinity;
   const value = values.affinity.toUpperCase();
@@ -58,5 +58,3 @@ const AffinityRadioGroup: FC<Props> = ({ label, inputProps = {} }) => {
     </Form.Group>
   );
 };
-
-export default AffinityRadioGroup;

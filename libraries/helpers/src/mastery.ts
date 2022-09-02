@@ -1,6 +1,6 @@
-import { ELEMENT } from "@affinity-rpg/models/element";
-import { Mastery, MASTERY_CLASSIFICATION, MASTERY_TYPE } from "@affinity-rpg/models/mastery";
-import { STATUS_EFFECT } from "@affinity-rpg/models/status-effect";
+import { ELEMENT } from "@affinity-rpg/models";
+import { Mastery, MASTERY_CLASSIFICATION, MASTERY_TYPE } from "@affinity-rpg/models";
+import { STATUS_EFFECT } from "@affinity-rpg/models";
 
 export const createMastery = (): Mastery => ({
   id: "",

@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { ROUTES } from "@affinity-rpg/models/routes";
+import { ROUTES } from "@affinity-rpg/models";
 import { faHelmetBattle } from "@fortawesome/pro-regular-svg-icons";
-import Emblem from "@affinity-rpg/components/src/components/emblem";
+import { Emblem } from "@affinity-rpg/components";
 
 const Home: FC = () => {
   return (

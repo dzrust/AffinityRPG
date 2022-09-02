@@ -1,24 +1,26 @@
 import { FC, Fragment, useContext, useState } from "react";
 import { Row, Col, Button, Badge } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { AFFINITY } from "@affinity-rpg/models/affinity";
-import { Armor } from "@affinity-rpg/models/armor";
-import { Hero, STAGES } from "@affinity-rpg/models/hero";
-import { ITEM_TYPE } from "@affinity-rpg/models/item";
-import { MASTERY_TYPE } from "@affinity-rpg/models/mastery";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { Weapon } from "@affinity-rpg/models/weapon";
+import { AFFINITY } from "@affinity-rpg/models";
+import { Armor } from "@affinity-rpg/models";
+import { Hero, STAGES } from "@affinity-rpg/models";
+import { ITEM_TYPE } from "@affinity-rpg/models";
+import { MASTERY_TYPE } from "@affinity-rpg/models";
+import { ROUTES } from "@affinity-rpg/models";
+import { Weapon } from "@affinity-rpg/models";
 import AffinityScore from "./affinity-score";
-import { HeroContext } from "@affinity-rpg/components/src/components/hero/hero-hoc";
-import { useDeleteHeroMutation } from "@affinity-rpg/data/api/heroes";
-import { useIsLoading, useUserState } from "@affinity-rpg/hooks/src/hooks";
-import ArmorViewer from "@affinity-rpg/components/src/components/armor/armor-viewer";
-import ConfirmationModal from "@affinity-rpg/components/src/components/confirmation-modal";
-import HeroDescription from "@affinity-rpg/components/src/components/hero/hero-description";
-import ItemViewer from "@affinity-rpg/components/src/components/item/item-viewer";
-import MasteryViewer from "@affinity-rpg/components/src/components/mastery/mastery-viewer";
-import WeaponViewer from "@affinity-rpg/components/src/components/weapon/weapon-viewer";
-import SkillViewer from "@affinity-rpg/components/src/components/skill/skill-viewer";
+import { HeroContext } from "@affinity-rpg/components";
+import { useDeleteHeroMutation } from "@affinity-rpg/data/src/api/heroes";
+import { useIsLoading, useUserState } from "@affinity-rpg/hooks";
+import {
+  ArmorViewer,
+  ConfirmationModal,
+  HeroDescription,
+  ItemViewer,
+  MasteryViewer,
+  WeaponViewer,
+  SkillViewer,
+} from "@affinity-rpg/components";
 
 type Props = {
   showHeroBuilder?: boolean;

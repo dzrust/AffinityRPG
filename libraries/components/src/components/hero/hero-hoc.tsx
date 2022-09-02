@@ -1,14 +1,8 @@
 import { FC, useMemo, useEffect, createContext, useCallback } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Hero } from "@affinity-rpg/models/hero";
-import { Item } from "@affinity-rpg/models/item";
-import { Mastery } from "@affinity-rpg/models/mastery";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { useGetHeroQuery } from "@affinity-rpg/data/api/heroes";
-import { useGetItemsQuery } from "@affinity-rpg/data/api/items";
-import { useGetMasteriesQuery } from "@affinity-rpg/data/api/masteries";
-import { createHero } from "@affinity-rpg/helpers/hero";
-import { getItemModifiers } from "@affinity-rpg/helpers/item";
+import { Hero, Item, Mastery, ROUTES } from "@affinity-rpg/models";
+import { useGetHeroQuery, useGetItemsQuery, useGetMasteriesQuery } from "@affinity-rpg/data";
+import { createHero, getItemModifiers } from "@affinity-rpg/helpers";
 
 type HeroContextType = {
   hero: Hero & { movement: number };
@@ -24,7 +18,7 @@ export const HeroContext = createContext<HeroContextType>({
   refresh: () => {},
 });
 
-const HeroHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
+export const HeroHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   const navigator = useNavigate();
   let route = useLocation().pathname;
   let { id } = useParams();
@@ -68,5 +62,3 @@ const HeroHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   }
   return <HeroContext.Provider value={heroContext}>{children}</HeroContext.Provider>;
 };
-
-export default HeroHOC;

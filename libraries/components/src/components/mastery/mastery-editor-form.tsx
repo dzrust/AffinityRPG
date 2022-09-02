@@ -1,22 +1,15 @@
 import { FormikProps } from "formik";
 import { FC, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import {
-  Mastery,
-  MasteryFormModel,
-  MASTERY_CLASSIFICATIONS,
-  MASTERY_TYPE,
-  MASTERY_TYPES,
-} from "@affinity-rpg/models/mastery";
-import AffinityStatsEditor from "../affinity/affinity-stat-editor";
-import ConfirmationModal from "../confirmation-modal";
-import ClassificationSelect from "../form/classification-select";
-import ElementSelect from "../form/element-select";
-import FormControl from "../form/form-control";
-import FormSelect from "../form/form-select";
+import { Mastery, MasteryFormModel, MASTERY_CLASSIFICATIONS, MASTERY_TYPE, MASTERY_TYPES } from "@affinity-rpg/models";
+import { getMasteryCost, getMasteryClassificationText } from "@affinity-rpg/helpers";
+import { FormControl } from "../form/form-control";
+import { AffinityStatsEditor } from "../affinity/affinity-stat-editor";
+import { ConfirmationModal } from "../confirmation-modal";
+import { ClassificationSelect } from "../form/classification-select";
+import { ElementSelect } from "../form/element-select";
 import StatusEffectSelect from "../form/status-effect-select";
-import { getMasteryCost } from "@affinity-rpg/helpers/mastery";
-import { getMasteryClassificationText } from "@affinity-rpg/helpers/text-helpers";
+import { FormSelect } from "../form/form-select";
 
 type Props = {
   formik: FormikProps<MasteryFormModel>;
@@ -24,7 +17,7 @@ type Props = {
   onDelete: () => void;
 };
 
-const MasteryEditorForm: FC<Props> = ({ close, onDelete, formik }) => {
+export const MasteryEditorForm: FC<Props> = ({ close, onDelete, formik }) => {
   const [isDeleting, setIsDeleting] = useState(() => false);
   const { values, handleSubmit, isSubmitting } = formik;
   return (
@@ -112,5 +105,3 @@ const MasteryEditorForm: FC<Props> = ({ close, onDelete, formik }) => {
     </Form>
   );
 };
-
-export default MasteryEditorForm;

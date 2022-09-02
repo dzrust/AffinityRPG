@@ -1,20 +1,20 @@
 import { FC, Fragment, useState } from "react";
 import { useFormikContext } from "formik";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { ItemFormModel } from "@affinity-rpg/models/item";
-import AffinityStatsEditor from "../affinity/affinity-stat-editor";
-import FormControl from "../form/form-control";
-import FormSelect from "../form/form-select";
-import ConfirmationModal from "../confirmation-modal";
-import ElementSelect from "../form/element-select";
-import RatingSelect from "../form/rating-select";
+import { ItemFormModel } from "@affinity-rpg/models";
+import { AffinityStatsEditor } from "../affinity/affinity-stat-editor";
+import { ConfirmationModal } from "../confirmation-modal";
+import { ElementSelect } from "../form/element-select";
+import { RatingSelect } from "../form/rating-select";
+import { FormControl } from "../form/form-control";
+import { FormSelect } from "../form/form-select";
 
 type Props = {
   close: () => void;
   onDelete: () => void;
 };
 
-const ItemEditorForm: FC<Props> = ({ close, onDelete }) => {
+export const ItemEditorForm: FC<Props> = ({ close, onDelete }) => {
   const { values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting } =
     useFormikContext<ItemFormModel>();
   const [isDeleting, setIsDeleting] = useState(() => false);
@@ -117,5 +117,3 @@ const ItemEditorForm: FC<Props> = ({ close, onDelete }) => {
     </Fragment>
   );
 };
-
-export default ItemEditorForm;

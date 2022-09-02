@@ -1,13 +1,14 @@
 import { FC } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { Hero } from "@affinity-rpg/models/hero";
-import HeroDescription from "./hero-description";
+import { Hero } from "@affinity-rpg/models";
+import { HeroDescription } from "./hero-description";
 
 type Props = {
   hero: Hero;
   onSelectHero?: () => void;
 };
-const HeroViewer: FC<Props> = ({ hero, onSelectHero }) => {
+
+export const HeroViewer: FC<Props> = ({ hero, onSelectHero }) => {
   return (
     <Card onClick={onSelectHero} className={!!onSelectHero ? "clickable" : ""}>
       <Card.Header>
@@ -25,5 +26,3 @@ const HeroViewer: FC<Props> = ({ hero, onSelectHero }) => {
     </Card>
   );
 };
-
-export default HeroViewer;

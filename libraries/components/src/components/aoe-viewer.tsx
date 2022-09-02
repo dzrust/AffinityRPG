@@ -1,11 +1,11 @@
 import { FC, useMemo } from "react";
-import { AOE } from "@affinity-rpg/models/aoe";
+import { AOE } from "@affinity-rpg/models";
 
 type Props = {
   aoe: AOE;
 };
 
-const AOEViewer: FC<Props> = ({ aoe }) => {
+export const AOEViewer: FC<Props> = ({ aoe }) => {
   const xPlane = useMemo(() => {
     let maxX = 0;
     aoe.configuration.forEach((config) => {
@@ -50,5 +50,3 @@ const AOEViewer: FC<Props> = ({ aoe }) => {
     </table>
   );
 };
-
-export default AOEViewer;

@@ -8,11 +8,10 @@ import {
   Roll,
   ROLL_TYPES,
   SkillRoll,
-} from "@affinity-rpg/models/roll";
-import { rollD6, resistanceRoll, skillRoll } from "@affinity-rpg/helpers/roll";
+} from "@affinity-rpg/models";
+import { rollD6, resistanceRoll, skillRoll } from "@affinity-rpg/helpers";
 import DiceDisplay from "./dice-display";
-import FormControl from "@affinity-rpg/components/src/components/form/form-control";
-import DiceRollTypeRadioGroup from "@affinity-rpg/components/src/components/roll/dice-roll-type-radio-group";
+import { FormControl, DiceRollTypeRadioGroup } from "@affinity-rpg/components";
 
 const DiceRoller: FC = () => {
   const [diceRoll, setDiceRoll] = useState<Roll | undefined>(() => undefined);

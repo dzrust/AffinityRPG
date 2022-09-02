@@ -1,8 +1,8 @@
-import { getSubObjectByKey } from "@affinity-rpg/helpers/object-access";
+import { getSubObjectByKey } from "@affinity-rpg/helpers";
 import { useFormikContext } from "formik";
 import { FC } from "react";
 import { Form, FormSelectProps, InputGroup } from "react-bootstrap";
-import FormControlErrors from "./form-control-errors";
+import { FormControlErrors } from "./form-control-errors";
 
 type Props = {
   label: string;
@@ -12,7 +12,7 @@ type Props = {
   renderOption: (option: any) => JSX.Element;
 };
 
-const FormSelect: FC<Props> = ({ label, name, options, inputProps = {}, renderOption }) => {
+export const FormSelect: FC<Props> = ({ label, name, options, inputProps = {}, renderOption }) => {
   const { values, errors, touched, handleBlur, handleChange } = useFormikContext<any>();
   const error = getSubObjectByKey(name, errors);
   const touchedValue = getSubObjectByKey(name, touched);
@@ -36,5 +36,3 @@ const FormSelect: FC<Props> = ({ label, name, options, inputProps = {}, renderOp
     </Form.Group>
   );
 };
-
-export default FormSelect;

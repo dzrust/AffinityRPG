@@ -9,7 +9,7 @@ type Props = {
   rollDice?: () => void;
 };
 
-const StatDisplay: FC<Props> = ({ label, variant, display, isRollingAllowed = false, rollDice }) => {
+export const StatDisplay: FC<Props> = ({ label, variant, display, isRollingAllowed = false, rollDice }) => {
   if (!display) {
     return null;
   }
@@ -26,5 +26,3 @@ const StatDisplay: FC<Props> = ({ label, variant, display, isRollingAllowed = fa
     </Badge>
   );
 };
-
-export default StatDisplay;

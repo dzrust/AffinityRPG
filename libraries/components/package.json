@@ -11,10 +11,6 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@affinity-rpg/models": "workspace:1.0.0",
-    "@affinity-rpg/data": "workspace:1.0.0",
-    "@affinity-rpg/helpers": "workspace:1.0.0",
-    "@affinity-rpg/hooks": "workspace:1.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/pro-duotone-svg-icons": "^6.1.1",
     "@fortawesome/pro-light-svg-icons": "^6.1.1",
@@ -27,7 +23,11 @@
     "react-bootstrap": "^2.5.0",
     "react-router-dom": "^6.2.2",
     "luxon": "^2.4.0",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "@affinity-rpg/models": "workspace:*",
+    "@affinity-rpg/data": "workspace:*",
+    "@affinity-rpg/helpers": "workspace:*",
+    "@affinity-rpg/hooks": "workspace:*"
   },
   "devDependencies": {
     "@types/luxon": "^2.3.2",

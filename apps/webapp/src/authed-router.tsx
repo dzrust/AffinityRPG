@@ -1,4 +1,4 @@
-import { FC, Fragment, lazy, Suspense } from "react";
+import { FC, Fragment, Suspense, lazy } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,29 +17,24 @@ import {
   faBalanceScale as faBalanceScaleRegular,
   faHoodCloak as faHoodCloakRegular,
 } from "@fortawesome/pro-regular-svg-icons";
-import { ROUTES, ROUTES_ARRAY } from "@affinity-rpg/models/routes";
-import { STAGES } from "@affinity-rpg/models/hero";
+import { ROUTES, ROUTES_ARRAY } from "@affinity-rpg/models";
+import { STAGES } from "@affinity-rpg/models";
+import { HeroHOC, MasteryHOC, ItemHOC, LegendHOC, RollNotificationDisplay } from "@affinity-rpg/components";
+import { useAppDispatch } from "@affinity-rpg/hooks";
+import { removeRollNotification } from "@affinity-rpg/data";
 
 const LazyHome = lazy(() => import("./views/home/home"));
 const LazyHeroes = lazy(() => import("./views/heroes/heroes"));
 const LazyLegends = lazy(() => import("./views/legends/legends"));
 const LazySettings = lazy(() => import("./views/settings/settings"));
 const LazyBackToHome = lazy(() => import("./views/home/404"));
-const LazyHeroHOC = lazy(() => import("../../../libraries/components/src/components/hero/hero-hoc"));
 const LazyHeroBuilder = lazy(() => import("./views/hero-builder/hero-builder"));
 const LazyDiceRoller = lazy(() => import("./views/dice-roller/dice-roller"));
-const LazyMasteryHOC = lazy(() => import("../../../libraries/components/src/components/mastery/mastery-hoc"));
 const LazyMasteryEditor = lazy(() => import("./views/hero-builder/stages/mastery-editor"));
-const LazyItemHOC = lazy(() => import("../../../libraries/components/src/components/item/item-hoc"));
 const LazyItemEditor = lazy(() => import("./views/hero-builder/stages/item-editor"));
 const LazyAdminHeroes = lazy(() => import("./views/admin/admin-heroes"));
 const LazyMarkdownPage = lazy(() => import("./views/rules/markdown-page"));
-const LazyKitchenSink = lazy(() => import("@affinity-rpg/components/src/kitchen-sink"));
-const LazyLegendHOC = lazy(() => import("../../../libraries/components/src/components/legend/legend-hoc"));
 const LazyLegendSheet = lazy(() => import("./views/legend/legend"));
-const LazyRollNotificationDisplay = lazy(
-  () => import("../../../libraries/components/src/components/roll/roll-notifications"),
-);
 const LazyHeroSheet = lazy(() => import("./views/hero/hero"));
 
 const routeIconTable = new Map<
@@ -89,6 +84,7 @@ routeIconTable.set(ROUTES.USER, {
 
 const AuthedRouter: FC = () => {
   const navLocation = useLocation();
+  const dispatch = useAppDispatch();
   return (
     <Fragment>
       <Navbar bg="dark" variant="dark" fixed="bottom" collapseOnSelect expand="lg">
@@ -115,38 +111,27 @@ const AuthedRouter: FC = () => {
         </Container>
       </Navbar>
       <Container className="app__container">
+        <RollNotificationDisplay onNotificationClose={(index: number) => dispatch(removeRollNotification(index))} />
         <Suspense>
-          <LazyRollNotificationDisplay />
           <Routes>
             <Route path={ROUTES.HOME} element={<LazyHome />} />
             <Route path={ROUTES.HEROES} element={<LazyHeroes />} />
-            <Route
-              path={`${ROUTES.HERO}/:id`}
-              element={
-                <LazyHeroHOC>
-                  <LazyHeroSheet isRollsAllowed />
-                </LazyHeroHOC>
-              }
-            />
-            <Route
-              path={`${ROUTES.HERO_BUILDER}/:id/:stage`}
-              element={<LazyHeroHOC children={<LazyHeroBuilder />} />}
-            />
+            <Route path={`${ROUTES.HERO}/:id`} element={<HeroHOC children={<LazyHeroSheet isRollsAllowed />} />} />
+            <Route path={`${ROUTES.HERO_BUILDER}/:id/:stage`} element={<HeroHOC children={<LazyHeroBuilder />} />} />
             <Route
               path={`${ROUTES.HERO_BUILDER}/:id/${STAGES.MASTERY}/:masteryId`}
-              element={<LazyHeroHOC children={<LazyMasteryHOC children={<LazyMasteryEditor />} />} />}
+              element={<HeroHOC children={<MasteryHOC children={<LazyMasteryEditor />} />} />}
             />
             <Route
               path={`${ROUTES.HERO_BUILDER}/:id/${STAGES.INVENTORY}/:itemId`}
-              element={<LazyHeroHOC children={<LazyItemHOC children={<LazyItemEditor />} />} />}
+              element={<HeroHOC children={<ItemHOC children={<LazyItemEditor />} />} />}
             />
             <Route path={ROUTES.LEGENDS} element={<LazyLegends />} />
-            <Route path={`${ROUTES.LEGENDS}/:id`} element={<LazyLegendHOC children={<LazyLegendSheet />} />} />
+            <Route path={`${ROUTES.LEGENDS}/:id`} element={<LegendHOC children={<LazyLegendSheet />} />} />
             <Route path={`${ROUTES.RULES}`} element={<LazyMarkdownPage />} />
             <Route path={`${ROUTES.RULES}/*`} element={<LazyMarkdownPage />} />
             <Route path={ROUTES.USER} element={<LazySettings />} />
             <Route path={ROUTES.DICE_ROLLER} element={<LazyDiceRoller />} />
-            <Route path={ROUTES.KITCHEN_SINK} element={<LazyKitchenSink />} />
             <Route path={`${ROUTES.ADMIN}${ROUTES.HEROES}`} element={<LazyAdminHeroes />} />
             <Route path="*" element={<LazyBackToHome />} />
           </Routes>

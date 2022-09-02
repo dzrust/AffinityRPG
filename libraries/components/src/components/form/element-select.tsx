@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { ELEMENTS, ELEMENT } from "@affinity-rpg/models/element";
-import FormSelect from "./form-select";
+import { ELEMENTS, ELEMENT } from "@affinity-rpg/models";
+import { FormSelect } from "./form-select";
 
-const ElementSelect: FC = () => {
+export const ElementSelect: FC = () => {
   return (
     <FormSelect
       label="Element"
@@ -16,5 +16,3 @@ const ElementSelect: FC = () => {
     />
   );
 };
-
-export default ElementSelect;

@@ -3,9 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import AuthedRouter from "./authed-router";
 import { User } from "firebase/auth";
 import Loading from "./views/loading/loading";
-import { firebaseAuth } from "@affinity-rpg/data/firebase";
-import { setUser } from "@affinity-rpg/data/slices/userSlice";
-import { useAppDispatch, useUserState } from "@affinity-rpg/hooks/src/hooks";
+import { firebaseAuth, setUser } from "@affinity-rpg/data";
+import { useAppDispatch, useUserState } from "@affinity-rpg/hooks";
 
 const LazyLogin = lazy(() => import("./views/login/login"));
 

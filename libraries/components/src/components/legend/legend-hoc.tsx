@@ -1,13 +1,10 @@
 import { FC, useMemo, useState, useEffect, createContext, useCallback } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Hero } from "@affinity-rpg/models/hero";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { Legend } from "@affinity-rpg/models/legend";
+import { Hero, ROUTES, Legend } from "@affinity-rpg/models";
 import { DateTime } from "luxon";
-import { useLazyGetHeroQuery } from "@affinity-rpg/data/api/heroes";
-import { useGetLegendQuery } from "@affinity-rpg/data/api/legends";
-import { createLegend } from "@affinity-rpg/helpers/legend";
-import { useUserState } from "@affinity-rpg/hooks/src/hooks";
+import { useLazyGetHeroQuery, useGetLegendQuery } from "@affinity-rpg/data";
+import { createLegend } from "@affinity-rpg/helpers";
+import { useUserState } from "@affinity-rpg/hooks";
 
 type LegendContextType = {
   legend: Legend;
@@ -21,7 +18,7 @@ export const LegendContext = createContext<LegendContextType>({
   refresh: () => {},
 });
 
-const LegendHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
+export const LegendHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   const navigator = useNavigate();
   let route = useLocation().pathname;
   let { id } = useParams();
@@ -78,5 +75,3 @@ const LegendHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   }
   return <LegendContext.Provider value={legendContext}>{children}</LegendContext.Provider>;
 };
-
-export default LegendHOC;

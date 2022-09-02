@@ -1,7 +1,7 @@
+import { firebaseAuthUI } from "@affinity-rpg/data";
 import { GoogleAuthProvider } from "firebase/auth";
 import { FC, useEffect, useState } from "react";
 import { Container, Modal } from "react-bootstrap";
-import { firebaseAuthUI } from "../../../../../libraries/data/firebase";
 import Loading from "../loading/loading";
 
 const Login: FC = () => {

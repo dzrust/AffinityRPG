@@ -1,9 +1,8 @@
 import { FC, useMemo, useEffect, createContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ROUTES } from "@affinity-rpg/models/routes";
-import { Mastery } from "@affinity-rpg/models/mastery";
-import { useGetMasteryQuery } from "@affinity-rpg/data/api/masteries";
-import { createMastery } from "@affinity-rpg/helpers/mastery";
+import { ROUTES, Mastery } from "@affinity-rpg/models";
+import { useGetMasteryQuery } from "@affinity-rpg/data";
+import { createMastery } from "@affinity-rpg/helpers";
 
 type MasteryContextType = {
   mastery: Mastery;
@@ -13,7 +12,7 @@ export const MasteryContext = createContext<MasteryContextType>({
   mastery: createMastery(),
 });
 
-const MasteryHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
+export const MasteryHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   const navigator = useNavigate();
   let { id, masteryId } = useParams();
 
@@ -32,5 +31,3 @@ const MasteryHOC: FC<{ children: React.ReactNode }> = ({ children }) => {
   }
   return <MasteryContext.Provider value={masteryContext}>{children}</MasteryContext.Provider>;
 };
-
-export default MasteryHOC;
