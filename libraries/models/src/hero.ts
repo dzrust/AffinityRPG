@@ -1,9 +1,11 @@
 import * as yup from "yup";
 import { AFFINITIES, AFFINITY } from "./affinity";
-import { Level, levelArray } from "./level";
+import { Level, levelArray, Levels } from "./level";
 import { DistanceUnit } from "./units";
 import { VISIBILITY } from "./visibility";
 import { SKILLS, SkillState } from "./skills";
+
+export const BASE_HERO_HEALTH_MODIFIER = 5;
 
 export enum GENDER {
   MALE = "MALE",
@@ -22,7 +24,6 @@ export type Hero = {
   gender: GENDER;
   job?: string;
   affinity: AFFINITY;
-  freeAffnityStats: number;
   experience: number;
   baseMovement: DistanceUnit;
   level: Level;
@@ -39,6 +40,7 @@ export type Hero = {
   habits: string[];
   strengths: string[];
   weaknesses: string[];
+  levels: Levels;
 };
 
 export enum STAGES {

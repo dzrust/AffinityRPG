@@ -241,6 +241,23 @@ importers:
       typescript: 4.8.2
       vite: 3.0.9
 
+  tools/simulator:
+    specifiers:
+      '@affinity-rpg/helpers': workspace:*
+      '@affinity-rpg/models': workspace:*
+      '@types/ramda': ^0.28.15
+      ramda: ^0.28.0
+      typescript: ^4.6.4
+      vite: ^3.0.7
+    dependencies:
+      '@affinity-rpg/helpers': link:../../libraries/helpers
+      '@affinity-rpg/models': link:../../libraries/models
+      ramda: 0.28.0
+    devDependencies:
+      '@types/ramda': 0.28.15
+      typescript: 4.8.2
+      vite: 3.0.9
+
 packages:
 
   /@ampproject/remapping/2.2.0:
@@ -1330,6 +1347,12 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+
+  /@types/ramda/0.28.15:
+    resolution: {integrity: sha512-FCaLNVZry65jW8x/FDnKgjgkCNQxgc5AYMQwdNn6yW5M+62R+0nt2Y36U43dTNora9hcquemfrY5gxhE5pcilQ==}
+    dependencies:
+      ts-toolbelt: 6.15.5
+    dev: true
 
   /@types/react-dom/18.0.6:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
@@ -2736,6 +2759,10 @@ packages:
       long: 5.2.0
     dev: false
 
+  /ramda/0.28.0:
+    resolution: {integrity: sha512-9QnLuG/kPVgWvMQ4aODhsBUFKOUmnbUnsSXACv+NCQZcHbeb+v8Lodp8OVxtRULN1/xOyYLLaL6npE6dMq5QTA==}
+    dev: false
+
   /react-bootstrap/2.5.0_63dfw6rfgd64rl77ptfma4cvt4:
     resolution: {integrity: sha512-j/aLR+okzbYk61TM3eDOU1NqOqnUdwyVrF+ojoCRUxPdzc2R0xXvqyRsjSoyRoCo7n82Fs/LWjPCin/QJNdwvA==}
     peerDependencies:
@@ -3199,6 +3226,10 @@ packages:
       typescript: 4.8.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+    dev: true
+
+  /ts-toolbelt/6.15.5:
+    resolution: {integrity: sha512-FZIXf1ksVyLcfr7M317jbB67XFJhOO1YqdTcuGaq9q5jLUoTikukZ+98TPjKiP2jC5CgmYdWWYs0s2nLSU0/1A==}
     dev: true
 
   /tslib/1.14.1:

@@ -1,3 +1,6 @@
+import { AFFINITY, Hero, Level, LevelUp, Mastery, NPC } from "@affinity-rpg/models";
+import { rollHealth } from "./roll";
+
 export const getLevelFromExperience = (experience: number) => {
   if (experience >= 0 && experience < 300) return 1;
   if (experience >= 300 && experience < 900) return 2;
@@ -65,4 +68,65 @@ export const getExperienceFromLevel = (level: number) => {
     default:
       return 0;
   }
+};
+
+export const createLevelUp = (): LevelUp => ({
+  level: 1,
+  completed: false,
+  masteries: [],
+  vigor: 0,
+  potency: 0,
+  finesse: 0,
+  healthGained: {
+    total: 0,
+    results: [],
+    healthTotal: 0,
+  },
+  healthModifier: 0,
+});
+
+export const levelUp = (levelee: Hero | NPC, healthModifier: number, extraStat: AFFINITY, masteries: Mastery[]) => {
+  const nextLevel: Level = (levelee.level + 1) as Level;
+  levelee.levels[nextLevel].completed = true;
+  levelee.levels[nextLevel].healthModifier = healthModifier;
+  levelee.levels[nextLevel].level = nextLevel;
+  if (nextLevel % 2 === 0) {
+    levelee.levels[nextLevel].masteries = masteries;
+  }
+  if (nextLevel % 2 === 1 && nextLevel < 17) {
+    switch (levelee.affinity) {
+      case AFFINITY.FINESSE:
+        levelee.levels[nextLevel].finesse++;
+        levelee.finesse++;
+        break;
+      case AFFINITY.POTENCY:
+        levelee.levels[nextLevel].potency++;
+        levelee.potency++;
+        break;
+      case AFFINITY.VIGOR:
+        levelee.levels[nextLevel].vigor++;
+        levelee.vigor++;
+        break;
+    }
+  }
+  if (nextLevel % 2 === 1 || nextLevel >= 16) {
+    switch (extraStat) {
+      case AFFINITY.FINESSE:
+        levelee.levels[nextLevel].finesse++;
+        levelee.finesse++;
+        break;
+      case AFFINITY.POTENCY:
+        levelee.levels[nextLevel].potency++;
+        levelee.potency++;
+        break;
+      case AFFINITY.VIGOR:
+        levelee.levels[nextLevel].vigor++;
+        levelee.vigor++;
+        break;
+    }
+  }
+  levelee.levels[nextLevel].healthGained = rollHealth(levelee.vigor);
+  levelee.totalHealth += levelee.levels[nextLevel].healthGained.healthTotal + levelee.levels[nextLevel].healthModifier;
+  levelee.currentHealth = levelee.totalHealth;
+  levelee.level = nextLevel;
 };

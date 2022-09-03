@@ -3,6 +3,7 @@ import { RATING } from "./rating";
 import { STATUS_RATING } from "./status-effect";
 
 export type DiceFaceType = 1 | 2 | 3 | 4 | 5 | 6;
+
 export const rollLookup = {
   1: -2,
   2: -1,
@@ -13,9 +14,26 @@ export const rollLookup = {
 };
 
 export const resistanceRollLookup = {
-  1: -2,
-  2: -1,
+  1: 0,
+  2: 0,
   3: 0,
+  4: 1,
+  5: 1,
+  6: 2,
+};
+export const healthRollLookup = {
+  1: 0,
+  2: 0,
+  3: 1,
+  4: 1,
+  5: 1,
+  6: 2,
+};
+
+export const damageRollLookup = {
+  1: 0,
+  2: 0,
+  3: 1,
   4: 1,
   5: 2,
   6: 3,
@@ -44,6 +62,14 @@ export type SkillRoll = {
 
 export type ResistanceRoll = {
   resistanceTotal: number;
+} & Roll;
+
+export type DamageRoll = {
+  damageTotal: number;
+} & Roll;
+
+export type HealthRoll = {
+  healthTotal: number;
 } & Roll;
 
 export type RollSeries<T> = {

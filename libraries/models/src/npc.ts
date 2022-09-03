@@ -1,17 +1,16 @@
 import { AFFINITY } from "./affinity";
 import { GENDER } from "./hero";
-import { Level } from "./level";
+import { Level, Levels } from "./level";
+import { RATING } from "./rating";
+import { SkillState } from "./skills";
 import { DistanceUnit } from "./units";
+
+export const BASE_NPC_HEALTH_MODIFIER = 5;
 
 export enum NPC_STATE {
   HOSTILE = "HOSTILE",
   NEUTRAL = "NEUTRAL",
   FRIENDLY = "FRIENDLY",
-}
-
-export enum NPC_TYPE {
-  HUMANOID = "HUMANOID",
-  CREATURE = "CREATURE",
 }
 
 export type NPCTemplate = {
@@ -20,15 +19,14 @@ export type NPCTemplate = {
   race: string;
   gender: GENDER;
   affinity: AFFINITY;
-  lesserAffinity: AFFINITY;
   baseMovement: DistanceUnit;
   baseHealth: number;
-  description: number;
+  description: string;
+  rating: RATING;
 };
 
 export type NPC = {
   state: NPC_STATE;
-  type: NPC_TYPE;
   experienceEarned: number;
   level: Level;
   totalHealth: number;
@@ -36,4 +34,6 @@ export type NPC = {
   potency: number;
   finesse: number;
   vigor: number;
+  levels: Levels;
+  skills: SkillState[];
 } & NPCTemplate;

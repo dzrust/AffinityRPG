@@ -1,5 +1,5 @@
-import { RATING } from "@affinity-rpg/models";
 import {
+  RATING,
   Roll,
   DiceFaceType,
   SkillRoll,
@@ -7,9 +7,12 @@ import {
   RollSeries,
   ResistanceRoll,
   resistanceRollLookup,
+  damageRollLookup,
+  DIFFICULTY,
+  STATUS_RATING,
+  DamageRoll,
+  HealthRoll,
 } from "@affinity-rpg/models";
-import { DIFFICULTY } from "@affinity-rpg/models";
-import { STATUS_RATING } from "@affinity-rpg/models";
 
 export const getNumberOfSuccessForStatusRating = (numberOfSuccesses: number) => {
   if (numberOfSuccesses === 2) {
@@ -150,6 +153,32 @@ export const resistanceRoll = (numberOfDiceToRoll: number): ResistanceRoll => {
   }
   return {
     resistanceTotal: resistanceTotal,
+    results: results.results,
+    total: results.total,
+  };
+};
+
+export const rollDamage = (numberOfDiceToRoll: number): DamageRoll => {
+  const results = rollD6(numberOfDiceToRoll);
+  let damageTotal = 0;
+  for (let i = 0, { length } = results.results; i < length; i++) {
+    damageTotal += damageRollLookup[results.results[i]];
+  }
+  return {
+    damageTotal: damageTotal,
+    results: results.results,
+    total: results.total,
+  };
+};
+
+export const rollHealth = (numberOfDiceToRoll: number): HealthRoll => {
+  const results = rollD6(numberOfDiceToRoll);
+  let healthTotal = 0;
+  for (let i = 0, { length } = results.results; i < length; i++) {
+    healthTotal += damageRollLookup[results.results[i]];
+  }
+  return {
+    healthTotal: healthTotal,
     results: results.results,
     total: results.total,
   };

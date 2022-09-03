@@ -6,6 +6,7 @@ export * from "./src/item";
 export * from "./src/legend";
 export * from "./src/level";
 export * from "./src/mastery";
+export * from "./src/npc";
 export * from "./src/object-access";
 export * from "./src/roll";
 export * from "./src/skills";
