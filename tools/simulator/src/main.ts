@@ -1,8 +1,10 @@
 import { runCombatRounds } from "./battle-simulator";
+import { runGaugeifierSimulation } from "./gaugeifier";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
     <button id="runCombat">Run Combat</button>
+    <button id="runGuage">Run Guage</button>
   </div>
 `;
 
@@ -12,3 +14,5 @@ document.getElementById("runCombat")?.addEventListener("click", () => {
   // }
   runCombatRounds(4, 4, 20, 20);
 });
+
+document.getElementById("runGuage")?.addEventListener("click", () => runGaugeifierSimulation());
