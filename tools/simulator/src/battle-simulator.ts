@@ -35,9 +35,9 @@ const AFFINITY_COMBINATIONS = [
   { affinity: AFFINITY.FINESSE, secondaryAffinity: AFFINITY.POTENCY },
   { affinity: AFFINITY.FINESSE, secondaryAffinity: AFFINITY.FINESSE },
   { affinity: AFFINITY.FINESSE, secondaryAffinity: AFFINITY.VIGOR },
-  // { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.POTENCY },
-  // { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.FINESSE },
-  // { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.VIGOR },
+  { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.POTENCY },
+  { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.FINESSE },
+  { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.VIGOR },
 ];
 
 const addWeaponAndArmorToCombatant = (combatant: Combatant, index: number) => {
