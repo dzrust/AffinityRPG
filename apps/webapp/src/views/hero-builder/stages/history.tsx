@@ -5,7 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { heroHistoryFormModel, HeroHistoryFormModel, STAGES, ROUTES } from "@affinity-rpg/models";
 import { MultiStringFormControl, FormControl } from "@affinity-rpg/components";
 import { useUpdateHeroMutation } from "@affinity-rpg/data";
-import { useIsLoading, useHero } from "@affinity-rpg/hooks";
+import { useHero } from "@affinity-rpg/hooks";
+import { useIsLoading } from "../../../hooks";
 
 const HistoryStage: FC = () => {
   const { hero } = useHero();

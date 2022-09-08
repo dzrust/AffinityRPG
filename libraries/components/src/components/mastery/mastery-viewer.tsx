@@ -6,7 +6,7 @@ import { Card } from "react-bootstrap";
 import { Mastery, MASTERY_CLASSIFICATION, MASTERY_TYPE, ROLL_TYPES, STATUS_EFFECT } from "@affinity-rpg/models";
 import { useUpdateMasteryMutation } from "@affinity-rpg/data";
 import { getNumberOfSkillDiceByHeroLevel, getStatusEffectText, getElementText } from "@affinity-rpg/helpers";
-import { useHero, useIsLoading } from "@affinity-rpg/hooks";
+import { useHero } from "@affinity-rpg/hooks";
 import { DiceUnitDisplay } from "../displays/dice-unit-display";
 import { StatDisplay } from "../displays/stat-display";
 import { Emblem } from "../emblem";
@@ -16,6 +16,7 @@ type Props = {
   mastery: Mastery;
   showCooldownTracker?: boolean;
   heroId?: string;
+  isLoading: boolean;
   onSelectMastery?: () => void;
   isRollingAllowed?: boolean;
 };
@@ -24,12 +25,12 @@ export const MasteryViewer: FC<Props> = ({
   mastery,
   showCooldownTracker = false,
   heroId,
+  isLoading,
   isRollingAllowed = false,
   onSelectMastery,
 }) => {
   const [cooldown, setCooldown] = useState(() => mastery.currentCooldown ?? 0);
   const { hero } = useHero();
-  const isLoading = useIsLoading();
   const [updateMastery] = useUpdateMasteryMutation();
   const cooldownArray = useMemo(() => {
     const tempCooldownArray: string[] = [];

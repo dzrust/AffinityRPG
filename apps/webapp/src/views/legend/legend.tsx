@@ -6,16 +6,17 @@ import { generateInvitation } from "@affinity-rpg/helpers";
 import { Hero, ROUTES } from "@affinity-rpg/models";
 import { HeroViewer } from "@affinity-rpg/components";
 import { useUpdateLegendMutation } from "@affinity-rpg/data";
-import { useIsLoading, useLegend, useUserState } from "@affinity-rpg/hooks";
+import { useLegend } from "@affinity-rpg/hooks";
+import { useIsLoading, useUserState } from "../../hooks";
 
 type Props = {
   showLegendBuilder?: boolean;
 };
 
 const LegendSheet: FC<Props> = () => {
-  const { legend, heroes } = useLegend();
-  const isLoading = useIsLoading();
   const user = useUserState().user;
+  const { legend, heroes } = useLegend(user);
+  const isLoading = useIsLoading();
   const navigator = useNavigate();
   const [updateLegend] = useUpdateLegendMutation();
   const onHeroSelect = (hero: Hero) => {

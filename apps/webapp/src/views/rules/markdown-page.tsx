@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import V01Routes from "../../rules-routes/0.1.json";
 import { ROUTES, VERSION } from "@affinity-rpg/models";
 import { useGetRulesQuery, setVersion } from "@affinity-rpg/data";
-import { useAppState, useAppDispatch } from "@affinity-rpg/hooks";
+import { useAppState, useAppDispatch } from "../../hooks";
 
 const MarkdownPage = () => {
   const { version } = useAppState();

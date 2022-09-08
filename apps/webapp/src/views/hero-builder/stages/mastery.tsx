@@ -7,7 +7,8 @@ import { heroMasteryFormModel, HeroMasteryFormModel, STAGES, Mastery, ROUTES } f
 import { MasteryViewer, FormControl } from "@affinity-rpg/components";
 import { useUpdateHeroMutation } from "@affinity-rpg/data";
 import { useCreateMasteryMutation } from "@affinity-rpg/data";
-import { useIsLoading, useHero } from "@affinity-rpg/hooks";
+import { useHero } from "@affinity-rpg/hooks";
+import { useIsLoading } from "../../../hooks";
 
 const MasteriesStage: FC = () => {
   const { hero, masteries } = useHero();
@@ -117,7 +118,11 @@ const MasteriesStage: FC = () => {
             {masteries.map((mastery) =>
               mastery ? (
                 <Col key={mastery.id} xs={12} md={4} className="mt-3">
-                  <MasteryViewer mastery={mastery} onSelectMastery={() => onSelectMastery(mastery)} />
+                  <MasteryViewer
+                    mastery={mastery}
+                    onSelectMastery={() => onSelectMastery(mastery)}
+                    isLoading={isLoading}
+                  />
                 </Col>
               ) : null,
             )}

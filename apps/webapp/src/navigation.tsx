@@ -4,7 +4,7 @@ import AuthedRouter from "./authed-router";
 import { User } from "firebase/auth";
 import Loading from "./views/loading/loading";
 import { firebaseAuth, setUser } from "@affinity-rpg/data";
-import { useAppDispatch, useUserState } from "@affinity-rpg/hooks";
+import { useAppDispatch, useUserState } from "./hooks";
 
 const LazyLogin = lazy(() => import("./views/login/login"));
 

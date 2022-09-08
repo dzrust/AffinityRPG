@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,8 +17,7 @@
     "@affinity-rpg/helpers": "workspace:1.0.0",
     "@reduxjs/toolkit": "^1.8.1",
     "firebase": "^9.9.3",
-    "firebaseui": "^6.0.1",
-    "redux": "^4.2.0"
+    "firebaseui": "^6.0.1"
   },
   "devDependencies": {
     "typescript": "^4.6.4",

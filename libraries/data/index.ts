@@ -1,5 +1,4 @@
 export * from "./src/firebase";
-export * from "./src/store";
 
 export * from "./src/api/base-query";
 export * from "./src/api/heroes";

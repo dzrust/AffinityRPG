@@ -19,8 +19,8 @@ import {
 } from "@fortawesome/pro-regular-svg-icons";
 import { ROUTES, ROUTES_ARRAY, STAGES } from "@affinity-rpg/models";
 import { RollNotificationDisplay } from "@affinity-rpg/components";
-import { useAppDispatch } from "@affinity-rpg/hooks";
 import { removeRollNotification } from "@affinity-rpg/data";
+import { useAppDispatch, useAppSelector } from "./hooks";
 
 const LazyHome = lazy(() => import("./views/home/home"));
 const LazyHeroes = lazy(() => import("./views/heroes/heroes"));
@@ -84,6 +84,7 @@ routeIconTable.set(ROUTES.USER, {
 const AuthedRouter: FC = () => {
   const navLocation = useLocation();
   const dispatch = useAppDispatch();
+  const notifications = useAppSelector((state) => state.app).rollNotification;
   return (
     <Fragment>
       <Navbar bg="dark" variant="dark" fixed="bottom" collapseOnSelect expand="lg">
@@ -110,7 +111,10 @@ const AuthedRouter: FC = () => {
         </Container>
       </Navbar>
       <Container className="app__container">
-        <RollNotificationDisplay onNotificationClose={(index: number) => dispatch(removeRollNotification(index))} />
+        <RollNotificationDisplay
+          notifications={notifications}
+          onNotificationClose={(index: number) => dispatch(removeRollNotification(index))}
+        />
         <Suspense>
           <Routes>
             <Route path={ROUTES.HOME} element={<LazyHome />} />

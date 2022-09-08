@@ -1,16 +1,15 @@
 import { useLazyGetHeroQuery, useGetLegendQuery } from "@affinity-rpg/data";
 import { createLegend } from "@affinity-rpg/helpers";
 import { Hero, ROUTES, Legend } from "@affinity-rpg/models";
+import { User } from "firebase/auth";
 import { useState, useEffect, useMemo } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { DateTime } from "luxon";
-import { useUserState } from "./hooks";
 
-export const useLegend = () => {
+export const useLegend = (user: User | null) => {
   const navigator = useNavigate();
   let route = useLocation().pathname;
   let { id } = useParams();
-  const user = useUserState().user;
   const [heroes, setHeroes] = useState<Hero[]>(() => []);
   const [getHero] = useLazyGetHeroQuery();
 

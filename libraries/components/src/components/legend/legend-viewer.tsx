@@ -3,15 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { Legend } from "@affinity-rpg/models";
-import { useUserState } from "@affinity-rpg/hooks";
 
 type Props = {
   legend: Legend;
+  user: any | null;
   onSelectLegend?: () => void;
 };
 
-export const LegendViewer: FC<Props> = ({ legend, onSelectLegend }) => {
-  const user = useUserState().user;
+export const LegendViewer: FC<Props> = ({ legend, user, onSelectLegend }) => {
   return (
     <Card onClick={onSelectLegend} className={!!onSelectLegend ? "clickable" : ""}>
       <Card.Body>

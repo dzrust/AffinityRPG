@@ -3,10 +3,10 @@ import { faDiceD6 } from "@fortawesome/pro-regular-svg-icons";
 import { Toast, ToastContainer } from "react-bootstrap";
 import { RollNotification, ROLL_TYPES, RATING, STATUS_RATING } from "@affinity-rpg/models";
 import { getRatingText, getStatusRatingText } from "@affinity-rpg/helpers";
-import { useAppSelector } from "@affinity-rpg/hooks";
 import { Emblem } from "../emblem";
 
 type Props = {
+  notifications: RollNotification[];
   onNotificationClose: (index: number) => void;
 };
 
@@ -33,8 +33,7 @@ const getResultByRollType = (rollNotification: RollNotification) => {
   return 0;
 };
 
-export const RollNotificationDisplay: FC<Props> = ({ onNotificationClose }) => {
-  const notifications = useAppSelector((state) => state.app).rollNotification;
+export const RollNotificationDisplay: FC<Props> = ({ notifications, onNotificationClose }) => {
   return (
     <ToastContainer position="bottom-end" className="mt-5" style={{ zIndex: 999999 }}>
       {notifications.map((notification, index) => {

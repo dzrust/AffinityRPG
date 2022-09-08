@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { createLegend } from "@affinity-rpg/helpers";
 import { Legend, ROUTES } from "@affinity-rpg/models";
 import { useGetGGLegendsQuery, useGetLegendsQuery, useCreateLegendMutation } from "@affinity-rpg/data";
-import { useIsLoading, useUserState } from "@affinity-rpg/hooks";
 import { LegendViewer } from "@affinity-rpg/components";
+import { useIsLoading, useUserState } from "../../hooks";
 
 const Legends: FC = () => {
   const isLoading = useIsLoading();
@@ -50,7 +50,7 @@ const Legends: FC = () => {
       <hr />
       {legends.map((legend) => (
         <Row className="clickable mt-3" key={legend.id}>
-          <LegendViewer legend={legend} onSelectLegend={() => onLegendSelect(legend)} />
+          <LegendViewer legend={legend} onSelectLegend={() => onLegendSelect(legend)} user={user} />
         </Row>
       ))}
       <div className="m-3" />

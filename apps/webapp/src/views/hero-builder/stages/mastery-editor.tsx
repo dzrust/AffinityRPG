@@ -4,7 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { STAGES, masteryFormModel, MasteryFormModel, ROUTES } from "@affinity-rpg/models";
 import { MasteryEditorForm } from "@affinity-rpg/components";
 import { useUpdateMasteryMutation, useDeleteMasteryMutation } from "@affinity-rpg/data";
-import { useIsLoading, useMastery } from "@affinity-rpg/hooks";
+import { useMastery } from "@affinity-rpg/hooks";
+import { useIsLoading } from "../../../hooks";
 
 const MasteryEditor: FC = () => {
   const { mastery } = useMastery();

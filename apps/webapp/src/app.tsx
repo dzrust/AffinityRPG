@@ -1,7 +1,7 @@
 import { Loader } from "@affinity-rpg/components";
-import { useAppState } from "@affinity-rpg/hooks";
 import { FC, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { useAppState } from "./hooks";
 import Navigation from "./navigation";
 
 const App: FC = () => {

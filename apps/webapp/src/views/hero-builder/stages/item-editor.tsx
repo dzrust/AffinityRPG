@@ -24,7 +24,8 @@ import {
 } from "@affinity-rpg/models";
 import { ArmorEditorForm, WeaponEditorForm, ItemEditorForm } from "@affinity-rpg/components";
 import { useUpdateItemMutation, useDeleteItemMutation } from "@affinity-rpg/data";
-import { useIsLoading, useItem } from "@affinity-rpg/hooks";
+import { useItem } from "@affinity-rpg/hooks";
+import { useIsLoading } from "../../../hooks";
 
 const ItemEditor: FC = () => {
   const { item } = useItem();

@@ -15,7 +15,8 @@ import {
 } from "@affinity-rpg/models";
 import { ArmorViewer, ItemViewer, WeaponViewer, FormControl } from "@affinity-rpg/components";
 import { useUpdateHeroMutation, useCreateItemMutation } from "@affinity-rpg/data";
-import { useIsLoading, useHero } from "@affinity-rpg/hooks";
+import { useHero } from "@affinity-rpg/hooks";
+import { useIsLoading } from "../../../hooks";
 
 const InventoryStage: FC = () => {
   const { hero, items } = useHero();

@@ -5,8 +5,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AFFINITY, GENDER, Hero, HeroIntroFormModel, heroIntroFormModel, STAGES, ROUTES } from "@affinity-rpg/models";
 import { FormControl, GenderRadioGroup, AffinityRadioGroup } from "@affinity-rpg/components";
 import { useUpdateHeroMutation } from "@affinity-rpg/data";
-import { useIsLoading, useHero } from "@affinity-rpg/hooks";
+import { useHero } from "@affinity-rpg/hooks";
 import { getBaseAffinityStatScore } from "@affinity-rpg/helpers";
+import { useIsLoading } from "../../../hooks";
 
 const IntroStage: FC = () => {
   const { hero } = useHero();

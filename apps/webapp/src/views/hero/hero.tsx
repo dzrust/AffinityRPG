@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AFFINITY, Armor, Hero, STAGES, ITEM_TYPE, MASTERY_TYPE, ROUTES, Weapon } from "@affinity-rpg/models";
 import AffinityScore from "./affinity-score";
 import { useDeleteHeroMutation } from "@affinity-rpg/data";
-import { useHero, useIsLoading, useUserState } from "@affinity-rpg/hooks";
+import { useHero } from "@affinity-rpg/hooks";
 import {
   ArmorViewer,
   ConfirmationModal,
@@ -14,6 +14,7 @@ import {
   WeaponViewer,
   SkillViewer,
 } from "@affinity-rpg/components";
+import { useIsLoading, useUserState } from "../../hooks";
 
 type Props = {
   showHeroBuilder?: boolean;
@@ -103,6 +104,7 @@ const HeroSheet: FC<Props> = ({ showHeroBuilder = true, isRollsAllowed = false }
         {masteries.map((mastery) => (
           <Col xs={12} md={4} key={mastery.id} className="mt-3">
             <MasteryViewer
+              isLoading={isLoading}
               mastery={mastery}
               showCooldownTracker={
                 mastery.permanentEffect.length < 1 && mastery.type === MASTERY_TYPE.ACTIVE && user?.uid === hero.userId

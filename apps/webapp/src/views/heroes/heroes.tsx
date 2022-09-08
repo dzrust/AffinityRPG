@@ -5,7 +5,7 @@ import { createHero } from "@affinity-rpg/helpers";
 import { Hero, ROUTES } from "@affinity-rpg/models";
 import { HeroViewer } from "@affinity-rpg/components";
 import { useGetHeroesForUserQuery, useCreateHeroMutation } from "@affinity-rpg/data";
-import { useIsLoading, useUserState } from "@affinity-rpg/hooks";
+import { useIsLoading, useUserState } from "../../hooks";
 
 const Heroes: FC = () => {
   const isLoading = useIsLoading();

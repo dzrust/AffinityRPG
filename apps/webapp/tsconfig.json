@@ -4,6 +4,6 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx"
   },
-  "include": ["src", "../../libraries/components/src/kitchen-sink.tsx", "../../libraries/hooks/src/hooks.ts", "../../libraries/data/store.ts", "../../libraries/data/firebase.ts", "../../libraries/components/src/components", "../../libraries/helpers/src/affinity.ts"],
+  "include": ["src", "../../libraries/components/src/kitchen-sink.tsx", "src/hooks.ts", "../../libraries/data/store.ts", "../../libraries/data/firebase.ts", "../../libraries/components/src/components", "../../libraries/helpers/src/affinity.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

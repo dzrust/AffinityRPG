@@ -13,8 +13,9 @@ import {
 } from "@affinity-rpg/models";
 import { useUpdateHeroMutation } from "@affinity-rpg/data";
 import { getLevelFromExperience } from "@affinity-rpg/helpers";
-import { useIsLoading, useHero } from "@affinity-rpg/hooks";
+import { useHero } from "@affinity-rpg/hooks";
 import { FormControl, SkillEditor } from "@affinity-rpg/components";
+import { useIsLoading } from "../../../hooks";
 
 const JobStage: FC = () => {
   const { hero } = useHero();

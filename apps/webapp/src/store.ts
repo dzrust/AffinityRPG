@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { heroesAPI } from "./api/heroes";
-import { itemsAPI } from "./api/items";
-import { legendsAPI } from "./api/legends";
-import { masteriesAPI } from "./api/masteries";
-import { rulesAPI } from "./api/rules";
-import appSlice, { isLoadingMiddleware } from "./slices/appSlice";
-import userSlice from "./slices/userSlice";
+import { heroesAPI } from "@affinity-rpg/data/src/api/heroes";
+import { itemsAPI } from "@affinity-rpg/data/src/api/items";
+import { legendsAPI } from "@affinity-rpg/data/src/api/legends";
+import { masteriesAPI } from "@affinity-rpg/data/src/api/masteries";
+import { rulesAPI } from "@affinity-rpg/data/src/api/rules";
+import appSlice, { isLoadingMiddleware } from "@affinity-rpg/data/src/slices/appSlice";
+import userSlice from "@affinity-rpg/data/src/slices/userSlice";
 
 export const store = configureStore({
   reducer: {
