@@ -1,13 +1,12 @@
 import { faFireFlame } from "@fortawesome/pro-duotone-svg-icons";
 import { faAtom, faExplosion } from "@fortawesome/pro-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC, useContext, useMemo, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Mastery, MASTERY_CLASSIFICATION, MASTERY_TYPE, ROLL_TYPES, STATUS_EFFECT } from "@affinity-rpg/models";
 import { useUpdateMasteryMutation } from "@affinity-rpg/data";
 import { getNumberOfSkillDiceByHeroLevel, getStatusEffectText, getElementText } from "@affinity-rpg/helpers";
-import { useIsLoading } from "@affinity-rpg/hooks";
-import { HeroContext } from "../hero/hero-hoc";
+import { useHero, useIsLoading } from "@affinity-rpg/hooks";
 import { DiceUnitDisplay } from "../displays/dice-unit-display";
 import { StatDisplay } from "../displays/stat-display";
 import { Emblem } from "../emblem";
@@ -29,7 +28,7 @@ export const MasteryViewer: FC<Props> = ({
   onSelectMastery,
 }) => {
   const [cooldown, setCooldown] = useState(() => mastery.currentCooldown ?? 0);
-  const { hero } = useContext(HeroContext);
+  const { hero } = useHero();
   const isLoading = useIsLoading();
   const [updateMastery] = useUpdateMasteryMutation();
   const cooldownArray = useMemo(() => {

@@ -1,22 +1,33 @@
 import { Formik } from "formik";
-import { FC, useContext, useMemo } from "react";
+import { FC, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { AFFINITY, AffinityStat, AffinityStatFormModel } from "@affinity-rpg/models";
-import { Armor, ArmorFormModel, armorFormModel, ARMOR_CLASSIFICATION } from "@affinity-rpg/models";
-import { ELEMENT } from "@affinity-rpg/models";
-import { STAGES } from "@affinity-rpg/models";
-import { itemFormModel, ItemFormModel, ITEM_TYPE } from "@affinity-rpg/models";
-import { RATING } from "@affinity-rpg/models";
-import { ROUTES } from "@affinity-rpg/models";
-import { STATUS_EFFECT } from "@affinity-rpg/models";
-import { Weapon, WeaponFormModel, weaponFormModel, WEAPON_CLASSIFICATION } from "@affinity-rpg/models";
-import { ItemContext } from "@affinity-rpg/components";
+import {
+  AFFINITY,
+  AffinityStat,
+  AffinityStatFormModel,
+  Armor,
+  ArmorFormModel,
+  armorFormModel,
+  ARMOR_CLASSIFICATION,
+  ELEMENT,
+  STAGES,
+  itemFormModel,
+  ItemFormModel,
+  ITEM_TYPE,
+  RATING,
+  ROUTES,
+  STATUS_EFFECT,
+  Weapon,
+  WeaponFormModel,
+  weaponFormModel,
+  WEAPON_CLASSIFICATION,
+} from "@affinity-rpg/models";
 import { ArmorEditorForm, WeaponEditorForm, ItemEditorForm } from "@affinity-rpg/components";
-import { useUpdateItemMutation, useDeleteItemMutation } from "@affinity-rpg/data/src/api/items";
-import { useIsLoading } from "@affinity-rpg/hooks";
+import { useUpdateItemMutation, useDeleteItemMutation } from "@affinity-rpg/data";
+import { useIsLoading, useItem } from "@affinity-rpg/hooks";
 
 const ItemEditor: FC = () => {
-  const { item } = useContext(ItemContext);
+  const { item } = useItem();
   const isLoading = useIsLoading();
   const navigator = useNavigate();
   const { id, itemId } = useParams();

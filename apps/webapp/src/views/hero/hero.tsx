@@ -1,17 +1,10 @@
-import { FC, Fragment, useContext, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import { Row, Col, Button, Badge } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { AFFINITY } from "@affinity-rpg/models";
-import { Armor } from "@affinity-rpg/models";
-import { Hero, STAGES } from "@affinity-rpg/models";
-import { ITEM_TYPE } from "@affinity-rpg/models";
-import { MASTERY_TYPE } from "@affinity-rpg/models";
-import { ROUTES } from "@affinity-rpg/models";
-import { Weapon } from "@affinity-rpg/models";
+import { AFFINITY, Armor, Hero, STAGES, ITEM_TYPE, MASTERY_TYPE, ROUTES, Weapon } from "@affinity-rpg/models";
 import AffinityScore from "./affinity-score";
-import { HeroContext } from "@affinity-rpg/components";
-import { useDeleteHeroMutation } from "@affinity-rpg/data/src/api/heroes";
-import { useIsLoading, useUserState } from "@affinity-rpg/hooks";
+import { useDeleteHeroMutation } from "@affinity-rpg/data";
+import { useHero, useIsLoading, useUserState } from "@affinity-rpg/hooks";
 import {
   ArmorViewer,
   ConfirmationModal,
@@ -41,7 +34,7 @@ const heroHistory: HeroHistory[] = [
 ];
 
 const HeroSheet: FC<Props> = ({ showHeroBuilder = true, isRollsAllowed = false }) => {
-  const { hero, masteries, items } = useContext(HeroContext);
+  const { hero, masteries, items } = useHero();
   const isLoading = useIsLoading();
   const navigator = useNavigate();
   const [isDeleting, setIsDeleting] = useState(() => false);

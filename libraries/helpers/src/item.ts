@@ -1,8 +1,4 @@
-import { AFFINITY } from "@affinity-rpg/models";
-import { Armor, ARMOR_CLASSIFICATION } from "@affinity-rpg/models";
-import { ELEMENT } from "@affinity-rpg/models";
-import { Item, ITEM_TYPE } from "@affinity-rpg/models";
-import { RATING } from "@affinity-rpg/models";
+import { AFFINITY, Armor, ARMOR_CLASSIFICATION, ELEMENT, Item, ITEM_TYPE, RATING } from "@affinity-rpg/models";
 
 export const createItem = (type: ITEM_TYPE = ITEM_TYPE.ITEM): Item => ({
   id: "",

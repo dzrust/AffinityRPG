@@ -1,18 +1,16 @@
-import { FC, Fragment, useContext, useMemo } from "react";
+import { FC, Fragment, useMemo } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { getLevelFromExperience } from "@affinity-rpg/helpers";
-import { AFFINITIES } from "@affinity-rpg/models";
-import { GENDERS, Hero, STAGES } from "@affinity-rpg/models";
-import { ROUTES } from "@affinity-rpg/models";
+import { AFFINITIES, GENDERS, Hero, STAGES, ROUTES } from "@affinity-rpg/models";
 import ConfirmationStage from "./stages/confirmation";
 import HistoryStage from "./stages/history";
 import IntroStage from "./stages/intro";
 import InventoryStage from "./stages/inventory";
 import JobStage from "./stages/job";
 import MasteriesStage from "./stages/mastery";
-import { HeroContext } from "@affinity-rpg/components";
 import { StepperSVG } from "@affinity-rpg/components";
+import { useHero } from "@affinity-rpg/hooks";
 
 const stages = [
   {
@@ -66,7 +64,7 @@ const stages = [
 ];
 
 const HeroBuilder: FC = () => {
-  const { hero } = useContext(HeroContext);
+  const { hero } = useHero();
   const { stage: activeStage } = useParams();
   const navigator = useNavigate();
   let route = useLocation().pathname;

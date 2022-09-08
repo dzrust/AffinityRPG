@@ -1,7 +1,6 @@
 import {
   createArmor,
   createTestHero,
-  createTestNPC,
   createWeapon,
   resistanceRoll,
   rollD6,
@@ -21,6 +20,7 @@ import {
   WEAPON_CLASSIFICATION,
 } from "@affinity-rpg/models";
 import * as R from "ramda";
+import { AFFINITY_COMBINATIONS } from "./battle-simulator";
 type HeroWithWeaponsAndArmor = {
   weapons: Weapon[];
   armor: Armor[];
@@ -70,18 +70,6 @@ type RoundsResult = {
 
 const NUMBER_OF_COMBAT = 1000;
 const NUMBER_OF_ROUNDS = 10;
-
-const AFFINITY_COMBINATIONS = [
-  { affinity: AFFINITY.POTENCY, secondaryAffinity: AFFINITY.POTENCY },
-  { affinity: AFFINITY.POTENCY, secondaryAffinity: AFFINITY.FINESSE },
-  { affinity: AFFINITY.POTENCY, secondaryAffinity: AFFINITY.VIGOR },
-  { affinity: AFFINITY.FINESSE, secondaryAffinity: AFFINITY.POTENCY },
-  { affinity: AFFINITY.FINESSE, secondaryAffinity: AFFINITY.FINESSE },
-  { affinity: AFFINITY.FINESSE, secondaryAffinity: AFFINITY.VIGOR },
-  { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.POTENCY },
-  { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.FINESSE },
-  { affinity: AFFINITY.VIGOR, secondaryAffinity: AFFINITY.VIGOR },
-];
 
 const addWeaponAndArmorToCombatant = (
   combatant: Combatant,

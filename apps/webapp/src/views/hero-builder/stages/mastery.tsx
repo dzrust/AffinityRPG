@@ -1,20 +1,16 @@
 import { Formik } from "formik";
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { createMastery } from "@affinity-rpg/helpers";
-import { rollD6 } from "@affinity-rpg/helpers";
-import { heroMasteryFormModel, HeroMasteryFormModel, STAGES } from "@affinity-rpg/models";
-import { Mastery } from "@affinity-rpg/models";
-import { ROUTES } from "@affinity-rpg/models";
-import { HeroContext } from "@affinity-rpg/components";
+import { createMastery, rollD6 } from "@affinity-rpg/helpers";
+import { heroMasteryFormModel, HeroMasteryFormModel, STAGES, Mastery, ROUTES } from "@affinity-rpg/models";
 import { MasteryViewer, FormControl } from "@affinity-rpg/components";
-import { useUpdateHeroMutation } from "@affinity-rpg/data/src/api/heroes";
-import { useCreateMasteryMutation } from "@affinity-rpg/data/src/api/masteries";
-import { useIsLoading } from "@affinity-rpg/hooks";
+import { useUpdateHeroMutation } from "@affinity-rpg/data";
+import { useCreateMasteryMutation } from "@affinity-rpg/data";
+import { useIsLoading, useHero } from "@affinity-rpg/hooks";
 
 const MasteriesStage: FC = () => {
-  const { hero, masteries } = useContext(HeroContext);
+  const { hero, masteries } = useHero();
   const isLoading = useIsLoading();
   const navigator = useNavigate();
   const { id } = useParams();

@@ -1,5 +1,4 @@
-import { SkillState, SkillStateFormModel, SKILLS } from "@affinity-rpg/models";
-import { STATUS_EFFECT } from "@affinity-rpg/models";
+import { SkillState, SkillStateFormModel, SKILLS, STATUS_EFFECT } from "@affinity-rpg/models";
 
 export const getSkillStatesOrDefault = (skills: SkillState[] = []): SkillStateFormModel[] => {
   return SKILLS.map((skill) => {

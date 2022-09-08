@@ -28,7 +28,7 @@ type Combatant = HeroWithWeaponsAndArmor | NPCWithWeaponsAndArmor;
 
 const NUMBER_OF_COMBAT = 1000;
 
-const AFFINITY_COMBINATIONS = [
+export const AFFINITY_COMBINATIONS = [
   { affinity: AFFINITY.POTENCY, secondaryAffinity: AFFINITY.POTENCY },
   { affinity: AFFINITY.POTENCY, secondaryAffinity: AFFINITY.FINESSE },
   { affinity: AFFINITY.POTENCY, secondaryAffinity: AFFINITY.VIGOR },

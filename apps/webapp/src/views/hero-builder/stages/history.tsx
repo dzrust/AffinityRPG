@@ -1,16 +1,14 @@
 import { Formik } from "formik";
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { heroHistoryFormModel, HeroHistoryFormModel, STAGES } from "@affinity-rpg/models";
-import { ROUTES } from "@affinity-rpg/models";
+import { heroHistoryFormModel, HeroHistoryFormModel, STAGES, ROUTES } from "@affinity-rpg/models";
 import { MultiStringFormControl, FormControl } from "@affinity-rpg/components";
-import { HeroContext } from "@affinity-rpg/components";
-import { useUpdateHeroMutation } from "@affinity-rpg/data/src/api/heroes";
-import { useIsLoading } from "@affinity-rpg/hooks";
+import { useUpdateHeroMutation } from "@affinity-rpg/data";
+import { useIsLoading, useHero } from "@affinity-rpg/hooks";
 
 const HistoryStage: FC = () => {
-  const { hero } = useContext(HeroContext);
+  const { hero } = useHero();
   const isLoading = useIsLoading();
   const navigator = useNavigate();
   const [updateHero] = useUpdateHeroMutation();

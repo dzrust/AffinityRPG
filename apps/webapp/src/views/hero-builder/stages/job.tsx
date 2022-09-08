@@ -1,19 +1,23 @@
 import { Formik } from "formik";
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { heroJobFormModel, HeroJobFormModel, STAGES } from "@affinity-rpg/models";
-import { ROUTES } from "@affinity-rpg/models";
-import { SKILLS, SkillState } from "@affinity-rpg/models";
-import { STATUS_EFFECT } from "@affinity-rpg/models";
-import { HeroContext } from "@affinity-rpg/components";
-import { useUpdateHeroMutation } from "@affinity-rpg/data/src/api/heroes";
+import {
+  heroJobFormModel,
+  HeroJobFormModel,
+  STAGES,
+  ROUTES,
+  SKILLS,
+  SkillState,
+  STATUS_EFFECT,
+} from "@affinity-rpg/models";
+import { useUpdateHeroMutation } from "@affinity-rpg/data";
 import { getLevelFromExperience } from "@affinity-rpg/helpers";
-import { useIsLoading } from "@affinity-rpg/hooks";
+import { useIsLoading, useHero } from "@affinity-rpg/hooks";
 import { FormControl, SkillEditor } from "@affinity-rpg/components";
 
 const JobStage: FC = () => {
-  const { hero } = useContext(HeroContext);
+  const { hero } = useHero();
   const isLoading = useIsLoading();
   const navigator = useNavigate();
   const { id } = useParams();

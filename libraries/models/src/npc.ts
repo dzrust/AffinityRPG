@@ -5,7 +5,7 @@ import { RATING } from "./rating";
 import { SkillState } from "./skills";
 import { DistanceUnit } from "./units";
 
-export const BASE_NPC_HEALTH_MODIFIER = 5;
+export const BASE_NPC_HEALTH_MODIFIER = 10;
 
 export enum NPC_STATE {
   HOSTILE = "HOSTILE",

@@ -3,9 +3,8 @@ import { FC, useMemo } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { createLegend } from "@affinity-rpg/helpers";
-import { Legend } from "@affinity-rpg/models";
-import { ROUTES } from "@affinity-rpg/models";
-import { useGetGGLegendsQuery, useGetLegendsQuery, useCreateLegendMutation } from "@affinity-rpg/data/src/api/legends";
+import { Legend, ROUTES } from "@affinity-rpg/models";
+import { useGetGGLegendsQuery, useGetLegendsQuery, useCreateLegendMutation } from "@affinity-rpg/data";
 import { useIsLoading, useUserState } from "@affinity-rpg/hooks";
 import { LegendViewer } from "@affinity-rpg/components";
 

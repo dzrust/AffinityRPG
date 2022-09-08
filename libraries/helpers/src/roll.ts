@@ -173,12 +173,8 @@ export const rollDamage = (numberOfDiceToRoll: number): DamageRoll => {
 
 export const rollHealth = (numberOfDiceToRoll: number): HealthRoll => {
   const results = rollD6(numberOfDiceToRoll);
-  let healthTotal = 0;
-  for (let i = 0, { length } = results.results; i < length; i++) {
-    healthTotal += damageRollLookup[results.results[i]];
-  }
   return {
-    healthTotal: healthTotal,
+    healthTotal: results.total,
     results: results.results,
     total: results.total,
   };

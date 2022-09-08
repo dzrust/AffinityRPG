@@ -9,7 +9,7 @@ import {
   VISIBILITY,
 } from "@affinity-rpg/models";
 import { createLevelUp, levelUp } from "./level";
-import { rollD6, rollHealth } from "./roll";
+import { rollHealth } from "./roll";
 
 export const createHero = (): Hero => ({
   id: "",

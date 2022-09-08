@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceD6 } from "@fortawesome/pro-duotone-svg-icons";
 import { FC, useMemo } from "react";
-import { AFFINITY } from "@affinity-rpg/models";
-import { ROLL_TYPES } from "@affinity-rpg/models";
+import { AFFINITY, ROLL_TYPES } from "@affinity-rpg/models";
 import { Button } from "react-bootstrap";
 import { AffinityEmblem, RollButton } from "@affinity-rpg/components";
 

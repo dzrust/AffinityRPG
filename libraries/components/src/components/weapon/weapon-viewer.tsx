@@ -1,5 +1,5 @@
 import { faSword } from "@fortawesome/pro-regular-svg-icons";
-import { FC, useContext, useMemo } from "react";
+import { FC, useMemo } from "react";
 import { Card } from "react-bootstrap";
 import { Weapon, STATUS_EFFECT, ROLL_TYPES, ELEMENT } from "@affinity-rpg/models";
 import {
@@ -12,9 +12,9 @@ import {
 import { DiceUnitDisplay } from "../displays/dice-unit-display";
 import { StatDisplay } from "../displays/stat-display";
 import { Emblem } from "../emblem";
-import { HeroContext } from "../hero/hero-hoc";
 import { RollButton } from "../roll/roll-button";
 import { WeaponSlots } from "./weapon-slots";
+import { useHero } from "@affinity-rpg/hooks";
 
 type Props = {
   item: Weapon;
@@ -23,7 +23,7 @@ type Props = {
 };
 const badgeBackground = "primary";
 export const WeaponViewer: FC<Props> = ({ item, isRollingAllowed = false, onSelectItem }) => {
-  const { hero } = useContext(HeroContext);
+  const { hero } = useHero();
   const weaponDefaults = useMemo(() => {
     return {
       points: getDefaultWeaponPointsFromRating(item),

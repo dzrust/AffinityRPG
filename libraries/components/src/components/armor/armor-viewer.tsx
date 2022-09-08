@@ -1,5 +1,5 @@
 import { faShield } from "@fortawesome/pro-regular-svg-icons";
-import { FC, useContext, useMemo } from "react";
+import { FC, useMemo } from "react";
 import { Card } from "react-bootstrap";
 import { Armor, ROLL_TYPES } from "@affinity-rpg/models";
 import {
@@ -11,9 +11,9 @@ import {
 import { DiceUnitDisplay } from "../displays/dice-unit-display";
 import { StatDisplay } from "../displays/stat-display";
 import { Emblem } from "../emblem";
-import { HeroContext } from "../hero/hero-hoc";
 import { RollButton } from "../roll/roll-button";
 import { WeaponSlots } from "../weapon/weapon-slots";
+import { useHero } from "@affinity-rpg/hooks";
 
 type Props = {
   item: Armor;
@@ -24,7 +24,7 @@ type Props = {
 const badgeBackground = "primary";
 
 export const ArmorViewer: FC<Props> = ({ item, isRollingAllowed, onSelectItem }) => {
-  const { hero } = useContext(HeroContext);
+  const { hero } = useHero();
   const armorDefaults = useMemo(() => {
     return {
       points: getDefaultArmorPointsFromRating(item.rating),

@@ -20,18 +20,14 @@ export * from "./src/components/form/rating-select";
 export * from "./src/components/form/status-effect-select";
 
 export * from "./src/components/hero/hero-description";
-export * from "./src/components/hero/hero-hoc";
 export * from "./src/components/hero/hero-viewer";
 
 export * from "./src/components/item/item-editor-form";
-export * from "./src/components/item/item-hoc";
 export * from "./src/components/item/item-viewer";
 
-export * from "./src/components/legend/legend-hoc";
 export * from "./src/components/legend/legend-viewer";
 
 export * from "./src/components/mastery/mastery-editor-form";
-export * from "./src/components/mastery/mastery-hoc";
 export * from "./src/components/mastery/mastery-viewer";
 
 export * from "./src/components/roll/dice-roll-type-radio-group";

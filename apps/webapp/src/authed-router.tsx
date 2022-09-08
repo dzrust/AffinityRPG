@@ -17,9 +17,8 @@ import {
   faBalanceScale as faBalanceScaleRegular,
   faHoodCloak as faHoodCloakRegular,
 } from "@fortawesome/pro-regular-svg-icons";
-import { ROUTES, ROUTES_ARRAY } from "@affinity-rpg/models";
-import { STAGES } from "@affinity-rpg/models";
-import { HeroHOC, MasteryHOC, ItemHOC, LegendHOC, RollNotificationDisplay } from "@affinity-rpg/components";
+import { ROUTES, ROUTES_ARRAY, STAGES } from "@affinity-rpg/models";
+import { RollNotificationDisplay } from "@affinity-rpg/components";
 import { useAppDispatch } from "@affinity-rpg/hooks";
 import { removeRollNotification } from "@affinity-rpg/data";
 
@@ -116,18 +115,12 @@ const AuthedRouter: FC = () => {
           <Routes>
             <Route path={ROUTES.HOME} element={<LazyHome />} />
             <Route path={ROUTES.HEROES} element={<LazyHeroes />} />
-            <Route path={`${ROUTES.HERO}/:id`} element={<HeroHOC children={<LazyHeroSheet isRollsAllowed />} />} />
-            <Route path={`${ROUTES.HERO_BUILDER}/:id/:stage`} element={<HeroHOC children={<LazyHeroBuilder />} />} />
-            <Route
-              path={`${ROUTES.HERO_BUILDER}/:id/${STAGES.MASTERY}/:masteryId`}
-              element={<HeroHOC children={<MasteryHOC children={<LazyMasteryEditor />} />} />}
-            />
-            <Route
-              path={`${ROUTES.HERO_BUILDER}/:id/${STAGES.INVENTORY}/:itemId`}
-              element={<HeroHOC children={<ItemHOC children={<LazyItemEditor />} />} />}
-            />
+            <Route path={`${ROUTES.HERO}/:id`} element={<LazyHeroSheet isRollsAllowed />} />
+            <Route path={`${ROUTES.HERO_BUILDER}/:id/:stage`} element={<LazyHeroBuilder />} />
+            <Route path={`${ROUTES.HERO_BUILDER}/:id/${STAGES.MASTERY}/:masteryId`} element={<LazyMasteryEditor />} />
+            <Route path={`${ROUTES.HERO_BUILDER}/:id/${STAGES.INVENTORY}/:itemId`} element={<LazyItemEditor />} />
             <Route path={ROUTES.LEGENDS} element={<LazyLegends />} />
-            <Route path={`${ROUTES.LEGENDS}/:id`} element={<LegendHOC children={<LazyLegendSheet />} />} />
+            <Route path={`${ROUTES.LEGENDS}/:id`} element={<LazyLegendSheet />} />
             <Route path={`${ROUTES.RULES}`} element={<LazyMarkdownPage />} />
             <Route path={`${ROUTES.RULES}/*`} element={<LazyMarkdownPage />} />
             <Route path={ROUTES.USER} element={<LazySettings />} />

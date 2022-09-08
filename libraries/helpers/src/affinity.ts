@@ -1,5 +1,4 @@
-import { AFFINITY } from "@affinity-rpg/models";
-import { Hero } from "@affinity-rpg/models";
+import { AFFINITY, Hero } from "@affinity-rpg/models";
 
 export const getBaseAffinityStatScore = (hero: Partial<Hero>) => {
   const newHero = { ...hero };
