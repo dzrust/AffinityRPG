@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@affinity-rpg/components": "workspace:*",
-    "@affinity-rpg/data": "workspace:*",
+    "@affinity-rpg/data": "1.0.0",
     "@affinity-rpg/helpers": "workspace:*",
     "@affinity-rpg/hooks": "workspace:*",
     "@affinity-rpg/models": "workspace:*",
