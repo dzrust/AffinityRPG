@@ -36,4 +36,6 @@ export type NPC = {
   vigor: number;
   levels: Levels;
   skills: SkillState[];
+  damage: number;
+  crit: number;
 } & NPCTemplate;

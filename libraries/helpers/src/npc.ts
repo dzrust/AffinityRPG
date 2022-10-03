@@ -53,6 +53,8 @@ export const createNPC = (): NPC => ({
     19: createLevelUp(),
     20: createLevelUp(),
   },
+  damage: 0,
+  crit: 0,
 });
 
 export const createTestNPC = (affinity: AFFINITY, secondaryAffinity: AFFINITY) => (level: number) => {

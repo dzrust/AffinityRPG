@@ -1,5 +1,5 @@
 import { AFFINITY, Hero, Level, LevelUp, Mastery, NPC } from "@affinity-rpg/models";
-import { rollHealth } from "./roll";
+import { rollDamage, rollHealth } from "./roll";
 
 export const getLevelFromExperience = (experience: number) => {
   if (experience >= 0 && experience < 300) return 1;
@@ -83,28 +83,41 @@ export const createLevelUp = (): LevelUp => ({
     healthTotal: 0,
   },
   healthModifier: 0,
+  damageGained: {
+    total: 0,
+    results: [],
+    damageTotal: 0,
+  },
+  damageModifier: 0,
+  critDamageGained: {
+    total: 0,
+    results: [],
+    damageTotal: 0,
+  },
+  critDamageModifier: 0,
 });
 
 export const levelUp = (levelee: Hero | NPC, healthModifier: number, extraStat: AFFINITY, masteries: Mastery[]) => {
   const nextLevel: Level = (levelee.level + 1) as Level;
-  levelee.levels[nextLevel].completed = true;
-  levelee.levels[nextLevel].healthModifier = healthModifier;
-  levelee.levels[nextLevel].level = nextLevel;
+  const levelUp = levelee.levels[nextLevel];
+  levelUp.completed = true;
+  levelUp.healthModifier = healthModifier;
+  levelUp.level = nextLevel;
   if (nextLevel % 2 === 0) {
-    levelee.levels[nextLevel].masteries = masteries;
+    levelUp.masteries = masteries;
   }
   if (nextLevel % 2 === 1 && nextLevel < 17) {
     switch (levelee.affinity) {
       case AFFINITY.FINESSE:
-        levelee.levels[nextLevel].finesse++;
+        levelUp.finesse++;
         levelee.finesse++;
         break;
       case AFFINITY.POTENCY:
-        levelee.levels[nextLevel].potency++;
+        levelUp.potency++;
         levelee.potency++;
         break;
       case AFFINITY.VIGOR:
-        levelee.levels[nextLevel].vigor++;
+        levelUp.vigor++;
         levelee.vigor++;
         break;
     }
@@ -112,21 +125,25 @@ export const levelUp = (levelee: Hero | NPC, healthModifier: number, extraStat: 
   if (nextLevel % 2 === 1 || nextLevel >= 16) {
     switch (extraStat) {
       case AFFINITY.FINESSE:
-        levelee.levels[nextLevel].finesse++;
+        levelUp.finesse++;
         levelee.finesse++;
         break;
       case AFFINITY.POTENCY:
-        levelee.levels[nextLevel].potency++;
+        levelUp.potency++;
         levelee.potency++;
         break;
       case AFFINITY.VIGOR:
-        levelee.levels[nextLevel].vigor++;
+        levelUp.vigor++;
         levelee.vigor++;
         break;
     }
   }
-  levelee.levels[nextLevel].healthGained = rollHealth(levelee.vigor);
-  levelee.totalHealth += levelee.levels[nextLevel].healthGained.healthTotal + levelee.levels[nextLevel].healthModifier;
+  levelUp.healthGained = rollHealth(levelee.vigor);
+  levelUp.damageGained = rollDamage(levelee.potency);
+  levelUp.critDamageGained = rollDamage(levelee.finesse);
+  levelee.damage += levelUp.damageGained.damageTotal;
+  levelee.crit += levelUp.critDamageGained.damageTotal;
+  levelee.totalHealth += levelUp.healthGained.healthTotal + levelUp.healthModifier;
   levelee.currentHealth = levelee.totalHealth;
   levelee.level = nextLevel;
 };

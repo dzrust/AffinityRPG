@@ -59,6 +59,8 @@ export const createHero = (): Hero => ({
     19: createLevelUp(),
     20: createLevelUp(),
   },
+  damage: 0,
+  crit: 0,
 });
 
 export const getNumberOfSkillDiceByHeroLevel = (hero: Hero) => {

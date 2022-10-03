@@ -45,17 +45,17 @@ const addWeaponAndArmorToCombatant = (combatant: Combatant, index: number) => {
     const weapon1 = createWeapon();
     weapon1.weaponSlotsUsed = 1;
     weapon1.classification = WEAPON_CLASSIFICATION.ONE_HANDED;
-    weapon1.damage = { diceCount: 2, modifier: 1 };
+    weapon1.damage = { diceCount: 2, modifier: 0 };
     const weapon2 = createWeapon();
     weapon2.weaponSlotsUsed = 1;
     weapon2.classification = WEAPON_CLASSIFICATION.ONE_HANDED;
-    weapon2.damage = { diceCount: 2, modifier: 1 };
+    weapon2.damage = { diceCount: 2, modifier: 0 };
     combatant.weapons = [weapon1, weapon2];
   } else {
     const weapon1 = createWeapon();
     weapon1.weaponSlotsUsed = 2;
     weapon1.classification = WEAPON_CLASSIFICATION.TWO_HANDED;
-    weapon1.damage = { diceCount: 3, modifier: 2 };
+    weapon1.damage = { diceCount: 3, modifier: 0 };
     combatant.weapons = [weapon1];
   }
   const armor = createArmor();
@@ -137,8 +137,8 @@ const attack = (current: Combatant, target: Combatant) => {
       resistance = 0;
     let bleedApplied = false;
     if (finesseRoll.success) {
-      damage = rollD6(weapon.damage.diceCount).total;
-      damage += rollDamage(finesseRoll.criticalRolls + current.potency).damageTotal;
+      damage = rollDamage(weapon.damage.diceCount).total;
+      damage += (finesseRoll.criticalRolls > 0 ? current.crit : 0) + current.damage;
       R.forEach<number>(
         (value) => R.add(value, resistance),
         R.map((armor) => armor.armor.modifier, target.armor),
@@ -149,7 +149,7 @@ const attack = (current: Combatant, target: Combatant) => {
     weaponAttacks.push({
       finesseRoll,
       damage,
-      damageDice: finesseRoll.criticalRolls + weapon.damage.diceCount,
+      damageDice: weapon.damage.diceCount,
       trueDamage: Math.max(damage - resistance, 0),
       resistance,
       bleedApplied,
@@ -216,6 +216,8 @@ export const runCombatRounds = (
       vigor: pm.vigor,
       finesse: pm.finesse,
       health: pm.totalHealth,
+      damage: pm.damage,
+      crit: pm.crit,
     })),
   );
   const hostileParty = createHostileNPCParty(hostilePartySize, hostilePartyLevel);
@@ -227,6 +229,8 @@ export const runCombatRounds = (
       vigor: pm.vigor,
       finesse: pm.finesse,
       health: pm.totalHealth,
+      damage: pm.damage,
+      crit: pm.crit,
     })),
   );
   const results = [];

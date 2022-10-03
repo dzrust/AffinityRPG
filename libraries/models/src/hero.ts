@@ -41,6 +41,8 @@ export type Hero = {
   strengths: string[];
   weaknesses: string[];
   levels: Levels;
+  damage: number;
+  crit: number;
 };
 
 export enum STAGES {

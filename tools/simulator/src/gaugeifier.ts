@@ -42,8 +42,8 @@ type Round = {
   hit: SkillRoll;
   damage: {
     weaponDamage: Roll[];
-    criticalDamage: DamageRoll;
-    potencyDamage: DamageRoll;
+    criticalDamage: number;
+    potencyDamage: number;
     totalDamage: number;
   };
   resistance: {
@@ -128,14 +128,14 @@ const getDamage = (combatant: Combatant, criticals: number) => {
     totalDamage += roll.total;
     weaponDamage.push(roll);
   });
-  const potencyDamage = rollDamage(combatant.potency);
-  totalDamage += potencyDamage.damageTotal;
-  const criticalDamage = rollDamage(criticals);
-  totalDamage += criticalDamage.damageTotal;
+  totalDamage += combatant.damage;
+  if (criticals > 0) {
+    totalDamage += combatant.crit;
+  }
   return {
     weaponDamage,
-    criticalDamage,
-    potencyDamage,
+    criticalDamage: combatant.damage,
+    potencyDamage: criticals > 0 ? combatant.crit : 0,
     totalDamage,
   };
 };
@@ -215,8 +215,8 @@ const runTest = (combatant: Combatant, difficulty: number): RoundsResult => {
   };
 };
 
-export const runGaugeifierSimulation = async () => {
-  const combatant = createHeroCombatant(20, AFFINITY_COMBINATIONS[0], 2, 0, true, 2);
+export const runGaugeifierSimulation = async (level: number, affinityCombinationIndex: number) => {
+  const combatant = createHeroCombatant(level, AFFINITY_COMBINATIONS[affinityCombinationIndex], 2, 0, true, 2);
   let promises: Promise<RoundsResult>[] = [];
   const results: RoundsResult[] = [];
   for (let i = 1; i <= NUMBER_OF_COMBAT; i++) {
@@ -265,4 +265,5 @@ export const runGaugeifierSimulation = async () => {
   console.log("How often did I hit", Math.trunc((hitAverage * 100) / NUMBER_OF_COMBAT), "%");
   console.log("How much did I resist on average", Math.trunc(resistanceAverage / NUMBER_OF_COMBAT));
   console.log("How often did I crit", Math.trunc((critAverage * 100) / NUMBER_OF_COMBAT), "%");
+  console.log("Who am I", combatant);
 };
