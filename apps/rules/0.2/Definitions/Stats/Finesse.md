@@ -7,6 +7,33 @@ Example:
 4 Finesse would give the Hero 4d6
 ```
 
+## Keywords Indicating Roll
+
+- Quickly
+- Quietly
+- Gently
+- Swiftly
+- Persuade
+- Deceive
+- Pick
+- Sneak
+- Gracefully
+- Precise
+- Steady
+- Balance
+- Hit
+- Cast
+- Draw
+- Throw
+- Aim
+- Shuffle
+- Dance
+- Perform
+- Suggest
+- Escape
+- Unravel
+- Untangle
+
 ## Abbreviation
 
 FIN

@@ -35,7 +35,7 @@ All skills start in a neutral state with no bonuses or penalty. Choose two skill
 
 ### Name your hero
 
-You must have a name or someway of being identified by others so they can grab your attention in verbal or gesture based way.
+You must have a name or some way of being identified by others so they can grab your attention in verbal or gesture based way.
 
 ### Determine your starting equipment
 

@@ -14,6 +14,25 @@ Example:
 4 Vigor would give the Hero 1 + 4d6 = 1 + 4d6 = 5d6.
 ```
 
+## Keywords Indicating Roll
+
+- Withstand
+- Hold
+- Shrugoff
+- Fortitude
+- Disregard
+- Ignore
+- Forget
+- Resist
+- Restore
+- Regain
+- Tank
+- Tough
+- Grounded
+- Marathon
+- Pace
+- 
+
 ## Abbreviation
 
 VGR

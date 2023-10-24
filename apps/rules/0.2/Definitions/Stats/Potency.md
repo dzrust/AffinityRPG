@@ -7,6 +7,37 @@ Example:
 6 Potency would give the Hero 6d6
 ```
 
+## Keywords Indicating Roll
+
+- Strike
+- Damage
+- Aggrevate
+- Annoy
+- Break
+- Lift
+- Hold
+- Distance
+- Destroy
+- Coerce
+- Force
+- Jam
+- Aggressive
+- Pull
+- Push
+- Tow
+- Carry
+- Climb
+- Open
+- Bust
+- Smash
+- Attack
+- Run
+- Move
+- Exert
+- Effort
+- Strength
+
+
 ## Abbreviation
 
 PTE
